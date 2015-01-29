@@ -1,0 +1,19 @@
+{
+  "name": "WebProject",
+  "version": "0.0.0",
+  "homepage": "https://github.com/techmatt101/WebProject",
+  "authors": [
+    "techmatt101 <matt@kempmail.co.uk>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
