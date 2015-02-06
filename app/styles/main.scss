@@ -1,8 +1,59 @@
 @import "variables";
 
+* {
+    box-sizing: border-box;
+//    outline: none;
+//    user-select: none;
+}
+
 body {
-  background: $body-bg;
-  color: $text-color;
-  font-family: $font-family;
-  font-size: $font-size;
+    background: $body-bg;
+    color: $text-color;
+    font-family: $font-family;
+    font-size: $font-size;
+}
+
+%list-unstyled {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.resources ul,
+.timeline ul {
+    @extend %list-unstyled;
+}
+
+.timeline {
+    background: $brand-color;
+    height: 400px;
+}
+
+.resources {
+    background: $white;
+}
+
+.resource {
+    background: #ddd;
+    padding: $global-padding;
+    margin: $global-margin;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: $border-radius;
+    transition: 300ms box-shadow;
+
+    &--dragging {
+        box-shadow: 2px 3px 15px rgba(0,0,0,0.4);
+        z-index: 1000;
+    }
+}
+
+.placeholder {
+    display: inline-block;
+    background: #aaa;
+    border: 3px dashed #fff;
+    opacity: 0.4;
+    border-radius: $border-radius;
+    margin: $global-margin;
+    padding: $global-padding-y - 3px $global-padding-x; //TODO: HACK, should not need to take the border off the top padding
 }
