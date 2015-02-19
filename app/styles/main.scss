@@ -54,6 +54,7 @@ body {
     border: 3px dashed #fff;
     opacity: 0.4;
     border-radius: $border-radius;
+    padding: $global-padding;
     margin: $global-margin;
-    padding: $global-padding-y - 3px $global-padding-x; //TODO: HACK, should not need to take the border off the top padding
+    vertical-align: top;
 }

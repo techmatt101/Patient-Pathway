@@ -10,7 +10,6 @@ var parentElement;
 var element;
 var placeholderElment = document.createElement('li');
 placeholderElment.className = 'placeholder';
-placeholderElment.innerText = '.'; //TODO: WHY! >:(
 var startPos = { x: 0, y: 0 };
 
 var timelineResources = [];
