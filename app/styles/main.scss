@@ -19,6 +19,13 @@ body {
     padding: 0;
 }
 
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #111;
+    padding: 0.2em 0;
+}
+
 .resources ul,
 .timeline ul {
     @extend %list-unstyled;

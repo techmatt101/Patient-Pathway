@@ -10,7 +10,14 @@
   "bugs": {
     "url": "https://github.com/techmatt101/WebProject/issues"
   },
-  "dependencies": {},
+  "scripts": {
+    "install": "bower install && tsd reinstall -s -o",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1"
+  },
+  "dependencies": {
+    "gulp-typescript": "^2.4.2"
+  },
   "devDependencies": {
     "gulp": "~3.8.10",
     "chalk": "~0.5.1",

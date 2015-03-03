@@ -6,7 +6,7 @@
     "techmatt101 <matt@kempmail.co.uk>"
   ],
   "moduleType": [
-    "globals"
+    "amd"
   ],
   "license": "MIT",
   "ignore": [
@@ -15,5 +15,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "~1.3.14",
+    "requirejs": "~2.1.16",
+    "angular-route": "~1.3.14"
+  }
 }

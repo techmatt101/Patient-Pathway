@@ -35,7 +35,7 @@ gulp.task('watch', function() {
 //===================================================//
 
 gulp.task('markup', function() {
-    return gulp.src('app/*.html')
+    return gulp.src('app/**/*.html')
         .pipe($.if(isProduction, $.minifyHtml()))
         .pipe(gulp.dest('dist'));
 });
@@ -51,13 +51,22 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('dist/styles'));
 });
 
+//gulp.task('scriptLibs', function() {
+//    gulp.src(['bower_components/angular/angular.js', 'bower_components/angular/angular.js'])
+//        .pipe($.if(isDebug, $.sourcemaps.init()))
+//        .pipe($.concat('app.js'))
+//        .pipe($.if(isProduction, $.uglify()))
+//        .pipe($.if(isDebug, $.sourcemaps.write()))
+//        .pipe(gulp.dest('dist/scripts'));
+//});
+
 gulp.task('scripts', function() {
-    return gulp.src('app/scripts/**/*.js')
+    return gulp.src('app/**/*.ts')
         .pipe($.if(isDebug, $.sourcemaps.init()))
-        .pipe($.concat('app.js'))
+        .pipe($.typescript({ module: 'amd' }))
         .pipe($.if(isProduction, $.uglify()))
         .pipe($.if(isDebug, $.sourcemaps.write()))
-        .pipe(gulp.dest('dist/scripts'));
+        .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('images', function() {

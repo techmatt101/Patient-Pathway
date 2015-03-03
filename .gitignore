@@ -15,9 +15,10 @@ $RECYCLE.BIN/
 .DS_Store
 
 # NodeJS
-bower_components
 node_modules
 npm-debug.log
+bower_components
+typings/**/
 
 # Build
 build/
