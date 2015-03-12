@@ -5,7 +5,7 @@ Web application designed for clinicians and patients in the NHS. The application
 ## Requirements
 - [nodeJS](http://nodejs.org/)
 - [bower](bower.io) `npm install bower -g`
-- [tsd](http://definitelytyped.org/) `npm install tsd -g`
+- [tsd](http://definitelytyped.org/) **v0.6** `npm install tsd@next -g`
 
 ## Install Guide
 - Install project `npm install`
