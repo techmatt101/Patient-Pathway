@@ -12,7 +12,7 @@ function asyncLoadController (path) { //TODO: hmmm.. better way to do this?
 }
 
 module PatientPathway {
-    angular.module('PatientPathway', ['ngRoute', 'PatientPathway.Login', 'PatientPathway.Paths', 'PatientPathway.Pathway'])
+    angular.module('PatientPathway', ['ngRoute', 'PatientPathway.Login', 'PatientPathway.Settings', 'PatientPathway.Paths', 'PatientPathway.Pathway'])
         .config(($routeProvider : ng.route.IRouteProvider) => {
             $routeProvider.otherwise({redirectTo: '/login'});
         });
@@ -23,6 +23,15 @@ module PatientPathway {
             $routeProvider.when('/login', {
                 templateUrl: 'views/login.html',
                 controller: 'Login'
+            });
+        });
+
+    angular.module('PatientPathway.Settings', ['ngRoute'])
+        .controller('Settings', asyncLoadController('controllers/settings'))
+        .config(($routeProvider : ng.route.IRouteProvider) => {
+            $routeProvider.when('/settings', {
+                templateUrl: 'views/settings.html',
+                controller: 'Settings'
             });
         });
 
@@ -37,7 +46,7 @@ module PatientPathway {
         });
 
     angular.module('PatientPathway.Pathway', ['ngRoute'])
-        .controller('Pathway', asyncLoadController('./controllers/pathway'))
+        .controller('Pathway', asyncLoadController('controllers/pathway'))
         .config(($routeProvider : ng.route.IRouteProvider) => {
             $routeProvider.when('/pathway', {
                 templateUrl: 'views/pathway.html',
