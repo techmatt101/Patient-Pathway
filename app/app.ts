@@ -36,7 +36,7 @@ module PatientPathway {
         });
 
     angular.module('PatientPathway.Paths', ['ngRoute'])
-        .controller('Paths', asyncLoadController('./controllers/paths'))
+        .controller('Paths', asyncLoadController('controllers/paths'))
         .controller('Navbar', asyncLoadController('components/navbar/navbar.controller'))
         .config(($routeProvider : ng.route.IRouteProvider) => {
             $routeProvider.when('/paths', {
