@@ -1,0 +1,27 @@
+@import '../core/variables';
+
+.btn {
+    display: inline-block;
+    margin: 0.5em auto;
+    padding: 0.7em 1em;
+    max-width: 100%;
+    border: none;
+    outline: none;
+
+    background: $brand-color--dark;
+    border-radius: $border-radius;
+    color: $white;
+    cursor: pointer;
+    font-family: $font-family;
+    text-decoration: none;
+
+    &:hover,
+    &:focus, {
+        background: lighten($brand-color--dark, 5%);
+        text-decoration: none;
+    }
+
+    &:active {
+        background: darken($brand-color--dark, 5%);
+    }
+}

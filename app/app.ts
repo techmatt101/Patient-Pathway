@@ -2,7 +2,7 @@
 declare var require : any;
 import angular = require('angular');
 
-function asyncLoadController (path) { //TODO: hmmm.. better way to do this?
+function asyncLoadController(path) { //TODO: hmmm.. better way to do this?
     return ($scope) => {
         require([path], (controller) => {
             new controller.Main($scope);
@@ -12,10 +12,18 @@ function asyncLoadController (path) { //TODO: hmmm.. better way to do this?
 }
 
 module PatientPathway {
-    angular.module('PatientPathway', ['ngRoute', 'PatientPathway.Login', 'PatientPathway.Settings', 'PatientPathway.Paths', 'PatientPathway.Pathway'])
-        .config(($routeProvider : ng.route.IRouteProvider) => {
-            $routeProvider.otherwise({redirectTo: '/login'});
+    angular.module('PatientPathway', [
+        'ngRoute',
+        'PatientPathway.Login',
+        'PatientPathway.Settings',
+        'PatientPathway.Paths',
+        'PatientPathway.Pathway'
+    ]).config(($routeProvider : ng.route.IRouteProvider) => {
+        $routeProvider.when('/style-guide', {
+            templateUrl: 'views/style-guide.html'
         });
+        $routeProvider.otherwise({redirectTo: '/login'});
+    });
 
     angular.module('PatientPathway.Login', ['ngRoute'])
         .controller('Login', asyncLoadController('controllers/login'))

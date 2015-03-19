@@ -1,23 +1,27 @@
 // Global Variables
 
 // Colors =============================== //
-$body-bg: #f4f4f4;
-$text-color: #111;
+$brand-color: #68d5d8;
+$brand-color--light: #90e4f1;
+$brand-color--dark: #37848c;
 
-$white: #FFF;
+$media-video-color: #e76e70;
+$media-link-color: #3498db;
+$media-pdf-color: #1eb47d;
+
+$white: #fff;
 $white--dark: darken($white, 10%);
-$black: #000;
+$black: #333;
 $black--light: lighten($black, 10%);
-$grey: #ccc;
+$grey: #393939;
 $grey--dark: darken($grey, 7%);
-$grey--light: lighten($grey, 7%);
+$grey--light: #f5f5f5;
 
-$brand-color: #345B93;
-$brand-color--light: #6999e1;
-$brand-color--dark: #284672;
+$body-bg: #68d5d8;
+$text-color: $black;
 
-$link-color: $brand-color--light;
-$highlight-color: lighten($brand-color--light, 5%);
+$link-color: $brand-color--dark;
+$highlight-color: $brand-color--dark;
 
 $success-color: #5cb85c;
 $info-color: #5bc0de;
@@ -25,28 +29,25 @@ $warning-color: #f0ad4e;
 $danger-color: #d9534f;
 
 // Style =============================== //
-$font-family--sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family--serif: Georgia, "Times New Roman", Times, serif;
-$font-family--mono: Menlo, Monaco, Consolas, "Courier New", monospace;
-$font-family: $font-family--sans-serif;
+$font-family: 'museo_sans100', Helvetica, Arial, sans-serif;
 
-$font-size: 14px;
+$font-size: 16px;
 $font-size--large: ceil(($font-size * 1.25));
 $font-size--small: ceil(($font-size * 0.85));
 
 $letter-spacing: 0.05em;
-$border-radius: 3px;
+$border-radius: 7px;
 
 // Layout =============================== //
 $average-screen-width: 1366px;
 $average-screen-height: 768px;
 
-$global-margin-x: 5px;
-$global-margin-y: 5px;
+$global-margin-x: 10px;
+$global-margin-y: 10px;
 $global-margin: $global-margin-y $global-margin-x;
 
-$global-padding-x: 10px;
-$global-padding-y: 7px;
+$global-padding-x: 18px;
+$global-padding-y: 15px;
 $global-padding: $global-padding-y $global-padding-x;
 
 // Media query breakpoints

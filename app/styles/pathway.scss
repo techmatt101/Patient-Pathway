@@ -1,0 +1,39 @@
+.resources ul,
+.timeline ul {
+    @extend %list-unstyled;
+}
+
+.timeline {
+    background: $brand-color;
+    height: 400px;
+}
+
+.resources {
+    background: $white;
+}
+
+.resource {
+    background: #ddd;
+    padding: $global-padding;
+    margin: $global-margin;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: $border-radius;
+    transition: 300ms box-shadow;
+
+    &--dragging {
+        box-shadow: 2px 3px 15px rgba(0,0,0,0.4);
+        z-index: 1000;
+    }
+}
+
+.placeholder {
+    display: inline-block;
+    background: #aaa;
+    border: 3px dashed #fff;
+    opacity: 0.4;
+    border-radius: $border-radius;
+    padding: $global-padding;
+    margin: $global-margin;
+    vertical-align: top;
+}

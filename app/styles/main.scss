@@ -1,17 +1,13 @@
-@import "variables";
+@import "core/variables";
+@import "core/fonts";
+@import "core/base";
 
-* {
-    box-sizing: border-box;
-//    outline: none;
-//    user-select: none;
-}
+@import "components/buttons";
+@import "components/form";
+@import "components/media";
+@import "components/site";
 
-body {
-    background: $body-bg;
-    color: $text-color;
-    font-family: $font-family;
-    font-size: $font-size;
-}
+@import "pathway";
 
 %list-unstyled {
     list-style: none;
@@ -21,47 +17,15 @@ body {
 
 .browsehappy {
     margin: 0.2em 0;
-    background: #ccc;
-    color: #111;
+    background: #111;
+    color: #eee;
     padding: 0.2em 0;
 }
 
-.resources ul,
-.timeline ul {
-    @extend %list-unstyled;
-}
-
-.timeline {
-    background: $brand-color;
-    height: 400px;
-}
-
-.resources {
+.section {
     background: $white;
-}
-
-.resource {
-    background: #ddd;
     padding: $global-padding;
     margin: $global-margin;
-    display: inline-block;
-    cursor: pointer;
     border-radius: $border-radius;
-    transition: 300ms box-shadow;
-
-    &--dragging {
-        box-shadow: 2px 3px 15px rgba(0,0,0,0.4);
-        z-index: 1000;
-    }
-}
-
-.placeholder {
-    display: inline-block;
-    background: #aaa;
-    border: 3px dashed #fff;
-    opacity: 0.4;
-    border-radius: $border-radius;
-    padding: $global-padding;
-    margin: $global-margin;
-    vertical-align: top;
+    border-bottom: 3px solid #ddd;
 }

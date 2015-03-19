@@ -1,0 +1,11 @@
+@import '../core/variables';
+
+.form {
+    &__input {
+        border-radius: $border-radius;
+        border: 1px solid $grey;
+        display: block;
+        margin: 5px 0 10px;
+        padding: 0.4em 0.6em;
+    }
+}
