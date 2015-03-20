@@ -73,6 +73,9 @@ gulp.task('scripts', function () {
 
 gulp.task('images', function () {
     return gulp.src('app/images/**/*.{svg,png,jpg}')
+        .pipe($.imagemin({
+            progressive: true
+        }))
         .pipe(gulp.dest('dist/images'));
 });
 
