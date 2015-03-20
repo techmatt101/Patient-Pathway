@@ -1,8 +1,9 @@
 /// <reference path="../typings/tsd.d.ts" />
-declare var require : any;
+declare
+var require : any;
 import angular = require('angular');
 
-function asyncLoadController(path) { //TODO: hmmm.. better way to do this?
+function asyncLoadController (path) { //TODO: hmmm.. better way to do this?
     return ($scope) => {
         require([path], (controller) => {
             new controller.Main($scope);
@@ -18,12 +19,14 @@ module PatientPathway {
         'PatientPathway.Settings',
         'PatientPathway.Paths',
         'PatientPathway.Pathway'
-    ]).config(($routeProvider : ng.route.IRouteProvider) => {
-        $routeProvider.when('/style-guide', {
-            templateUrl: 'views/style-guide.html'
+    ])
+        .controller('Navbar', asyncLoadController('components/navbar/navbar.controller'))
+        .config(($routeProvider : ng.route.IRouteProvider) => {
+            $routeProvider.when('/style-guide', {
+                templateUrl: 'views/style-guide.html'
+            });
+            $routeProvider.otherwise({redirectTo: '/login'});
         });
-        $routeProvider.otherwise({redirectTo: '/login'});
-    });
 
     angular.module('PatientPathway.Login', ['ngRoute'])
         .controller('Login', asyncLoadController('controllers/login'))
@@ -45,7 +48,6 @@ module PatientPathway {
 
     angular.module('PatientPathway.Paths', ['ngRoute'])
         .controller('Paths', asyncLoadController('controllers/paths'))
-        .controller('Navbar', asyncLoadController('components/navbar/navbar.controller'))
         .config(($routeProvider : ng.route.IRouteProvider) => {
             $routeProvider.when('/paths', {
                 templateUrl: 'views/paths.html',
@@ -55,6 +57,8 @@ module PatientPathway {
 
     angular.module('PatientPathway.Pathway', ['ngRoute'])
         .controller('Pathway', asyncLoadController('controllers/pathway'))
+        .controller('SearchBar', asyncLoadController('components/search-bar/search-bar.controller'))
+        .controller('Timeline', asyncLoadController('components/timeline/timeline.controller'))
         .config(($routeProvider : ng.route.IRouteProvider) => {
             $routeProvider.when('/pathway', {
                 templateUrl: 'views/pathway.html',
