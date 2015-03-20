@@ -26,12 +26,12 @@
 //        ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-    <script src="../bower_components/requirejs/require.js" type="text/javascript"></script>
+    <script src="libs/require.js" type="text/javascript"></script>
     <script>
         require.config({
             paths: {
-                angular: '../bower_components/angular/angular',
-                ngRoute: '../bower_components/angular-route/angular-route'
+                angular: 'libs/angular',
+                ngRoute: 'libs/angular-route'
             },
             shim: {
                 angular: { exports : 'angular'},

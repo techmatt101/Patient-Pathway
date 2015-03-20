@@ -6,35 +6,35 @@ var chalk = require('chalk');
 var isProduction = ($.util.env.dev || $.util.env.debug ? false : true);
 var isDebug = !isProduction;
 
-$.util.log('Environment: ' +  chalk.inverse.bold(isProduction ? 'PRODUCTION' : 'DEBUG'));
+$.util.log('Environment: ' + chalk.inverse.bold(isProduction ? 'PRODUCTION' : 'DEBUG'));
 
-gulp.task('default', ['clean'], function() {
+gulp.task('default', ['clean'], function () {
     gulp.start('build');
 });
 
 gulp.task('clean', del.bind(null, ['dist/**/*']));
 
-gulp.task('build', ['markup', 'styles', 'scripts', 'images', 'content', 'other'], function() {
+gulp.task('build', ['markup', 'styles', 'scriptLibs', 'scripts', 'images', 'content', 'other'], function () {
     if (isProduction) {
         gulp.start('size');
     }
 });
 
-gulp.task('size', function() {
+gulp.task('size', function () {
     return gulp.src('dist/**/*')
         .pipe($.size({ title: 'Build size total for', showFiles: true, gzip: true }));
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['build'], function () {
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/scripts/**/*.js', ['scripts']);
-    gulp.watch('app/images/**/*.{png,jpg}', ['images']);
     gulp.watch(['app/**/*.html'], ['markup']);
+    console.log('Now watching: styles, scripts, markup');
 });
 
 //===================================================//
 
-gulp.task('markup', function() {
+gulp.task('markup', function () {
     return gulp.src('app/**/*.html')
         .pipe($.if(isProduction, $.minifyHtml()))
         .pipe(gulp.dest('dist'));
@@ -51,35 +51,37 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('dist/styles'));
 });
 
-//gulp.task('scriptLibs', function() {
-//    gulp.src(['bower_components/angular/angular.js', 'bower_components/angular/angular.js'])
-//        .pipe($.if(isDebug, $.sourcemaps.init()))
-//        .pipe($.concat('app.js'))
-//        .pipe($.if(isProduction, $.uglify()))
-//        .pipe($.if(isDebug, $.sourcemaps.write()))
-//        .pipe(gulp.dest('dist/scripts'));
-//});
+gulp.task('scriptLibs', function() {
+    gulp.src([
+        'bower_components/angular/angular.js',
+        'bower_components/angular-route/angular-route.js',
+        'bower_components/requirejs/require.js'
+    ])
+        .pipe($.if(isProduction, $.uglify()))
+        .pipe(gulp.dest('dist/libs'));
+});
 
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
     return gulp.src('app/**/*.ts')
         .pipe($.if(isDebug, $.sourcemaps.init()))
         .pipe($.typescript({ module: 'amd' }))
+        .pipe($.if(isProduction, $.ngAnnotate()))
         .pipe($.if(isProduction, $.uglify()))
         .pipe($.if(isDebug, $.sourcemaps.write()))
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('images', function() {
+gulp.task('images', function () {
     return gulp.src('app/images/**/*.{svg,png,jpg}')
         .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('content', function() {
+gulp.task('content', function () {
     return gulp.src('app/content/**/*')
         .pipe(gulp.dest('dist/content'));
 });
 
-gulp.task('other', function() {
+gulp.task('other', function () {
     return gulp.src('app/favicon.ico')
         .pipe(gulp.dest('dist'));
 });
