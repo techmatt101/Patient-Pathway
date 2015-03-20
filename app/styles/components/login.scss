@@ -1,0 +1,19 @@
+@import "../core/animations";
+
+.login {
+    animation: fadeInUp 0.8s ease-out;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 1.4em;
+
+    .form {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+    }
+}
+

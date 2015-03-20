@@ -1,19 +1,15 @@
 @import "core/variables";
 @import "core/fonts";
 @import "core/base";
+@import "core/layout";
 
 @import "components/buttons";
 @import "components/form";
 @import "components/media";
+@import "components/login";
 @import "components/site";
 
 @import "pathway";
-
-%list-unstyled {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
 .browsehappy {
     margin: 0.2em 0;
@@ -22,10 +18,3 @@
     padding: 0.2em 0;
 }
 
-.section {
-    background: $white;
-    padding: $global-padding;
-    margin: $global-margin;
-    border-radius: $border-radius;
-    border-bottom: 3px solid #ddd;
-}

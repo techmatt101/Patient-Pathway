@@ -1,0 +1,9 @@
+@import "variables";
+
+.section {
+    background: $white;
+    padding: $global-padding;
+    margin: $global-margin;
+    border-radius: $border-radius;
+    border-bottom: 3px solid #ddd;
+}

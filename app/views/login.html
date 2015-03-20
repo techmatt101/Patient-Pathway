@@ -1,8 +1,15 @@
-<h1>Login</h1>
-<form action="/login" method="post">
-    <label for="username">Username</label>
-    <input type="text" id="username">
-    <label for="password">Password</label>
-    <input type="password" id="password">
-    <button type="submit">Submit</button>
-</form>
+<main class="login">
+    <img src="images/logo.svg" alt="Patient Pathway" width="280">
+
+    <p>Welcome! Please sign in.</p>
+
+    <form action="#/paths" method="get" class="form">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form__input">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form__input">
+
+        <button type="submit" class="btn">Login</button>
+    </form>
+</main>
