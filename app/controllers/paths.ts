@@ -23,19 +23,19 @@ module Paths {
             $scope.paths = [
                 {
                     id: 101,
-                    name: 'Nexus S',
+                    name: "James's Path",
                     themeId: 2,
                     users: []
                 },
                 {
                     id: 102,
-                    name: 'Nexus X',
+                    name: "Jim's Path",
                     themeId: 2,
                     users: []
                 },
                 {
                     id: 103,
-                    name: 'Nexus L',
+                    name: "Jess's Path",
                     themeId: 2,
                     users: []
                 }

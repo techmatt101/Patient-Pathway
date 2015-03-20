@@ -1,4 +1,4 @@
-module Navbar {
+module SearchBar {
 
     export class Main {
         constructor () {
@@ -6,4 +6,4 @@ module Navbar {
     }
 }
 
-export = Navbar;
+export = SearchBar;
