@@ -1,9 +1,4 @@
-module SearchBar {
-
-    export class Main {
-        constructor () {
-        }
-    }
+function SearchBar (){
 }
 
 export = SearchBar;

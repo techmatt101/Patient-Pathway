@@ -39,7 +39,7 @@
                 ngRoute: { deps: ["angular"] }
             }
         });
-        require(['angular', 'ngRoute', 'app'], function(angular) {
+        require(['angular', 'ngRoute', 'app', 'user', 'pathway'], function(angular) {
             angular.element(document.getElementsByTagName('html')[0]).ready(function() {
                 angular.bootstrap(document, ['PatientPathway']);
             });

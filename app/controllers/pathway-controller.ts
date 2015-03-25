@@ -1,0 +1,4 @@
+function PathwayController() {
+}
+
+export = PathwayController;
