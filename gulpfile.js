@@ -85,6 +85,9 @@ gulp.task('content', function () {
 });
 
 gulp.task('other', function () {
-    return gulp.src('app/favicon.ico')
+    gulp.src(['app/favicon.ico'])
         .pipe(gulp.dest('dist'));
+
+    gulp.src(['app/mock-data/**/*.json'])
+        .pipe(gulp.dest('dist/mock-data'));
 });

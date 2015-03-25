@@ -1,3 +1,5 @@
+import PathwayService = require('../services/pathway-service');
+
 interface IScope extends ng.IScope {
     paths : IPath[]
 }
@@ -14,27 +16,11 @@ interface IUser {
     name : string
 }
 
-function PathsControler ($scope : IScope) {
-    $scope.paths = [
-        {
-            id: 101,
-            name: "James's Path",
-            themeId: 2,
-            users: []
-        },
-        {
-            id: 102,
-            name: "Jim's Path",
-            themeId: 2,
-            users: []
-        },
-        {
-            id: 103,
-            name: "Jess's Path",
-            themeId: 2,
-            users: []
-        }
-    ];
+function PathsControler ($scope : IScope, PathwayService: PathwayService) {
+    $scope.paths = [];
+    PathwayService.list(1).then((data) => {
+        $scope.paths = data;
+    });
 }
 
 export = PathsControler;

@@ -3,13 +3,14 @@
 
     <p>Welcome! Please sign in.</p>
 
-    <form action="#/paths" method="get" class="form">
+    <form class="form" ng-submit="submit()">
         <label for="username">Username</label>
-        <input type="text" id="username" class="form__input">
+        <input type="text" id="username" ng-model="username" class="form__input" required>
 
         <label for="password">Password</label>
-        <input type="password" id="password" class="form__input">
+        <input type="password" id="password" ng-model="password" class="form__input" required>
 
         <button type="submit" class="btn">Login</button>
     </form>
+    <p class="small"><a href="#">Forget Password?</a></p>
 </main>

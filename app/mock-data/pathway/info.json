@@ -1,0 +1,32 @@
+{
+  "pathways": {
+    "1": {
+      "id": 1,
+      "title": "Example Pathway #1",
+      "theme": {
+        "id": 1,
+        "name": "Theme one"
+      },
+      "description": "The first pathway",
+      "creator": {
+        "id": 1,
+        "email": "foo@bar.com"
+      },
+      "dateModified": 1427226102
+    },
+    "2": {
+      "id": 2,
+      "title": "Example Pathway #2",
+      "theme": {
+        "id": 1,
+        "name": "Theme one"
+      },
+      "description": "The second pathway",
+      "creator": {
+        "id": 1,
+        "email": "foo@bar.com"
+      },
+      "dateModified": 1427226102
+    }
+  }
+}
