@@ -53,10 +53,12 @@ gulp.task('styles', function () {
 
 gulp.task('scriptLibs', function() {
     gulp.src([
+        'bower_components/requirejs/require.js',
         'bower_components/angular/angular.js',
         'bower_components/angular-route/angular-route.js',
-        'bower_components/requirejs/require.js'
-    ])
+        'bower_components/angular-animate/angular-animate.js',
+        'bower_components/angular-loading-bar/build/loading-bar.js'
+    ])//TODO: concat all libs?
         .pipe($.if(isProduction, $.uglify()))
         .pipe(gulp.dest('dist/libs'));
 });
