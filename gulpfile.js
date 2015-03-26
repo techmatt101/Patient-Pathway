@@ -59,6 +59,7 @@ gulp.task('scriptLibs', function() {
         'bower_components/angular-animate/angular-animate.js',
         'bower_components/angular-loading-bar/build/loading-bar.js'
     ])//TODO: concat all libs?
+        .pipe($.concat('core.js'))
         .pipe($.if(isProduction, $.uglify()))
         .pipe(gulp.dest('dist/libs'));
 });
@@ -75,9 +76,7 @@ gulp.task('scripts', function () {
 
 gulp.task('images', function () {
     return gulp.src('app/images/**/*.{svg,png,jpg}')
-        .pipe($.imagemin({
-            progressive: true
-        }))
+        .pipe($.if(isProduction, $.imagemin({ progressive: true })))
         .pipe(gulp.dest('dist/images'));
 });
 
@@ -90,6 +89,6 @@ gulp.task('other', function () {
     gulp.src(['app/favicon.ico'])
         .pipe(gulp.dest('dist'));
 
-    gulp.src(['app/mock-data/**/*.json'])
+    gulp.src(['mock-data/**/*.json'])
         .pipe(gulp.dest('dist/mock-data'));
 });

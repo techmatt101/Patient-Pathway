@@ -1,5 +1,4 @@
 /// <reference path="../typings/tsd.d.ts" />
-import angular = require('angular');
 import UserService = require('./services/user-service');
 import RoutingUtil = require('./utils/routing-util');
 

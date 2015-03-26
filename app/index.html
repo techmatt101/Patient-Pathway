@@ -27,23 +27,9 @@
 //        ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-    <script src="libs/require.js" type="text/javascript"></script>
+    <script src="libs/core.js" type="text/javascript"></script>
     <script>
-        require.config({
-            paths: {
-                angular: 'libs/angular',
-                ngRoute: 'libs/angular-route',
-                ngAnimate: 'libs/angular-animate',
-                loadingBar: 'libs/loading-bar'
-            },
-            shim: {
-                angular: { exports : 'angular'},
-                ngRoute: { deps: ["angular"] },
-                ngAnimate: { deps: ["angular"] },
-                loadingBar: { deps: ["angular"] }
-            }
-        });
-        require(['angular', 'ngRoute', 'ngAnimate', 'loadingBar', 'app', 'user', 'pathway'], function(angular) {
+        require(['app', 'user', 'pathway'], function() {
             angular.element(document.getElementsByTagName('html')[0]).ready(function() {
                 angular.bootstrap(document, ['PatientPathway']);
             });

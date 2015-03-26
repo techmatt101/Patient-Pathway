@@ -1,6 +1,3 @@
-declare
-var require : any;
-
 module RoutingUtil {
     export interface IRoute {
         name : string

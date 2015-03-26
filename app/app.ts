@@ -1,6 +1,4 @@
 /// <reference path="../typings/tsd.d.ts" />
-declare var require : any;
-import angular = require('angular');
 import RoutingUtil = require('./utils/routing-util');
 
 var PatientPathway = angular.module('PatientPathway', [
