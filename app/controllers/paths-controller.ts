@@ -16,6 +16,7 @@ interface IUser {
     name : string
 }
 
+// @ngInject
 function PathsControler ($scope : IScope, PathwayService: PathwayService) {
     $scope.paths = [];
     PathwayService.list(1).then((data) => {

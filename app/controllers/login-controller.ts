@@ -6,6 +6,7 @@ interface IScope extends ng.IScope {
     submit : () => void
 }
 
+// @ngInject
 function LoginController($scope : IScope, $location : ng.ILocationService, UserService : UserService, $http) {
     $scope.username = '';
     $scope.password = '';

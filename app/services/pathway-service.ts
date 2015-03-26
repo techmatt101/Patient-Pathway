@@ -1,6 +1,7 @@
 class PathwayService {
     private _http : ng.IHttpService;
 
+    // @ngInject
     constructor($http) {
         this._http = $http;
     }

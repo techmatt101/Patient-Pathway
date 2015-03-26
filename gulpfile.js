@@ -70,7 +70,7 @@ gulp.task('scripts', function () {
         .pipe($.if(isProduction, $.ngAnnotate()))
         .pipe($.if(isProduction, $.uglify()))
         .pipe($.if(isDebug, $.sourcemaps.write()))
-        .pipe(gulp.dest('dist/'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', function () {

@@ -7,6 +7,7 @@ interface ITeam {
     name : string
 }
 
+// @ngInject
 function Timeline ($scope : IScope) {
     $scope.items = [
         {
