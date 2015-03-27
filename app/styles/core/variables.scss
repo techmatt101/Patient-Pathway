@@ -29,9 +29,9 @@ $warning-color: #f0ad4e;
 $danger-color: #d9534f;
 
 // Style =============================== //
-$font-family: 'museo_sans100', Helvetica, Arial, sans-serif;
+$font-family: 'museo_sans300', Helvetica, Arial, sans-serif;
 
-$font-size: 16px;
+$font-size: 20px;
 $font-size--large: ceil(($font-size * 1.25));
 $font-size--small: ceil(($font-size * 0.85));
 
@@ -42,12 +42,12 @@ $border-radius: 7px;
 $average-screen-width: 1366px;
 $average-screen-height: 768px;
 
-$global-margin-x: 10px;
-$global-margin-y: 10px;
+$global-margin-x: 16px;
+$global-margin-y: 16px;
 $global-margin: $global-margin-y $global-margin-x;
 
-$global-padding-x: 18px;
-$global-padding-y: 15px;
+$global-padding-x: 24px;
+$global-padding-y: 20px;
 $global-padding: $global-padding-y $global-padding-x;
 
 // Media query breakpoints

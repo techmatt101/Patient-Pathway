@@ -5,7 +5,7 @@
     margin: 0.5em auto;
     padding: 0.7em 1em;
     max-width: 100%;
-    border: none;
+    border: 2px solid transparent;
     outline: none;
 
     background: $brand-color--dark;
@@ -14,15 +14,21 @@
     cursor: pointer;
     font-family: $font-family;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 0.9em;
+    transition: 200ms background;
 
-    &:hover,
-    &:focus, {
+    &:focus {
+        border-color: $brand-color--dark;
+    }
+
+    &:focus,
+    &:hover {
         background: lighten($brand-color--dark, 5%);
         text-decoration: none;
     }
 
     &:active {
+        border-color: transparent;
         background: darken($brand-color--dark, 5%);
     }
 }

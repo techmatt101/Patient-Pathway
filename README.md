@@ -5,7 +5,7 @@ Web application designed for clinicians and patients in the NHS. The application
 ## Requirements
 - [nodeJS](http://nodejs.org/)
 - [gulp](http://gulpjs.com/) `npm install gulp -g`
-- [bower](bower.io) `npm install bower -g`
+- [bower](http://bower.io/) `npm install bower -g`
 - [tsd](http://definitelytyped.org/) **v0.6** `npm install tsd@next -g`
 - [jasmine](http://jasmine.github.io/) `npm install jasmine -g` **(Only needed for testing)**
 
