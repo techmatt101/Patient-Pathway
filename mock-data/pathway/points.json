@@ -1,29 +1,34 @@
 {
-  "firstPointId": 1,
-  "points": {
-    "1": {
-      "id": 1,
-      "type": "link",
-      "title": "Example title",
-      "mediaId": 1,
-      "nextPointId": 2,
-      "previousPointId": null
-    },
-    "2": {
-      "id": 2,
-      "type": "link",
-      "title": "Example title",
-      "mediaId": 2,
-      "nextPointId": 3,
-      "previousPointId": 1
-    },
-    "3": {
-      "id": 4,
-      "type": "link",
-      "title": "Example title",
-      "mediaId": 3,
-      "nextPointId": null,
-      "previousPointId": 2
+  "success": true,
+  "token": "6b1adee9b2bd36fe115b70332ba50d9b7f5449e7",
+  "timestamp": 1425561853,
+  "response": {
+    "firstPointId": 1,
+    "points": {
+      "1": {
+        "id": 1,
+        "type": "link",
+        "title": "Example title",
+        "mediaId": 1,
+        "nextPointId": 2,
+        "previousPointId": null
+      },
+      "2": {
+        "id": 2,
+        "type": "link",
+        "title": "Example title",
+        "mediaId": 2,
+        "nextPointId": 3,
+        "previousPointId": 1
+      },
+      "3": {
+        "id": 4,
+        "type": "link",
+        "title": "Example title",
+        "mediaId": 3,
+        "nextPointId": null,
+        "previousPointId": 2
+      }
     }
   }
 }

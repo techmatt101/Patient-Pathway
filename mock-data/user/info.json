@@ -1,19 +1,24 @@
 {
-  "users": {
-    "1": {
-      "id": 1,
-      "email": "foo@example.com",
-      "permissionLevel": 1
-    },
-    "2": {
-      "id": 2,
-      "email": "bar@example.com",
-      "permissionLevel": 1
-    },
-    "3": {
-      "id": 3,
-      "email": "baz@example.com",
-      "permissionLevel": 1
+  "success": true,
+  "token": "6b1adee9b2bd36fe115b70332ba50d9b7f5449e7",
+  "timestamp": 1425561853,
+  "response": {
+    "users": {
+      "1": {
+        "id": 1,
+        "email": "foo@example.com",
+        "permissionLevel": 1
+      },
+      "2": {
+        "id": 2,
+        "email": "bar@example.com",
+        "permissionLevel": 1
+      },
+      "3": {
+        "id": 3,
+        "email": "baz@example.com",
+        "permissionLevel": 1
+      }
     }
   }
 }

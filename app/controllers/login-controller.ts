@@ -1,20 +1,24 @@
 import UserService = require('../services/user-service');
 
 interface IScope extends ng.IScope {
-    username : string
+    email : string
     password : string
     submit : () => void
 }
 
 // @ngInject
-function LoginController($scope : IScope, $location : ng.ILocationService, UserService : UserService, $http) {
-    $scope.username = '';
+function LoginController ($scope : IScope, $location : ng.ILocationService, UserService : UserService) {
+    $scope.email = UserService.getEmail();
     $scope.password = '';
     $scope.submit = () => {
-        UserService.login($scope.username, $scope.password).then((data) => {
-            console.log(data);
-            $location.path('/paths');
-        });
+        UserService.login($scope.email, $scope.password)
+            .then((data) => {
+                console.log(data);
+                $location.path('/paths');
+            })
+            .catch(() => {
+                alert("Login FAILED");
+            });
     };
 }
 

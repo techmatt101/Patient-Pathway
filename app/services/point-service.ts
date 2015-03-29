@@ -1,46 +1,43 @@
+import BackendConnectionService = require('backend-connection-service');
+
+
 class PointService {
-    private _http : ng.IHttpService;
+    private _Promise : ng.IQService;
+    private _request : BackendConnectionService;
 
     // @ngInject
-    constructor ($http) {
-        this._http = $http;
+    constructor ($q, BackendConnectionService) {
+        this._Promise = $q;
+        this._request = BackendConnectionService;
     }
 
 
-    add (pathwayId : number, mediaId : number, previousPointId? : number) {
-        return this._http.get(this.pointPath('add'))
-            .then(function(result) {
-                return result.data;
-            });
+    add (pathwayId : number, mediaId : number, previousPointId : number) {
+        return this._request.get('point/add', {
+            id: pathwayId,
+            mediaId: mediaId,
+            previousPointId: previousPointId
+        });
     }
 
     remove (pointId : number) {
-        return this._http.get(this.pointPath('add'))
-            .then(function(result) {
-                return result.data;
-            });
+        return this._request.get('point/remove', {
+            ids: [pointId]
+        });
     }
 
     update (pointId : number, title : string, note : string) {
-        return this._http.get(this.pointPath('add'))
-            .then(function(result) {
-                return result.data;
-            });
+        return this._request.get('point/update', {
+            id: pointId,
+            title: title,
+            note: note
+        });
     }
 
     list (pathwayId : number) {
-        return this._http.get(this.pathwayPath('points'))
-            .then(function(result) {
-                return result.data;
-            });
-    }
-
-    private pathwayPath (path) {
-        return 'mock-data/pathway/' + path + '.json';
-    }
-
-    private pointPath (path) {
-        return 'mock-data/point/' + path + '.json';
+        return this._request.get('pathway/points', {
+            id: pathwayId
+        });
     }
 }
 

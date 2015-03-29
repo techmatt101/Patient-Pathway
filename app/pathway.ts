@@ -1,8 +1,9 @@
 /// <reference path="../typings/tsd.d.ts" />
+import RoutingUtil = require('./utils/routing-util');
+
 import PathwayService = require('./services/pathway-service');
 import PointService = require('./services/point-service');
 import MediaService = require('./services/media-service');
-import RoutingUtil = require('./utils/routing-util');
 
 var routes : RoutingUtil.IRoute[] = [
     {

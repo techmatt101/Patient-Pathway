@@ -1,58 +1,56 @@
+import BackendConnectionService = require('backend-connection-service');
+
+
 class PathwayService {
-    private _http : ng.IHttpService;
+    private _Promise : ng.IQService;
+    private _request : BackendConnectionService;
 
     // @ngInject
-    constructor($http) {
-        this._http = $http;
+    constructor ($q, BackendConnectionService) {
+        this._Promise = $q;
+        this._request = BackendConnectionService;
     }
 
 
-    create (title : number, themeId = 1, templateId? : number) {
-        return this._http.get(this.pathwayPath('create'))
-            .then(function(result) {
-                return result.data;
-            });
+    create (title : number, themeId = 1) {
+        return this._request.get('pathway/create', {
+            title: title,
+            themeId: themeId
+        });
     }
 
     remove (pathwayId : number) {
-        return this._http.get(this.pathwayPath('delete'))
-            .then(function(result) {
-                return result.data;
-            });
+        return this._request.get('pathway/delete', {
+            id: [pathwayId]
+        });
     }
 
     list (userId : number) {
-        return this._http.get(this.userPath('/pathways'))
-            .then(function(result) {
-                var pathwayTable = (<any>result.data).users['1'].pathways;
-                var pathways = [];
-                for(var key in pathwayTable) {
-                    pathways.push(pathwayTable[key]);
-                }
-                return pathways;
-            })
+        return this._request.get('user/pathways', {
+            id: [userId]
+        }).then(function(data : any) {
+            var pathwayTable = data.users['1'].pathways;
+            var pathways = [];
+            for (var key in pathwayTable) {
+                pathways.push(pathwayTable[key]);
+            }
+            return pathways;
+        });
     }
 
     info (pathwayIds : number[]) {
-        return this._http.get(this.pathwayPath('info'))
-            .then(function(result) {
-                return result.data;
-            })
+        return this._request.get('pathway/info', {
+            ids: pathwayIds
+        });
     }
 
     update (pathwayId : number, title : string, description : string, themeId : number) {
-        return this._http.get(this.pathwayPath('update'))
-            .then(function(result) {
-                return result.data;
-            });
-    }
-
-    private pathwayPath (path) { //TODO: need to be static in a better location
-        return 'mock-data/pathway/' + path + '.json';
-    }
-
-    private userPath (path) { //TODO: need to be static in a better location
-        return 'mock-data/user/' + path + '.json';
+        return this._request.get('pathway/update', {
+            id: pathwayId,
+            title: title,
+            description: description,
+            themeId: themeId
+        });
     }
 }
 

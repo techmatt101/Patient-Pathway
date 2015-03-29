@@ -1,6 +1,7 @@
 /// <reference path="../typings/tsd.d.ts" />
-import UserService = require('./services/user-service');
 import RoutingUtil = require('./utils/routing-util');
+
+import UserService = require('./services/user-service');
 
 var routes : RoutingUtil.IRoute[] = [
     {

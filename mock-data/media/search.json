@@ -1,27 +1,32 @@
 {
-  "media": {
-    "15": {
-      "id": 15,
-      "title": "Example media",
-      "description": "Example media description",
-      "resourceUrl": "http:\/\/example.com\/hoge",
-      "type": "link",
-      "subMedia": {
-        "1": {
-          "id": 1,
-          "title": "Example media",
-          "type": "link"
+  "success": true,
+  "token": "6b1adee9b2bd36fe115b70332ba50d9b7f5449e7",
+  "timestamp": 1425561853,
+  "response": {
+    "media": {
+      "15": {
+        "id": 15,
+        "title": "Example media",
+        "description": "Example media description",
+        "resourceUrl": "http:\/\/example.com\/hoge",
+        "type": "link",
+        "subMedia": {
+          "1": {
+            "id": 1,
+            "title": "Example media",
+            "type": "link"
+          },
+          "2": {
+            "id": 2,
+            "title": "Example media",
+            "type": "link"
+          }
         },
-        "2": {
-          "id": 2,
-          "title": "Example media",
-          "type": "link"
-        }
-      },
-      "tags": [
-        "Foo",
-        "Bar"
-      ]
+        "tags": [
+          "Foo",
+          "Bar"
+        ]
+      }
     }
   }
 }

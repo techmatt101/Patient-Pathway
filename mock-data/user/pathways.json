@@ -1,44 +1,49 @@
 {
-  "users": {
-    "1": {
-      "id": 1,
-      "pathways": {
-        "1": {
-          "id": 1,
-          "title": "Example Pathway #1",
-          "creator": {
+  "success": true,
+  "token": "6b1adee9b2bd36fe115b70332ba50d9b7f5449e7",
+  "timestamp": 1425561853,
+  "response": {
+    "users": {
+      "1": {
+        "id": 1,
+        "pathways": {
+          "1": {
             "id": 1,
-            "email": "foo@bar.com"
+            "title": "Example Pathway #1",
+            "creator": {
+              "id": 1,
+              "email": "foo@bar.com"
+            },
+            "dateModified": 1427226102
           },
-          "dateModified": 1427226102
-        },
-        "2": {
-          "id": 2,
-          "title": "Example Pathway #2",
-          "creator": {
-            "id": 1,
-            "email": "foo@bar.com"
-          },
-          "dateModified": 1427226102
+          "2": {
+            "id": 2,
+            "title": "Example Pathway #2",
+            "creator": {
+              "id": 1,
+              "email": "foo@bar.com"
+            },
+            "dateModified": 1427226102
+          }
         }
-      }
-    },
-    "2": {
-      "id": 2,
-      "pathways": [
-      ]
-    },
-    "3": {
-      "id": 3,
-      "pathways": {
-        "3": {
-          "id": 3,
-          "title": "Example Pathway #3",
-          "creator": {
+      },
+      "2": {
+        "id": 2,
+        "pathways": [
+        ]
+      },
+      "3": {
+        "id": 3,
+        "pathways": {
+          "3": {
             "id": 3,
-            "email": "hoge@fuga.com"
-          },
-          "dateModified": 1427226102
+            "title": "Example Pathway #3",
+            "creator": {
+              "id": 3,
+              "email": "hoge@fuga.com"
+            },
+            "dateModified": 1427226102
+          }
         }
       }
     }

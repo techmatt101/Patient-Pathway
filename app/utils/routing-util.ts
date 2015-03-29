@@ -4,6 +4,7 @@ module RoutingUtil {
         path : string
         controller : string
         view : string
+        resolve? : any
     }
 
     export function registerRoutes (routes : IRoute[], $routeProvider : ng.route.IRouteProvider, $controllerProvider : ng.IControllerProvider) {
@@ -21,10 +22,13 @@ module RoutingUtil {
             return deferred.promise;
         };
 
+        var resolve = (route.resolve) ? route.resolve : {};
+        resolve.load = load;
+
         $routeProvider.when(route.path, {
             templateUrl: route.view,
             controller: route.name,
-            resolve: {load: load}
+            resolve: resolve
         });
     }
 

@@ -1,35 +1,31 @@
+import BackendConnectionService = require('backend-connection-service');
+
+
 class MediaService {
-    private _http : ng.IHttpService;
+    private _Promise : ng.IQService;
+    private _request : BackendConnectionService;
 
     // @ngInject
-    constructor ($http) {
-        this._http = $http;
+    constructor ($q, BackendConnectionService) {
+        this._Promise = $q;
+        this._request = BackendConnectionService;
     }
 
 
     info (mediaIds : number[]) {
-        return this._http.get(this.mediaPath('info'))
-            .then(function(result) {
-                return result.data;
-            });
+        return this._request.get('media/info', {
+            ids: mediaIds
+        });
     }
 
     listTags () {
-        return this._http.get(this.mediaPath('tags'))
-            .then(function(result) {
-                return result.data;
-            });
+        return this._request.get('media/tags');
     }
 
     search (text : number, tags? : string, type? : string, page? : number, results? : number) {
-        return this._http.get(this.mediaPath('search'))
-            .then(function(result) {
-                return result.data;
-            });
-    }
-
-    private mediaPath (path) {
-        return 'mock-data/media/' + path + '.json';
+        return this._request.get('media/search', {
+            title: text
+        });
     }
 }
 
