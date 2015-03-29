@@ -7,40 +7,24 @@ module RoutingUtil {
         resolve? : any
     }
 
-    export function registerRoutes (routes : IRoute[], $routeProvider : ng.route.IRouteProvider, $controllerProvider : ng.IControllerProvider) {
-        routes.forEach((route) => registerRoute(route, $routeProvider, $controllerProvider));
+    export function registerRoutes (routes : IRoute[], $routeProvider : ng.route.IRouteProvider) {
+        routes.forEach((route) => registerRoute(route, $routeProvider));
     }
 
-    export function registerRoute (route : IRoute, $routeProvider : ng.route.IRouteProvider, $controllerProvider : ng.IControllerProvider) {
+    export function registerRoute (route : IRoute, $routeProvider : ng.route.IRouteProvider) {
         // @ngInject
-        var load = ($q) => {
+        var dependencies = ($q, $rootScope) => {
             var deferred = $q.defer();
-            require([route.controller], (controller) => {
-                $controllerProvider.register(route.name, controller);
-                deferred.resolve();
-            });
+            require([route.controller], () => $rootScope.$apply(() => deferred.resolve()));
             return deferred.promise;
         };
-
-        var resolve = (route.resolve) ? route.resolve : {};
-        resolve.load = load;
-
-        $routeProvider.when(route.path, {
+        var config = {
             templateUrl: route.view,
             controller: route.name,
-            resolve: resolve
-        });
-    }
-
-    export function legacyAsyncLoadController (path) { //TODO: remove
-        // @ngInject
-        var load = ($scope) => {
-            require([path], (controller) => {
-                controller($scope);
-                $scope.$apply();
-            });
+            resolve: (route.resolve) ? route.resolve : {}
         };
-        return load;
+        config.resolve.dependencies = dependencies;
+        $routeProvider.when(route.path, config);
     }
 }
 

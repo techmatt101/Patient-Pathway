@@ -1,4 +1,6 @@
-import BackendConnectionService = require('backend-connection-service');
+import app = require('app');
+import BackendConnectionService = require('./backend-connection-service');
+var imported = [BackendConnectionService]; //TODO: HACK!!!
 
 
 class PointService {

@@ -1,3 +1,5 @@
+import app = require('app');
+
 interface IScope extends ng.IScope {
     items : ITeam[]
 }
@@ -24,5 +26,7 @@ function Timeline ($scope : IScope) {
         }
     ];
 }
+
+app.controller('Timeline', Timeline);
 
 export = Timeline;

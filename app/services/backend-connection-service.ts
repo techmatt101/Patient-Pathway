@@ -1,3 +1,5 @@
+import app = require('app');
+
 interface IResponse {
     success : boolean
     token : string
@@ -27,5 +29,7 @@ class BackendConnectionService {
         });
     }
 }
+
+app.service('BackendConnectionService', BackendConnectionService);
 
 export = BackendConnectionService;

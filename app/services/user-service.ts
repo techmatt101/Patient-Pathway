@@ -1,9 +1,18 @@
-import BackendConnectionService = require('backend-connection-service');
+import app = require('app');
+import BackendConnectionService = require('./backend-connection-service');
+var imported = [BackendConnectionService]; //TODO: HACK!!!
+
+
+enum Permissions {
+    NONE,
+    ADMIN
+}
 
 interface IUserDetails {
     id : number
     name : string
     email : string
+    permissionLevel : Permissions
 }
 
 class UserService {
@@ -59,5 +68,7 @@ class UserService {
         });
     }
 }
+
+app.service('UserService', UserService);
 
 export = UserService;

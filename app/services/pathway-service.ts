@@ -1,4 +1,6 @@
-import BackendConnectionService = require('backend-connection-service');
+import app = require('app');
+import BackendConnectionService = require('./backend-connection-service');
+var imported = [BackendConnectionService]; //TODO: HACK!!!
 
 
 class PathwayService {
@@ -53,5 +55,7 @@ class PathwayService {
         });
     }
 }
+
+app.service('PathwayService', PathwayService);
 
 export = PathwayService;

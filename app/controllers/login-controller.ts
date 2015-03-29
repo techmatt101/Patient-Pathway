@@ -1,4 +1,6 @@
+import app = require('app');
 import UserService = require('../services/user-service');
+var imported = [UserService]; //TODO: HACK!!!
 
 interface IScope extends ng.IScope {
     email : string
@@ -21,5 +23,7 @@ function LoginController ($scope : IScope, $location : ng.ILocationService, User
             });
     };
 }
+
+app.controller('LoginController', LoginController);
 
 export = LoginController;

@@ -1,11 +1,9 @@
 /// <reference path="../typings/tsd.d.ts" />
 import RoutingUtil = require('./utils/routing-util');
 
-import UserService = require('./services/user-service');
-
 var routes : RoutingUtil.IRoute[] = [
     {
-        name: 'Login',
+        name: 'LoginController',
         path: '/login',
         controller: 'controllers/login-controller',
         view: 'views/login.html'
@@ -13,9 +11,8 @@ var routes : RoutingUtil.IRoute[] = [
 ];
 
 var PatientPathwayUser = angular.module('PatientPathway.User', ['ngRoute'])
-    .service('UserService', UserService) //TODO: it's not async!
-    .config(($routeProvider : ng.route.IRouteProvider, $controllerProvider : ng.IControllerProvider) => {
-        RoutingUtil.registerRoutes(routes, $routeProvider, $controllerProvider);
+    .config(($routeProvider : ng.route.IRouteProvider) => {
+        RoutingUtil.registerRoutes(routes, $routeProvider);
     });
 
 export = PatientPathwayUser;
