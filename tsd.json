@@ -19,6 +19,9 @@
     },
     "angularjs/angular-cookies.d.ts": {
       "commit": "be0b6b394f77a59e192ad7cfec18078706e44db5"
+    },
+    "angularjs/angular-animate.d.ts": {
+      "commit": "fbb8c672d56d1cfe677b81c300f8506a31e0404c"
     }
   }
 }

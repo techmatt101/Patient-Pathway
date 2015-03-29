@@ -3,13 +3,17 @@ import UserService = require('../services/user-service');
 var imported = [UserService]; //TODO: HACK!!!
 
 interface IScope extends ng.IScope {
+    notice : string
     email : string
     password : string
     submit : () => void
 }
 
 // @ngInject
-function LoginController ($scope : IScope, $location : ng.ILocationService, UserService : UserService) {
+function LoginController ($scope : IScope, $location : ng.ILocationService, $animate : any, UserService : UserService) {
+    var form = document.getElementById('login');
+
+    $scope.notice = 'Welcome! Please sign in.';
     $scope.email = UserService.getEmail();
     $scope.password = '';
     $scope.submit = () => {
@@ -19,7 +23,8 @@ function LoginController ($scope : IScope, $location : ng.ILocationService, User
                 $location.path('/paths');
             })
             .catch(() => {
-                alert("Login FAILED");
+                $scope.notice = 'Your login information was incorrect. Please try again.';
+                $animate.addClass(form, 'shake').then(() => $animate.removeClass(form, 'shake'));
             });
     };
 }

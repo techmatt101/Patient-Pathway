@@ -3,11 +3,14 @@
 var app = angular.module('PatientPathway', [
     'ngRoute',
     'ngCookies',
-    'ngAnimate',  //TODO: hopefully remove this soon as it's only needed for the loading bar - https://github.com/chieffancypants/angular-loading-bar/issues/33
+    'ngAnimate',
     'angular-loading-bar',
     'PatientPathway.User',
     'PatientPathway.Pathway'
 ])
+    .run(($window) => {
+        $window.$ = angular.element;
+    })
     .run(($rootScope, cfpLoadingBar) => {
         var timeout;
         $rootScope.$on('$routeChangeStart', function() {
@@ -35,6 +38,5 @@ var app = angular.module('PatientPathway', [
         });
         $routeProvider.otherwise({redirectTo: '/login'});
     });
-
 
 export = app;

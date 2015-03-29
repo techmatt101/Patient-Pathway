@@ -1,9 +1,9 @@
-<main class="login">
+<main class="auth auth--login">
     <img src="images/logo.svg" alt="Patient Pathway" width="280">
 
-    <p>Welcome! Please sign in.</p>
+    <p>{{ notice }}</p>
 
-    <form class="form" ng-submit="submit()">
+    <form id="login" class="form" ng-submit="submit()">
         <label for="email">Email</label>
         <input type="text" id="email" name="email" ng-model="email" class="form__input" required>
 
@@ -12,5 +12,5 @@
 
         <button type="submit" class="btn">Login</button>
     </form>
-    <p class="small"><a href="#">Forget Password?</a></p>
+    <p class="small"><a href="#/reset-password">Forget Password?</a></p>
 </main>

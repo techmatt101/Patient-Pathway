@@ -1,9 +1,9 @@
 @import "../core/animations";
 
-.login {
-    animation: fadeInUp 0.8s ease-out;
+.auth {
+    margin: 60px auto 0;
+    width: 400px;
     text-align: center;
-    margin-top: 60px;
     font-size: 1.1em;
 
     .form {
@@ -15,5 +15,11 @@
         display: block;
         width: 100%;
     }
-}
 
+    &--login {
+        animation: fadeInUp 0.8s ease-out;
+    }
+
+    &--password-recovery {
+    }
+}
