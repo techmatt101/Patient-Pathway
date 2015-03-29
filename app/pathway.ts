@@ -10,7 +10,7 @@ var routes : RoutingUtil.IRoute[] = [
     },
     {
         name: 'PathwayController',
-        path: '/pathway',
+        path: '/pathway/:id',
         controller: 'controllers/pathway-controller',
         view: 'views/pathway.html'
     }

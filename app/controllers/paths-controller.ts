@@ -13,6 +13,7 @@ interface IPath {
     name : string
     themeId : number
     users : IUser[]
+    url : string
 }
 
 interface IUser {
@@ -24,7 +25,10 @@ interface IUser {
 function PathsController ($scope : IScope, PathwayService: PathwayService) {
     $scope.paths = [];
     PathwayService.list(1).then((data) => {
-        $scope.paths = data;
+        $scope.paths = data.map((x : any) => {
+            x.url = '#/pathway/' + x.id;
+            return x;
+        });
     });
 }
 
