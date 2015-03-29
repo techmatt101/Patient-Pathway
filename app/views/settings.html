@@ -1,8 +1,18 @@
-<h1>Settings</h1>
-<form action="#" method="post">
-    <label for="username">Username</label>
-    <input type="text" id="username">
-    <label for="password">Password</label>
-    <input type="password" id="password">
-    <button type="submit">Update</button>
-</form>
+<header ng-include="'components/navbar/navbar.html'"></header>
+
+<section class="section">
+    <h1>Settings</h1>
+    <h2>Update Details</h2>
+    <form class="form" ng-submit="submit()">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" ng-model="name" class="form__input" required>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" ng-model="email" class="form__input" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" ng-model="password" class="form__input" required>
+
+        <button type="submit" class="btn">Update</button>
+    </form>
+</section>
