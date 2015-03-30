@@ -4,11 +4,15 @@
 $brand-color: #68d5d8;
 $brand-color--light: #90e4f1;
 $brand-color--dark: #37848c;
-$brand-color--darker:#18545A;
+$brand-color--darker: #18545A;
 
 $media-video-color: #e76e70;
 $media-link-color: #3498db;
 $media-pdf-color: #1eb47d;
+
+$pastel-blue: #b3e8e9;
+$pastel-pink: #f2dede;
+$pastel-green: #dff0d8;
 
 $white: #fff;
 $white--dark: darken($white, 10%);
@@ -50,6 +54,10 @@ $global-margin: $global-margin-y $global-margin-x;
 $global-padding-x: 24px;
 $global-padding-y: 20px;
 $global-padding: $global-padding-y $global-padding-x;
+
+$global-padding-x--small: $global-padding-x / 2;
+$global-padding-y--small: $global-padding-y / 2;
+$global-padding--small: $global-padding-y--small $global-padding-x--small;
 
 // Media query breakpoints
 $screen-xs: 20em;

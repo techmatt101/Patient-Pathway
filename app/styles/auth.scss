@@ -1,19 +1,25 @@
-@import "../core/animations";
+@import "core/animations";
 
 .auth {
     margin: 60px auto 0;
-    width: 400px;
+    max-width: 400px;
     text-align: center;
     font-size: 1.1em;
 
     .form {
         text-align: left;
         display: inline-block;
+        padding: 10px;
     }
 
     .btn {
         display: block;
         width: 100%;
+    }
+
+    &__logo {
+        width: 100%;
+        max-width: 280px;
     }
 
     &--login {

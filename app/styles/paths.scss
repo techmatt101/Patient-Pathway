@@ -1,34 +1,47 @@
-.pathway {
-  width: 100%;
-  padding: 30px;
-  display: inline-block;
+@import 'core/variables';
+@import 'core/helpers';
 
-   .blue{
-    background-color:#b3e8e9;
-  }
+.pathways {
+    @extend %list-unstyled;
 
-  .pink {
-    background-color:#f2dede;
-  }
+    .pathway {
+        display: inline-block;
+        width: 96%;
+        margin-left: 2%;
+        margin-right: 2%;
 
-  .green {
-    background-color:#c2feb6;
-  }
+        @media only screen and (min-width: $screen-s) {
+            width: 46%;
+        }
 
-  .grey {
-    background-color:#dff0d8;
-  }
-
-  &__outer {
-    width:33.333%;
-    float:left;
-
-    .pathway__container  {
-        background: $white;
-        padding: 10px $global-padding-x;
-        margin:  $global-margin-y 0px;
-        border-radius: $border-radius;
-        text-align:left;
+        @media only screen and (min-width: $screen-l) {
+            width: 29%;
+        }
     }
-  }
+}
+
+.pathway {
+    &:nth-child(3n+1) {
+        background-color: $pastel-blue;
+    }
+
+    &:nth-child(3n+2) {
+        background-color: $pastel-pink;
+    }
+
+    &:nth-child(3n+3) {
+        background-color: $pastel-green;
+    }
+
+    &__points {
+        @extend %list-unstyled;
+
+        &__item {
+            background: $white;
+            padding: $global-padding-y--small $global-padding-x;
+            margin: $global-margin-y 0;
+            border-radius: $border-radius;
+            text-overflow: ellipsis;
+        }
+    }
 }

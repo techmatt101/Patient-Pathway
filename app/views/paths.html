@@ -1,77 +1,14 @@
 <header ng-include="'components/navbar/navbar.html'"></header>
 
-<ul>
-    <li ng-repeat="pathway in paths">
-        <a ng-href="{{pathway.url}}">{{pathway.title}}</a>
+<ul class="pathways">
+    <li class="pathway section" ng-repeat="pathway in paths">
+        <h4><a ng-href="{{pathway.url}}">{{pathway.title}}</a></h4>
+
+        <ul class="pathway__points">
+            <li class="pathway__points__item" ng-repeat="item in pathway.points">
+                <h5><a href="#">{{item.title}}</a></h5>
+                <p>Date Started: {{item.dateStarted}}</p>
+            </li>
+        </ul>
     </li>
 </ul>
-<div class="pathway">
-    <div class="pathway__outer">
-        <section class="section blue">
-            <h4>Peter Lloyd's Pathway</h4>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Leg</a></h5>
-                <p>Date Started:05/03/2015</p>
-            </div>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Arm</a></h5>
-                <p>Date Started:06/03/2015</p>
-            </div>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Hand</a></h5>
-                <p>Date Started:08/03/2015</p>
-            </div>
-        </section>
-    </div>
-    <div class="pathway__outer">
-        <section class="section pink">
-            <h4>Greg Ottley's Pathway</h4>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Leg</a></h5>
-                <p>Date Started:05/03/2015</p>
-            </div>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Arm</a></h5>
-                <p>Date Started:06/03/2015</p>
-            </div>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Hand</a></h5>
-                <p>Date Started:08/03/2015</p>
-            </div>
-        </section>
-    </div>
-    <div class="pathway__outer">
-        <section class="section grey">
-            <h4>Matt Kemp's Pathway</h4>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Leg</a></h5>
-                <p>Date Started:05/03/2015</p>
-            </div>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Arm</a></h5>
-                <p>Date Started:06/03/2015</p>
-            </div>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Hand</a></h5>
-                <p>Date Started:08/03/2015</p>
-            </div>
-        </section>
-    </div>
-    <div class="pathway__outer">
-        <section class="section grey">
-            <h4>Fran Haine's Pathway</h4>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Leg</a></h5>
-                <p>Date Started:05/03/2015</p>
-            </div>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Arm</a></h5>
-                <p>Date Started:06/03/2015</p>
-            </div>
-            <div class="pathway__container">
-                <h5><a href="#">Broken Hand</a></h5>
-                <p>Date Started:08/03/2015</p>
-            </div>
-        </section>
-    </div>
-</div>

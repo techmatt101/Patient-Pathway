@@ -9,20 +9,94 @@
         "pathways": {
           "1": {
             "id": 1,
-            "title": "Example Pathway #1",
+            "title": "Peter Lloyd's Pathway",
             "creator": {
               "id": 1,
               "email": "foo@bar.com"
             },
+            "points": [
+              {
+                "title": "Broken Leg",
+                "dateStarted": "08/03/2015"
+              },
+              {
+                "title": "Broken Arm",
+                "dateStarted": "06/03/2015"
+              },
+              {
+                "title": "Broken Hand",
+                "dataStarted": "05/03/2015"
+              }
+            ],
             "dateModified": 1427226102
           },
           "2": {
             "id": 2,
-            "title": "Example Pathway #2",
+            "title": "Greg Ottley's Pathway",
             "creator": {
               "id": 1,
               "email": "foo@bar.com"
             },
+            "points": [
+              {
+                "title": "Broken Hand",
+                "dateStarted": "08/03/2015"
+              },
+              {
+                "title": "Broken Arm",
+                "dateStarted": "06/03/2015"
+              },
+              {
+                "title": "Broken Leg",
+                "dateStarted": "05/03/2015"
+              }
+            ],
+            "dateModified": 1427226102
+          },
+          "3": {
+            "id": 2,
+            "title": "Matt Kemp's Pathway",
+            "creator": {
+              "id": 1,
+              "email": "foo@bar.com"
+            },
+            "points": [
+              {
+                "title": "Broken Knee",
+                "dateStarted": "08/03/2015"
+              },
+              {
+                "title": "Broken Foot",
+                "dateStarted": "07/03/2015"
+              },
+              {
+                "title": "Broken Toe",
+                "dateStarted": "02/03/2015"
+              }
+            ],
+            "dateModified": 1427226102
+          },
+          "4": {
+            "id": 2,
+            "title": "Fran Haine's Pathway",
+            "creator": {
+              "id": 1,
+              "email": "foo@bar.com"
+            },
+            "points": [
+              {
+                "title": "Broken Back",
+                "dateStarted": "08/03/2015"
+              },
+              {
+                "title": "Broken Neck",
+                "dateStarted": "06/03/2015"
+              },
+              {
+                "title": "Broken Ear",
+                "dateStarted": "02/03/2015"
+              }
+            ],
             "dateModified": 1427226102
           }
         }
