@@ -1,4 +1,4 @@
-.pathway-container {
+.pathway {
   width: 100%;
   padding: 30px;
   display: inline-block;
@@ -19,11 +19,11 @@
     background-color:#dff0d8;
   }
 
-  .pathway-outer {
+  &__outer {
     width:33.333%;
     float:left;
 
-    .pathway  {
+    .pathway__container  {
         background: $white;
         padding: 10px $global-padding-x;
         margin:  $global-margin-y 0px;
