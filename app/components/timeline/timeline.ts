@@ -13,15 +13,15 @@ function Timeline ($scope : IScope) {
     $scope.items = [
         {
             id: 101,
-            name: "Media 1"
+            name: "Point 1"
         },
         {
             id: 102,
-            name: "Media 2"
+            name: "Point 2"
         },
         {
             id: 103,
-            name: "Media 3"
+            name: "Point 3"
         }
     ];
 }

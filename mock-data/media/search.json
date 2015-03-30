@@ -6,10 +6,33 @@
     "media": {
       "15": {
         "id": 15,
-        "title": "Example media",
+        "title": "Example media #1",
         "description": "Example media description",
         "resourceUrl": "http:\/\/example.com\/hoge",
         "type": "link",
+        "subMedia": {
+          "1": {
+            "id": 1,
+            "title": "Example media",
+            "type": "link"
+          },
+          "2": {
+            "id": 2,
+            "title": "Example media",
+            "type": "link"
+          }
+        },
+        "tags": [
+          "Foo",
+          "Bar"
+        ]
+      },
+      "24": {
+        "id": 15,
+        "title": "Example media #2",
+        "description": "Example media description",
+        "resourceUrl": "http:\/\/example.com\/hoge",
+        "type": "video",
         "subMedia": {
           "1": {
             "id": 1,

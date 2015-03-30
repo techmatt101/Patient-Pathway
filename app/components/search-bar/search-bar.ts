@@ -1,9 +1,26 @@
 import app = require('app');
 
-
-function SearchBar() {
+interface IScope {
+    text : string
+    search : (text : string) => void
+    dropdown : any[]
 }
 
-app.controller('SearchBar', SearchBar);
+function SearchBar () {
+    return {
+        templateUrl: 'components/search-bar/search-bar.html',
+        controller: SearchBarController,
+        scope: {
+            dropdown: '=dropdown',
+            search: '=search'
+        }
+    }
+}
+
+function SearchBarController ($scope) {
+    $scope.text = '';
+}
+
+app.directive('searchBar', SearchBar);
 
 export = SearchBar;

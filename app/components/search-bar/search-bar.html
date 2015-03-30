@@ -1,4 +1,9 @@
-<form>
-    <input class="search" type="search" placeholder="Search resources">
-    <button type="submit" class="search__submit" class="btn icon-search"></button>
+<form ng-submit="search(text)">
+    <input class="search" ng-model="text" type="search" placeholder="Search resources">
+    <button type="submit" class="btn icon-search search__submit"></button>
+    <ul class="dropdown">
+        <li ng-repeat="item in dropdown">
+            <a href="#">{{item.title}}</a>
+        </li>
+    </ul>
 </form>

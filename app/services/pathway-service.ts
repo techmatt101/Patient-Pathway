@@ -1,4 +1,5 @@
 import app = require('app');
+import Helpers = require('../utils/helpers');
 import BackendConnectionService = require('./backend-connection-service');
 var imported = [BackendConnectionService]; //TODO: HACK!!!
 
@@ -31,12 +32,7 @@ class PathwayService {
         return this._request.get('user/pathways', {
             id: [userId]
         }).then(function(data : any) {
-            var pathwayTable = data.users['1'].pathways;
-            var pathways = [];
-            for (var key in pathwayTable) {
-                pathways.push(pathwayTable[key]);
-            }
-            return pathways;
+            return Helpers.tableToArray(data.users['1'].pathways);
         });
     }
 

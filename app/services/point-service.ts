@@ -43,4 +43,6 @@ class PointService {
     }
 }
 
+app.service('PointService', PointService);
+
 export = PointService;
