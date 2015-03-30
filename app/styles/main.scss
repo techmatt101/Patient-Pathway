@@ -10,7 +10,10 @@
 @import "components/auth";
 @import "components/site";
 
+@import "head";
 @import "pathway";
+@import "viewallpathways";
+@import "login";
 
 .browsehappy {
     margin: 0.2em 0;

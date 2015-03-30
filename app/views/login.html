@@ -1,7 +1,8 @@
+<link href="http://localhost:63342/WebProject/dist/styles/main.css"  media="screen, projection" rel="stylesheet" type="text/css"/>
 <main class="auth auth--login">
-    <img src="images/logo.svg" alt="Patient Pathway" width="280">
+    <img src="http://localhost:63342/WebProject/dist/images/logo.svg" id="logo" alt="Patient Pathway" width="280" >
 
-    <p>{{ notice }}</p>
+    <p>Welcome! Please Sign in.</p>
 
     <form id="login" class="form" ng-submit="submit()">
         <label for="email">Email</label>
@@ -10,6 +11,14 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" ng-model="password" class="form__input" required>
 
+        <label for="portal" id="portal">Portal</label>
+        <div class="select_container">
+            <select class="form__select">
+                <option value="Staff">Staff</option>
+                <option value="Patient">Patient</option>
+            </select>
+            <span class="dropdown icon-arrow"></span>
+        </div>
         <button type="submit" class="btn">Login</button>
     </form>
     <p class="small"><a href="#/reset-password">Forget Password?</a></p>
