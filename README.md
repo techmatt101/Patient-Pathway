@@ -1,4 +1,4 @@
-# Patient Pathway - Web Project Group 4
+# ![Patient Pathway](app/images/logo.png) Web Project Group 4
 
 Web application designed for clinicians and patients in the NHS. The application is intended to walk the patients through their pathway to recovery and shall be updated and maintained by various clinicians working with the patient.
 
