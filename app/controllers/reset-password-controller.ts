@@ -7,7 +7,6 @@ interface IScope extends ng.IScope {
     submit : () => void
 }
 
-// @ngInject
 function ResetPasswordController ($scope : IScope, UserService : UserService) {
     $scope.email = UserService.getEmail();
     $scope.submit = () => {

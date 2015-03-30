@@ -22,7 +22,7 @@ class UserService {
 
     public User : IUserDetails;
 
-    // @ngInject
+
     constructor($q, $cookieStore, BackendConnectionService) {
         this._Promise = $q;
         this._request = BackendConnectionService;

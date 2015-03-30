@@ -1,8 +1,7 @@
 import app = require('app');
 
-// @ngInject
-function Navbar($scope) {
-    console.log("Navbar", $scope);
+
+function Navbar() {
 }
 
 app.controller('Navbar', Navbar);

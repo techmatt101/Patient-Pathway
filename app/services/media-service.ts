@@ -7,7 +7,7 @@ class MediaService {
     private _Promise : ng.IQService;
     private _request : BackendConnectionService;
 
-    // @ngInject
+
     constructor ($q, BackendConnectionService) {
         this._Promise = $q;
         this._request = BackendConnectionService;

@@ -1,10 +1,9 @@
 import app = require('app');
 import UserService = require('../services/user-service');
 import PathwayService = require('../services/pathway-service');
-import Navbar = require('../components/navbar/navbar.controller');
+import Navbar = require('../components/navbar/navbar');
 var imported = [UserService, PathwayService, Navbar]; //TODO: HACK!!!
 
-// @ngInject
 function SettingsController() {
 }
 

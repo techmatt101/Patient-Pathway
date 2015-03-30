@@ -9,7 +9,6 @@ interface IScope extends ng.IScope {
     submit : () => void
 }
 
-// @ngInject
 function LoginController ($scope : IScope, $location : ng.ILocationService, $animate : any, UserService : UserService) {
     var form = document.getElementById('login');
 
@@ -19,7 +18,6 @@ function LoginController ($scope : IScope, $location : ng.ILocationService, $ani
     $scope.submit = () => {
         UserService.login($scope.email, $scope.password)
             .then((data) => {
-                console.log(data);
                 $location.path('/paths');
             })
             .catch(() => {

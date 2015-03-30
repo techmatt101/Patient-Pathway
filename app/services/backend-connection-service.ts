@@ -13,7 +13,7 @@ class BackendConnectionService {
 
     private _url = 'mock-data/';
 
-    // @ngInject
+
     constructor($q, $http) {
         this._Promise = $q;
         this._request = $http;
