@@ -11,10 +11,10 @@
     margin-left: 2%;
     margin-right: 2%;
 
-    @media only screen and (min-width:$screen-xs) and (max-width:$screen-s){
-      margin-left:5%;
-      margin-right:5%;
-      width:90%;
+    @media only screen and (min-width: $screen-xs) and (max-width: $screen-s) {
+      margin-left: 5%;
+      margin-right: 5%;
+      width: 90%;
     }
 
     @media only screen and (min-width: $screen-s) {
@@ -38,7 +38,7 @@
 
   &:nth-child(3n+3) {
     background-color: $pastel-green;
-  }  top: 135px;
+  }
 
   &__points {
     @extend %list-unstyled;
