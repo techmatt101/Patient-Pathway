@@ -4,28 +4,25 @@ interface IScope extends ng.IScope {
     items : ITeam[]
 }
 
-interface ITeam {
+export interface ITeam {
     id : number
-    name : string
+    title : string
+    type : string
+    notes : string
+    thumbnail : string
 }
 
-function Timeline ($scope : IScope) {
-    $scope.items = [
-        {
-            id: 101,
-            name: "Point 1"
-        },
-        {
-            id: 102,
-            name: "Point 2"
-        },
-        {
-            id: 103,
-            name: "Point 3"
+export function Timeline() {
+    return {
+        templateUrl: 'components/timeline/timeline.html',
+        controller: TimelineController,
+        scope: {
+            items: '=items'
         }
-    ];
+    }
 }
 
-app.controller('Timeline', Timeline);
+function TimelineController () {
+}
 
-export = Timeline;
+app.directive('timeline', Timeline);

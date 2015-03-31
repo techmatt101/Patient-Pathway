@@ -1,4 +1,5 @@
 import app = require('app');
+import Helpers = require('../utils/helpers');
 import BackendConnectionService = require('./backend-connection-service');
 var imported = [BackendConnectionService]; //TODO: HACK!!!
 
@@ -39,6 +40,8 @@ class PointService {
     list (pathwayId : number) {
         return this._request.get('pathway/points', {
             id: pathwayId
+        }).then((data) => {
+            return Helpers.tableToArray(data.points);
         });
     }
 }

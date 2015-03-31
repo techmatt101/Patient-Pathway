@@ -7,8 +7,10 @@
     "points": {
       "1": {
         "id": 1,
-        "type": "link",
-        "title": "Example title",
+        "type": "video",
+        "title": "Example title 0",
+        "thumbnail": "http://placekitten.com/g/300/150",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
         "mediaId": 1,
         "nextPointId": 2,
         "previousPointId": null
@@ -16,15 +18,69 @@
       "2": {
         "id": 2,
         "type": "link",
-        "title": "Example title",
+        "title": "Example title 1",
+        "thumbnail": "http://placekitten.com/g/300/150",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
         "mediaId": 2,
         "nextPointId": 3,
         "previousPointId": 1
       },
       "3": {
+        "id": 3,
+        "type": "pdf",
+        "title": "Example title 2 ",
+        "thumbnail": "http://placekitten.com/g/300/150",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
+        "mediaId": 3,
+        "nextPointId": null,
+        "previousPointId": 2
+      },
+      "4": {
         "id": 4,
+        "type": "video",
+        "title": "Example title 3",
+        "thumbnail": "http://placekitten.com/g/300/150",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
+        "mediaId": 3,
+        "nextPointId": null,
+        "previousPointId": 2
+      },
+      "5": {
+        "id": 5,
         "type": "link",
-        "title": "Example title",
+        "title": "Example title 3",
+        "thumbnail": "http://placekitten.com/g/300/150",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
+        "mediaId": 3,
+        "nextPointId": null,
+        "previousPointId": 2
+      },
+      "6": {
+        "id": 6,
+        "type": "video",
+        "title": "Example title 3",
+        "thumbnail": "http://placekitten.com/g/300/150",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
+        "mediaId": 3,
+        "nextPointId": null,
+        "previousPointId": 2
+      },
+      "7": {
+        "id": 7,
+        "type": "pdf",
+        "title": "Example title 3",
+        "thumbnail": "http://placekitten.com/g/300/150",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
+        "mediaId": 3,
+        "nextPointId": null,
+        "previousPointId": 2
+      },
+      "8": {
+        "id": 8,
+        "type": "link",
+        "title": "Example title 3",
+        "thumbnail": "http://placekitten.com/g/300/150",
+        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
         "mediaId": 3,
         "nextPointId": null,
         "previousPointId": 2

@@ -6,7 +6,7 @@ interface IScope {
     dropdown : any[]
 }
 
-function SearchBar () {
+export function SearchBar () {
     return {
         templateUrl: 'components/search-bar/search-bar.html',
         controller: SearchBarController,
@@ -22,5 +22,3 @@ function SearchBarController ($scope) {
 }
 
 app.directive('searchBar', SearchBar);
-
-export = SearchBar;

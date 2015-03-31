@@ -1,20 +1,15 @@
-#loading-bar,
-#loading-bar-spinner {
+#loading-bar {
   pointer-events: none;
   transition: 350ms linear all;
 }
 
 #loading-bar.ng-enter,
-#loading-bar.ng-leave.ng-leave-active,
-#loading-bar-spinner.ng-enter,
-#loading-bar-spinner.ng-leave.ng-leave-active {
+#loading-bar.ng-leave.ng-leave-active {
   opacity: 0;
 }
 
 #loading-bar.ng-leave,
-#loading-bar.ng-enter.ng-enter-active,
-#loading-bar-spinner.ng-leave,
-#loading-bar-spinner.ng-enter.ng-enter-active {
+#loading-bar.ng-enter.ng-enter-active {
   opacity: 1;
 }
 

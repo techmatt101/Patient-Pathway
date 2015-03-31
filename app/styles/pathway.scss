@@ -71,7 +71,7 @@
 
       @media only screen and (min-width: $screen-m) {
         margin-top: 0;
-        margin-bottom: -180px; //TODO: hmm... should be dynamic
+        margin-bottom: -180px; //TODO: hmm... should be dynamic.. maybe width the points then divide it by 2?
 
         $offset: 15%;
 
