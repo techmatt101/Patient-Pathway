@@ -1,42 +1,42 @@
 .shake {
-    animation-duration: 500ms;
-    animation-name: shake;
+  animation-duration: 500ms;
+  animation-name: shake;
 }
 
 @keyframes shake {
-    0%, 100% {
-        transform: translate3d(0, 0, 0);
-    }
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
 
-    15%, 45%, 75%, 70% {
-        transform: translate3d(-10px, 0, 0);
-    }
+  15%, 45%, 75%, 70% {
+    transform: translate3d(-10px, 0, 0);
+  }
 
-    30%, 60%, 60%, 90% {
-        transform: translate3d(10px, 0, 0);
-    }
+  30%, 60%, 60%, 90% {
+    transform: translate3d(10px, 0, 0);
+  }
 }
 
 @keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(10%);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
 
-    100% {
-        opacity: 1;
-        transform: none;
-    }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes fadeInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
 
-    100% {
-        opacity: 1;
-        transform: none;
-    }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }

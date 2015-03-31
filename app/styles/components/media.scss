@@ -1,22 +1,22 @@
 @import '../core/variables';
 
 .media {
-    padding: 0.5em;
-    margin: $global-margin;
-    border-radius: 50%;
-    display: inline-block;
-    color: $white;
-    font-size: 1.8em;
+  padding: 0.5em;
+  margin: $global-margin;
+  border-radius: 50%;
+  display: inline-block;
+  color: $white;
+  font-size: 1.8em;
 
-    &--video {
-        background: $media-video-color;
-    }
+  &--video {
+    background: $media-video-color;
+  }
 
-    &--link {
-        background: $media-link-color;
-    }
+  &--link {
+    background: $media-link-color;
+  }
 
-    &--pdf {
-        background: $media-pdf-color;
-    }
+  &--pdf {
+    background: $media-pdf-color;
+  }
 }

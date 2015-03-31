@@ -2,14 +2,14 @@
 @import '../core/fonts';
 
 .search {
-    padding: 5px 10px;
-    color: $black;
-    float: left;
+  padding: 5px 10px;
+  color: $black;
+  float: left;
 
-    &__submit {
-        padding: 3px;
-        border-radius: 0;
-        margin:2px 1px 1px -6px;
-    }
+  &__submit {
+    padding: 3px;
+    border-radius: 0;
+    margin: 2px 1px 1px -6px;
+  }
 
 }
