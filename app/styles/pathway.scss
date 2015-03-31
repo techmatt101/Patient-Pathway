@@ -31,7 +31,6 @@
     }
 
     .timeline__panel {
-      min-width: 200px;
       list-style: none outside none;
       position: relative;
       margin-top: 70px;
@@ -53,10 +52,15 @@
         margin-bottom: -180px; //TODO: hmm... should be dynamic
 
         $offset: 15%;
+        $icon-size: 3.5vw;
 
         .timeline__icon {
           top: 50%;
           left: auto;
+
+          font-size: $icon-size;
+          margin-left: -$icon-size;
+          margin-top: -$icon-size;
         }
 
         &:after {
@@ -90,13 +94,13 @@
           }
 
           .timeline__icon {
-            margin-right: -36px;
+            margin-right: -36px; //fallback
+            margin-right: -$icon-size;
           }
         }
       }
 
       .timeline__link {
-        width: 360px;
         padding: 0 4%;
 
         h5 {
@@ -105,7 +109,6 @@
       }
 
       .timeline__pdf {
-        width: 360px;
         padding: 0 4%;
 
         h5 {
