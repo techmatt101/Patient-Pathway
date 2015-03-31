@@ -77,7 +77,15 @@ gulp.task('scripts', function() {
 
 gulp.task('images', function() {
     return gulp.src('app/images/**/*.{svg,png,jpg}')
-        .pipe($.if(isProduction, $.imagemin({ progressive: true })))
+        .pipe($.if(isProduction, $.imagemin({
+            progressive: true,
+            multipass: true,
+            svgoPlugins: [
+                { removeViewBox: true },
+                { removeUselessStrokeAndFill: true },
+                { removeEmptyAttrs: true }
+            ]
+        })))
         .pipe(gulp.dest('dist/images'));
 });
 

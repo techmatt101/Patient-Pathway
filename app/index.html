@@ -17,16 +17,6 @@
     <noscript>JavaScript must be enabled to view this page</noscript>
     <div ng-view></div>
 
-    <!-- //TODO: change Google Analytics UA-XXXXX-X to be site's ID. -->
-    <script>
-//        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-//                function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-//            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-//            e.src='//www.google-analytics.com/analytics.js';
-//            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-//        ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
     <script src="libs/core.js" type="text/javascript"></script>
     <script>
         require(['app', 'user', 'pathway'], function() {
@@ -34,6 +24,15 @@
                 angular.bootstrap(document, ['PatientPathway']);
             });
         });
+    </script>
+    <!-- //TODO: change Google Analytics UA-XXXXX-X to be site's ID. -->
+    <script>
+        //        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        //                function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        //            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        //            e.src='//www.google-analytics.com/analytics.js';
+        //            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        //        ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 </body>
 </html>

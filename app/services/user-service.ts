@@ -4,8 +4,10 @@ var imported = [BackendConnectionService]; //TODO: HACK!!!
 
 
 enum Permissions {
-    NONE,
-    ADMIN
+    GUEST,
+    PATIENT,
+    CLINICIAN,
+    TEAM_LEADER
 }
 
 interface IUserDetails {

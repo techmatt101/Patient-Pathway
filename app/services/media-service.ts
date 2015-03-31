@@ -3,6 +3,12 @@ import Helpers = require('../utils/helpers');
 import BackendConnectionService = require('./backend-connection-service');
 var imported = [BackendConnectionService]; //TODO: HACK!!!
 
+enum MediaTypes {
+    VIDEO,
+    IMAGE,
+    PDF,
+    LINK
+}
 
 class MediaService {
     private _Promise : ng.IQService;

@@ -1,15 +1,3 @@
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(10%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: none;
-    }
-}
-
 .shake {
     animation-duration: 500ms;
     animation-name: shake;
@@ -26,5 +14,29 @@
 
     30%, 60%, 60%, 90% {
         transform: translate3d(10px, 0, 0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
     }
 }
