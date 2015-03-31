@@ -2,47 +2,53 @@
 @import 'core/helpers';
 
 .pathways {
-    @extend %list-unstyled;
+  @extend %list-unstyled;
 
-    .pathway {
-        display: inline-block;
-        vertical-align: top;
-        width: 96%;
-        margin-left: 2%;
-        margin-right: 2%;
+  .pathway {
+    display: inline-block;
+    vertical-align: top;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
 
-        @media only screen and (min-width: $screen-s) {
-            width: 46%;
-        }
-
-        @media only screen and (min-width: $screen-l) {
-            width: 29%;
-        }
+    @media only screen and (min-width:$screen-xs) and (max-width:$screen-s){
+      margin-left:5%;
+      margin-right:5%;
+      width:90%;
     }
+
+    @media only screen and (min-width: $screen-s) {
+      width: 46%;
+    }
+
+    @media only screen and (min-width: $screen-l) {
+      width: 29%;
+    }
+  }
 }
 
 .pathway {
-    &:nth-child(3n+1) {
-        background-color: $pastel-blue;
-    }
+  &:nth-child(3n+1) {
+    background-color: $pastel-blue;
+  }
 
-    &:nth-child(3n+2) {
-        background-color: $pastel-pink;
-    }
+  &:nth-child(3n+2) {
+    background-color: $pastel-pink;
+  }
 
-    &:nth-child(3n+3) {
-        background-color: $pastel-green;
-    }
+  &:nth-child(3n+3) {
+    background-color: $pastel-green;
+  }  top: 135px;
 
-    &__points {
-        @extend %list-unstyled;
+  &__points {
+    @extend %list-unstyled;
 
-        &__item {
-            background: $white;
-            padding: $global-padding-y--small $global-padding-x;
-            margin: $global-margin-y 0;
-            border-radius: $border-radius;
-            text-overflow: ellipsis;
-        }
+    &__item {
+      background: $white;
+      padding: $global-padding-y--small $global-padding-x;
+      margin: $global-margin-y 0;
+      border-radius: $border-radius;
+      text-overflow: ellipsis;
     }
+  }
 }

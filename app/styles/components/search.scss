@@ -1,12 +1,15 @@
 @import '../core/variables';
+@import '../core/fonts';
 
 .search {
     padding: 5px 10px;
-    color: $brand-color--dark;
+    color: $black;
+    float: left;
 
     &__submit {
-        padding: 2px;
+        padding: 3px;
         border-radius: 0;
-        margin-left: -8px;
+        margin:2px 1px 1px -6px;
     }
+
 }

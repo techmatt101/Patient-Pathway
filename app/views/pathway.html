@@ -1,3 +1,41 @@
 <header ng-include="'components/navbar/navbar.html'"></header>
 <search-bar dropdown="results" search="search"></search-bar>
 <div ng-include="'components/timeline/timeline.html'"></div>
+<div class="timeline ng-scope">
+    <div class="timeline__recentposts">
+        <p>Most Recent Posts</p>
+    </div>
+    <ul class="timeline__container">
+        <li class="timeline__panel section">
+            <div class="media media--video timeline__icon icon-video"></div>
+            <img src="http://i.stack.imgur.com/klttw.jpg" alt="dummy image"/>
+            <p>Posted on 06/05/2015 by Grace</p>
+        </li>
+        <li class="timeline__panel section">
+            <div class="media media--link timeline__icon icon-link"></div>
+            <img src="http://placehold.it/150x150" alt="patient pathway"/>
+            <div class="timeline__link">
+                <h5 class="timeline__heading__link"><a href="#">Neque Porro Quisquam Est Qui Dolrem Ipsum</a></h5>
+                <p>Posted on 06/05/2015 by Grace</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.<a href="#">Read More</a></p>
+            </div>
+        </li>
+        <li class="timeline__panel section">
+            <div class="media media--pdf timeline__icon icon-pdf"></div>
+            <img src="http://placehold.it/150x150" alt="patient pathway"/>
+            <div class="timeline__pdf">
+                <h5><a href="#">Neque Porro Quisquam Est Qui Dolrem Ipsum</a></h5>
+                <p>Posted on 06/05/2015 by Grace</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.<a href="#">Read More</a></p>
+            </div>
+        </li>
+        <li class="timeline__panel section">
+            <div class="media media--link timeline__icon icon-link"></div>
+            <img src="http://placehold.it/150x150" alt="patient pathway"/>
+            <div class="timeline__link">
+                <h5><a href="#">Neque Porro Quisquam Est Qui Dolrem Ipsum</a></h5>
+                <p>Posted on 06/05/2015 by Grace</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.<a href="#">Read More</a></p>
+            </div>
+        </li>
+    </ul>
+</div>
