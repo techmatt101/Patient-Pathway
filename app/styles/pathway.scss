@@ -2,7 +2,18 @@
 
 .timeline {
   margin: 0 auto;
-  width: 90%;
+
+  @media only screen and (min-width: $screen-s) {
+    width: 95%;
+  }
+
+  @media only screen and (min-width: $screen-l) {
+    width: 80%;
+  }
+
+  @media only screen and (min-width: $screen-xl) {
+    width: 70%;
+  }
 
   &__recentposts {
     background-color: $brand-color--darker;
@@ -35,12 +46,23 @@
       position: relative;
       margin-top: 70px;
 
+      $icon-size: 4vw;
+
       .timeline__icon {
         position: absolute;
         top: 0;
         left: 50%;
-        margin-left: -36px;
-        margin-top: -36px;
+        margin-left: -1em;
+        margin-top: -1em;
+        font-size: 1.5em;
+
+        @media only screen and (min-width: $screen-s) {
+          font-size: 2em;
+        }
+
+        @media only screen and (min-width: $screen-l) {
+          font-size: 2.4em;
+        }
       }
 
       p {
@@ -52,15 +74,10 @@
         margin-bottom: -180px; //TODO: hmm... should be dynamic
 
         $offset: 15%;
-        $icon-size: 3.5vw;
 
         .timeline__icon {
           top: 50%;
           left: auto;
-
-          font-size: $icon-size;
-          margin-left: -$icon-size;
-          margin-top: -$icon-size;
         }
 
         &:after {
@@ -94,8 +111,7 @@
           }
 
           .timeline__icon {
-            margin-right: -36px; //fallback
-            margin-right: -$icon-size;
+            margin-right: -1em;
           }
         }
       }
