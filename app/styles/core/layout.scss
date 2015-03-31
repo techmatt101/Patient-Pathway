@@ -27,3 +27,14 @@
 .big {
   font-size: 1.4em;
 }
+
+.img-wrap-w img {
+  display: block;
+  height: auto;
+  width: 100%
+}
+
+.img-wrap-h img {
+  height: 100%;
+  width: auto
+}
