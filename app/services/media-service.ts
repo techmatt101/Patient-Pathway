@@ -31,9 +31,9 @@ class MediaService {
         return this._request.get('media/tags');
     }
 
-    search (text : string, tags? : string, type? : string, page? : number, results? : number) {
+    search (query : string, tags? : string, type? : string, page? : number, results? : number) {
         return this._request.get('media/search', {
-            title: text
+            title: query
         }).then((data : any) => {
             return Helpers.tableToArray(data.media);
         });

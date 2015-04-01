@@ -10,8 +10,8 @@
                 <picture class="img-wrap-w">
                     <img ng-src="{{item.thumbnail}}" alt="{{item.title}}"/>
                 </picture>
-                <div class="timeline__link">
-                    <h5 class="timeline__heading__link"><a href="#">{{item.title}}</a></h5>
+                <div ng-class="'timeline__' + item.type">
+                    <h5 class="timeline__heading__link">{{item.title}}</h5>
 
                     <!-- TODO: bind date and author-->
                     <p>Posted on 06/05/2015 by Grace</p>

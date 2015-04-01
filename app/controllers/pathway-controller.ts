@@ -9,23 +9,37 @@ import Timeline = require('../components/timeline/timeline');
 var imported = [UserService, PathwayService, PointService, MediaService, Navbar, SearchBar, Timeline]; //TODO: HACK!!!
 
 interface IScope extends ng.IScope {
+    mediaResults : any[]
+    searchMedia : (query : string) => void
     points : Timeline.ITeam[]
-    results : any[]
-    search : (text : string) => void
+    addPoint : (mediaId : number) => void
 }
 
 function PathwayController ($scope : IScope, PointService : PointService, MediaService : MediaService) {
-    $scope.points = [];
-    $scope.results = [];
-    $scope.search = (text) => {
-        MediaService.search(text).then((data : any) => {
-            $scope.results = data;
+    // Search Bar
+    $scope.mediaResults = [];
+    $scope.searchMedia = (query) => {
+        MediaService.search(query).then((data : any) => {
+            $scope.mediaResults = data;
         });
     };
 
-    PointService.list(1).then((data) => {
-        $scope.points = data;
-    });
+    // Timeline
+    $scope.points = [];
+    $scope.addPoint = (mediaId) => {
+        PointService.add(1, mediaId, 0).then(() => { //TODO: linkup pathway id and last point id
+            fetchPoints();
+            console.log("YAY ADDED POINT!");
+        });
+    };
+
+    function fetchPoints () {
+        PointService.list(1).then((data) => {
+            $scope.points = data;
+        });
+    }
+
+    fetchPoints();
 }
 
 app.controller('PathwayController', PathwayController);

@@ -22,7 +22,8 @@ export function Timeline() {
     }
 }
 
-function TimelineController () {
+function TimelineController ($scope : IScope) {
+    $scope.items = [];
 }
 
 app.directive('timeline', Timeline);

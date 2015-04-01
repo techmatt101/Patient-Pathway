@@ -2,8 +2,10 @@ import app = require('app');
 
 interface IScope {
     text : string
-    search : (text : string) => void
-    dropdown : any[]
+    placeholder : string
+    results : any[]
+    submit : () => void
+    itemClick : () => void
 }
 
 export function SearchBar () {
@@ -11,14 +13,18 @@ export function SearchBar () {
         templateUrl: 'components/search-bar/search-bar.html',
         controller: SearchBarController,
         scope: {
-            dropdown: '=dropdown',
-            search: '=search'
+            results: '=results',
+            placeholder: '@?placeholder',
+            search: '=?onSearch',
+            itemClick: '=?onItemClick'
         }
     }
 }
 
-function SearchBarController ($scope) {
+function SearchBarController ($scope : IScope) {
     $scope.text = '';
+    $scope.placeholder = 'Search';
+    $scope.results = [];
 }
 
 app.directive('searchBar', SearchBar);
