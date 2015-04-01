@@ -91,7 +91,13 @@
         }
 
         &:nth-child(2n+1) {
+          text-align: right;
           margin-left: 50%;
+
+          .timeline__icon,
+          &:after {
+            left: 0;
+          }
 
           .section {
             margin-left: $offset;
@@ -99,6 +105,7 @@
         }
 
         &:nth-child(2n+2) {
+          text-align: left;
           margin-right: 50%;
 
           .section {
@@ -116,25 +123,23 @@
         }
       }
 
-      .timeline__link {
-        padding: 0 4%;
+      .timeline__video {
+        h5 {
+          color: $media-video-color;
+        }
+      }
 
+      .timeline__link {
         h5 {
           color: $media-link-color;
         }
       }
 
       .timeline__pdf {
-        padding: 0 4%;
-
         h5 {
           color: $media-pdf-color;
         }
-
       }
     }
   }
 }
-
-
-

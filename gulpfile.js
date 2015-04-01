@@ -27,9 +27,9 @@ gulp.task('size', function() {
 
 gulp.task('watch', ['build'], function() {
     gulp.watch('app/styles/**/*.scss', ['styles']);
-    gulp.watch('app/scripts/**/*.js', ['scripts']);
-    gulp.watch(['app/**/*.html'], ['markup']);
-    console.log('Now watching: styles, scripts, markup');
+    gulp.watch('app/**/*.html', ['markup']);
+    gulp.watch('mock-data/**/*.json', ['other']);
+    console.log('Now watching: styles, markup and mock data');
 });
 
 //===================================================//
@@ -59,7 +59,7 @@ gulp.task('scriptLibs', function() {
         'bower_components/angular-cookies/angular-cookies.js',
         'bower_components/angular-animate/angular-animate.js',
         'bower_components/angular-loading-bar/build/loading-bar.js'
-    ])//TODO: concat all libs?
+    ])
         .pipe($.concat('core.js'))
         .pipe($.if(isProduction, $.uglify()))
         .pipe(gulp.dest('dist/libs'));

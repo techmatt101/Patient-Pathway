@@ -21,7 +21,7 @@ a {
   }
 
   &:focus {
-    outline-color: darken($brand-color--dark, 10%);
+    outline-color: $brand-color--darker;
   }
 }
 

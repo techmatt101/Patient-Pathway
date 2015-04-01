@@ -23,12 +23,12 @@
 
   &:focus,
   &:hover {
-    background: lighten($brand-color--dark, 5%);
+    background: $brand-color--darker;
     text-decoration: none;
   }
 
   &:active {
     border-color: transparent;
-    background: darken($brand-color--dark, 5%);
+    background: $brand-color--darker;
   }
 }
