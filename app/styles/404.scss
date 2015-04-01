@@ -1,0 +1,13 @@
+@import 'core/variables';
+@import 'core/helpers';
+
+//404 page styling
+.page_not_found {
+  width: 60%;
+  margin: 0px auto;
+
+
+  @media only screen and (min-width:$screen-xs) and (max-width: $screen-m) {
+    width: 95%;
+  }
+}
