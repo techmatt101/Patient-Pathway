@@ -33,10 +33,14 @@ var app = angular.module('PatientPathway', [
     })
     .config(($routeProvider : ng.route.IRouteProvider, cfpLoadingBarProvider) => {
         cfpLoadingBarProvider.includeSpinner = false;
+        $routeProvider.when('/', {redirectTo: '/login'});
+        $routeProvider.when('/404', {
+            templateUrl: 'views/404.html'
+        });
         $routeProvider.when('/style-guide', {
             templateUrl: 'views/style-guide.html'
         });
-        $routeProvider.otherwise({redirectTo: '/login'});
+        $routeProvider.otherwise({redirectTo: '/404'});
     });
 
 export = app;
