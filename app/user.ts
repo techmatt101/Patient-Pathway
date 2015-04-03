@@ -22,7 +22,7 @@ var routes : RoutingUtil.IRoute[] = [
     },
 ];
 
-var PatientPathwayUser = angular.module('PatientPathway.User', ['ngRoute'])
+var PatientPathwayUser = angular.module('PatientPathway.User', [])
     .config(($routeProvider : ng.route.IRouteProvider) => {
         RoutingUtil.registerRoutes(routes, $routeProvider);
     });

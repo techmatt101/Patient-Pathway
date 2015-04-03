@@ -22,6 +22,7 @@ function LoginController ($scope : IScope, $location : ng.ILocationService, $ani
             })
             .catch(() => {
                 $scope.notice = 'Your login information was incorrect. Please try again.';
+				$scope.password = '';
                 $animate.addClass(form, 'shake').then(() => $animate.removeClass(form, 'shake'));
             });
     };
