@@ -95,12 +95,16 @@ gulp.task('content', function() {
 });
 
 gulp.task('other', function() {
-    gulp.src(['app/favicon.ico'])
+    gulp.src([
+        'app/favicon.ico',
+        'app/key.pem',
+        'app/cert.pem'
+    ])
         .pipe(gulp.dest('dist'));
 
-    gulp.src(['mock-data/**/*.json'])
+    gulp.src('mock-data/**/*.json')
         .pipe(gulp.dest('dist/mock-data'));
 
-    gulp.src('bower_components/apache-server-configs/dist/.htaccess')
+    gulp.src(['bower_components/apache-server-configs/dist/.htaccess'])
         .pipe($.if(isProduction, gulp.dest('dist')));
 });

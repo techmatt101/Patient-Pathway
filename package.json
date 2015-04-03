@@ -12,7 +12,7 @@
   },
   "scripts": {
     "install": "bower install && tsd reinstall -s -o",
-    "start": "http-server -a localhost -p 8000 -c-1"
+    "start": "(cd dist && http-server ./ -a localhost -p 8000 -c-1 -o --ssl)"
   },
   "dependencies": {},
   "devDependencies": {

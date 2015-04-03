@@ -1,3 +1,4 @@
 <header ng-include="'components/navbar/navbar.html'"></header>
 <search-bar results="mediaResults" placeholder="Search Resources" on-search="searchMedia" on-item-click="addPoint"></search-bar>
+<button ng-click="openSettings()">Settings</button>
 <timeline items="points"></timeline>
