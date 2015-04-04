@@ -5,6 +5,7 @@ var app = angular.module('PatientPathway', [
     'ngCookies',
     'ngAnimate',
     'angular-loading-bar',
+    'btford.modal',
     'PatientPathway.User',
     'PatientPathway.Pathway'
 ])

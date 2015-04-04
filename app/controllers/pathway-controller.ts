@@ -6,16 +6,25 @@ import MediaService = require('../services/media-service');
 import Navbar = require('../components/navbar/navbar');
 import SearchBar = require('../components/search-bar/search-bar');
 import Timeline = require('../components/timeline/timeline');
-var imported = [UserService, PathwayService, PointService, MediaService, Navbar, SearchBar, Timeline]; //TODO: HACK!!!
+import Settings = require('./settings-controller');
+var imported = [UserService, PathwayService, PointService, MediaService, Navbar, SearchBar, Timeline, Settings]; //TODO: HACK!!!
 
 interface IScope extends ng.IScope {
     mediaResults : any[]
     searchMedia : (query : string) => void
     points : Timeline.ITeam[]
     addPoint : (mediaId : number) => void
+    openSettings : () => void
 }
 
-function PathwayController ($scope : IScope, PointService : PointService, MediaService : MediaService) {
+function PathwayController ($scope : IScope, btfModal : any, PointService : PointService, MediaService : MediaService) {
+    $scope.openSettings = () => { //TODO: temporary example
+        btfModal({
+            controller: 'SettingsController',
+            templateUrl: 'views/settings.html'
+        }).activate();
+    };
+
     // Search Bar
     $scope.mediaResults = [];
     $scope.searchMedia = (query) => {

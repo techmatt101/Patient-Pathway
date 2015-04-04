@@ -58,7 +58,8 @@ gulp.task('scriptLibs', function() {
         'bower_components/angular-route/angular-route.js',
         'bower_components/angular-cookies/angular-cookies.js',
         'bower_components/angular-animate/angular-animate.js',
-        'bower_components/angular-loading-bar/build/loading-bar.js'
+        'bower_components/angular-loading-bar/build/loading-bar.js',
+        'bower_components/angular-modal/modal.js'
     ])
         .pipe($.concat('core.js'))
         .pipe($.if(isProduction, $.uglify()))
