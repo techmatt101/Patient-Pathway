@@ -2,6 +2,7 @@
 
 .timeline {
   margin: 0 auto;
+  text-align: center;
 
   @media only screen and (min-width: $screen-s) {
     width: 95%;
@@ -18,10 +19,8 @@
   &__recentposts {
     background-color: $brand-color--darker;
     color: $white;
-    padding: $global-padding--small;
-    margin: 0 auto;
-    width: 25%;
-    text-align: center;
+    padding: $global-padding-y--small $global-padding-x;
+    display: inline-block;
     border-radius: $border-radius;
   }
 
@@ -42,11 +41,14 @@
     }
 
     .timeline__panel {
+      $height: 400px;
+      $icon-size: 4vw;
+
       list-style: none outside none;
       position: relative;
       margin-top: 70px;
+      height: $height;
 
-      $icon-size: 4vw;
 
       .timeline__icon {
         position: absolute;
@@ -71,7 +73,7 @@
 
       @media only screen and (min-width: $screen-m) {
         margin-top: 0;
-        margin-bottom: -180px; //TODO: hmm... should be dynamic.. maybe width the points then divide it by 2?
+        margin-bottom: -$height / 2;
 
         $offset: 15%;
 
