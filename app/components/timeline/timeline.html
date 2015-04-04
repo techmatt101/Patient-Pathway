@@ -3,7 +3,7 @@
         <p>Most Recent Posts</p>
     </div>
 
-    <ul class="timeline__container">
+    <ul class="timeline__container" infinite-scroll="fetchNextItems()" infinite-scroll-distance="0" infinite-scroll-disabled="scrollPaused">
         <li class="timeline__panel" ng-repeat="item in items">
             <div class="media timeline__icon" ng-class="['media--' + item.type, 'icon-' + item.type]"></div>
             <section class="section">
