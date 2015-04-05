@@ -24,7 +24,7 @@ export interface IItem {
     timestamp : number
 }
 
-export function Timeline() {
+export function Timeline () {
     return {
         templateUrl: 'components/timeline/timeline.html',
         controller: TimelineController,
@@ -44,7 +44,13 @@ function TimelineController ($scope : IScope) {
         items: []
     }];
     $scope.contentLoaded = false;
-    $scope.scrollPaused = false;
+    $scope.scrollPaused = true;
+
+    $scope.$watch('fullListOfItems', () => {
+        if ($scope.fullListOfItems.length > 0) {
+            $scope.fetchNextItems();
+        }
+    });
 
     $scope.fetchNextItems = () => {
         $scope.scrollPaused = true;
@@ -53,7 +59,7 @@ function TimelineController ($scope : IScope) {
             var item = $scope.fullListOfItems[i];
             item.date = new Date(item.timestamp);
 
-            if((<any>Date).equalsDay(currentDate, item.date)) { //TODO: hmmm... need to create a d.ts for date-utils
+            if ((<any>Date).equalsDay(currentDate, item.date)) { //TODO: hmmm... need to create a d.ts for date-utils
                 $scope.sections[$scope.sections.length - 1].items.push(item);
             } else {
                 currentDate = item.date;
@@ -67,6 +73,7 @@ function TimelineController ($scope : IScope) {
         }
         $scope.scrollPaused = $scope.fullListOfItems.length <= itemsLoaded;
     };
+
     setTimeout(() => { //TODO: add logic to wait for all images to load
         $scope.contentLoaded = true;
     }, 15);
