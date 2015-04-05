@@ -1,7 +1,6 @@
 import app = require('app');
 
 interface IScope extends ng.IScope {
-    contentLoaded: boolean
     scrollPaused: boolean
     sections : ISection[]
     fullListOfItems : IItem[]
@@ -43,7 +42,6 @@ function TimelineController ($scope : IScope) {
         date: (<any>Date).today(), //TODO: hmmm... need to create a d.ts for date-utils
         items: []
     }];
-    $scope.contentLoaded = false;
     $scope.scrollPaused = true;
 
     $scope.$watch('fullListOfItems', () => {
@@ -73,10 +71,6 @@ function TimelineController ($scope : IScope) {
         }
         $scope.scrollPaused = $scope.fullListOfItems.length <= itemsLoaded;
     };
-
-    setTimeout(() => { //TODO: add logic to wait for all images to load
-        $scope.contentLoaded = true;
-    }, 15);
 }
 
 app.directive('timeline', Timeline);
