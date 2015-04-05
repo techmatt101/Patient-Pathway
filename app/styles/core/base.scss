@@ -2,6 +2,23 @@
 
 * {
   box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $brand-color--dark;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: $brand-color--darker;
+    }
+  }
+}
+
+html, body, .view {
+  height: 100%;
 }
 
 body {

@@ -53,14 +53,15 @@ gulp.task('styles', function() {
 
 gulp.task('scriptLibs', function() {
     gulp.src([
-        'bower_components/requirejs/require.js',
         'bower_components/angular/angular.js',
         'bower_components/angular-route/angular-route.js',
         'bower_components/angular-cookies/angular-cookies.js',
         'bower_components/angular-animate/angular-animate.js',
         'bower_components/angular-loading-bar/build/loading-bar.js',
         'bower_components/angular-modal/modal.js',
-        'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js'
+        'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
+        'bower_components/date-utils/lib/date-utils.js',
+        'bower_components/requirejs/require.js'
     ])
         .pipe($.concat('core.js'))
         .pipe($.if(isProduction, $.uglify()))

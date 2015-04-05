@@ -1,27 +1,32 @@
-<div class="timeline">
-    <div class="timeline__recentposts">
+<div class="timeline__cover">
+    <div class="timeline__breakpoint">
         <p>Most Recent Posts</p>
     </div>
-
-    <ul class="timeline__container" infinite-scroll="fetchNextItems()" infinite-scroll-distance="0" infinite-scroll-disabled="scrollPaused">
-        <li class="timeline__panel" ng-repeat="item in items">
-            <div class="media timeline__icon" ng-class="['media--' + item.type, 'icon-' + item.type]"></div>
-            <section class="section">
-                <picture class="img-wrap-w">
-                    <img ng-src="{{item.thumbnail}}" alt="{{item.title}}"/>
-                </picture>
-                <div ng-class="'timeline__' + item.type">
-                    <h5 class="timeline__heading__link">{{item.title}}</h5>
-
-                    <!-- TODO: bind date and author-->
-                    <p>Posted on 06/05/2015 by Grace</p>
-
-                    <p>
-                        {{item.notes}}
-                        <br> <a href="#">Read More</a>
-                    </p>
-                </div>
-            </section>
-        </li>
-    </ul>
 </div>
+
+<ul class="timeline__container" ng-show="contentLoaded" infinite-scroll="fetchNextItems()" infinite-scroll-distance="1" infinite-scroll-disabled="scrollPaused" infinite-scroll-parent="true">
+    <li ng-repeat="section in sections">
+        <div class="timeline__breakpoint">
+            <p>{{section.label}}</p>
+        </div>
+
+        <ul class="timeline__container">
+            <li class="timeline__panel" ng-repeat="item in section.items">
+                <div class="media timeline__panel__icon" ng-class="['media--' + item.type, 'icon-' + item.type]"></div>
+                <section class="timeline__panel__section section">
+                    <picture class="img-wrap-w">
+                        <img ng-src="{{item.thumbnail}}" alt="{{item.title}}"/>
+                    </picture>
+                    <div ng-class="'timeline__panel__' + item.type">
+                        <h4 class="timeline__panel__heading">{{item.title}}</h4>
+                        <!-- TODO: bind date and author-->
+                        <p>Posted on 06/05/2015 by Grace</p>
+
+                        <p>{{item.notes}}</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </section>
+            </li>
+        </ul>
+    </li>
+</ul>

@@ -1,147 +1,16 @@
 @import 'core/variables';
+@import 'components/timeline';
 
-.timeline {
-  margin: 0 auto;
-  text-align: center;
-
-  @media only screen and (min-width: $screen-s) {
-    width: 95%;
+.pathway {
+  .search-bar {
+    float: left;
   }
 
-  @media only screen and (min-width: $screen-l) {
-    width: 80%;
-  }
-
-  @media only screen and (min-width: $screen-xl) {
-    width: 70%;
-  }
-
-  &__recentposts {
-    background-color: $brand-color--darker;
-    color: $white;
-    padding: $global-padding-y--small $global-padding-x;
-    display: inline-block;
-    border-radius: $border-radius;
-  }
-
-  &__container {
-    list-style: none;
-    margin: 0;
-    padding: $global-padding-y 0;
-    position: relative;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      height: 100%;
-      width: 2px;
-      background: $brand-color--darker;
-    }
-
-    .timeline__panel {
-      $height: 400px;
-      $icon-size: 4vw;
-
-      list-style: none outside none;
-      position: relative;
-      margin-top: 70px;
-      height: $height;
-
-
-      .timeline__icon {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        margin-left: -1em;
-        margin-top: -1em;
-        font-size: 1.5em;
-
-        @media only screen and (min-width: $screen-s) {
-          font-size: 2em;
-        }
-
-        @media only screen and (min-width: $screen-l) {
-          font-size: 2.4em;
-        }
-      }
-
-      p {
-        font-size: 0.8em;
-      }
-
-      @media only screen and (min-width: $screen-m) {
-        margin-top: 0;
-        margin-bottom: -$height / 2;
-
-        $offset: 15%;
-
-        .timeline__icon {
-          top: 50%;
-          left: auto;
-        }
-
-        &:after {
-          content: '';
-          position: absolute;
-          height: 2px;
-          width: $offset;
-          top: 50%;
-          background: $brand-color--darker;
-          z-index: -1;
-        }
-
-        &:nth-child(2n+1) {
-          text-align: right;
-          margin-left: 50%;
-
-          .timeline__icon,
-          &:after {
-            left: 0;
-          }
-
-          .section {
-            margin-left: $offset;
-          }
-        }
-
-        &:nth-child(2n+2) {
-          text-align: left;
-          margin-right: 50%;
-
-          .section {
-            margin-right: $offset;
-          }
-
-          .timeline__icon,
-          &:after {
-            right: 0;
-          }
-
-          .timeline__icon {
-            margin-right: -1em;
-          }
-        }
-      }
-
-      .timeline__video {
-        h5 {
-          color: $media-video-color;
-        }
-      }
-
-      .timeline__link {
-        h5 {
-          color: $media-link-color;
-        }
-      }
-
-      .timeline__pdf {
-        h5 {
-          color: $media-pdf-color;
-        }
-      }
-    }
+  .timeline {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }

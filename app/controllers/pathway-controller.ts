@@ -12,7 +12,7 @@ var imported = [UserService, PathwayService, PointService, MediaService, Navbar,
 interface IScope extends ng.IScope {
     mediaResults : any[]
     searchMedia : (query : string) => void
-    points : Timeline.ITeam[]
+    points : Timeline.IItem[]
     addPoint : (mediaId : number) => void
     openSettings : () => void
 }

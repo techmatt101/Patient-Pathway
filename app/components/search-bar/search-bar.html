@@ -1,7 +1,7 @@
-<form ng-submit="search(text)">
-    <input class="search" ng-model="text" type="search" placeholder="{{placeholder}}">
+<form ng-submit="search(text)" class="search-bar">
+    <input class="search-bar__input" ng-model="text" type="search" placeholder="{{placeholder}}">
     <button type="submit" class="btn icon-search search__submit"></button>
-    <ul class="dropdown">
+    <ul class="search-bar__dropdown" ng-show="results.length > 0">
         <li ng-repeat="item in results">
             <a ng-click="itemClick(item.id)" href="">{{item.title}}</a>
         </li>

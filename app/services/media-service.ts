@@ -1,5 +1,5 @@
 import app = require('app');
-import Helpers = require('../utils/helpers');
+import Helpers = require('utils/helpers');
 import BackendConnectionService = require('./backend-connection-service');
 var imported = [BackendConnectionService]; //TODO: HACK!!!
 

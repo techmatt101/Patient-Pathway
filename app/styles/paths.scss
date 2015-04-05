@@ -4,7 +4,7 @@
 .pathways {
   @extend %list-unstyled;
 
-  .pathway {
+  .pathway-overview {
     display: inline-block;
     vertical-align: top;
     width: 96%;
@@ -27,7 +27,7 @@
   }
 }
 
-.pathway {
+.pathway-overview {
   &:nth-child(3n+1) {
     background-color: $pastel-blue;
   }
