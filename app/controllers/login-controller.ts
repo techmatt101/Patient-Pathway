@@ -13,11 +13,13 @@ function LoginController ($scope : IScope, $location : ng.ILocationService, $ani
     var form = document.getElementById('login');
 
     $scope.notice = 'Welcome! Please sign in.';
-    $scope.email = UserService.getEmail();
+    $scope.email = $location.search().email || UserService.getEmail();
     $scope.password = '';
     $scope.submit = () => {
+        $scope.notice = 'Signing in...';
         UserService.login($scope.email, $scope.password)
             .then((data) => {
+                $scope.notice = 'Welcome ' + data.name;
                 $location.path('/paths');
             })
             .catch(() => {
