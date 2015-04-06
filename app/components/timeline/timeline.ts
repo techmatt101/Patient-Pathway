@@ -39,13 +39,13 @@ export function Timeline () {
             var breakpoints : NodeList;
             $scope.$watchCollection('sections', () => breakpoints = element[0].querySelectorAll('.timeline__breakpoint'));
             element.on('scroll', () => {
-                var label = '';
+                var label = $scope.label;
                 for (var i = 0; i < breakpoints.length; i++) {
                     if((<HTMLElement>breakpoints[i]).offsetTop < element[0].scrollTop + 30) {
                         label = breakpoints[i].textContent;
                     } else break;
                 }
-                if(label !== '') {
+                if(label !== $scope.label) {
                     $scope.label = label;
                     $scope.$apply();
                 }
