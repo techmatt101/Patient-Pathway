@@ -1,10 +1,13 @@
 import app = require('app');
 
 interface IScope extends ng.IScope {
+    label: string
+    readOnly: boolean
     scrollPaused: boolean
     sections : ISection[]
     fullListOfItems : IItem[]
     fetchNextItems : () => void
+    removeItem : (id) => void
 }
 
 export interface ISection {
@@ -28,48 +31,76 @@ export function Timeline () {
         templateUrl: 'components/timeline/timeline.html',
         controller: TimelineController,
         scope: {
-            fullListOfItems: '=items'
+            fullListOfItems: '=items',
+            readOnly: '=readOnly'
+        },
+        link: ($scope : IScope, element : ng.IAugmentedJQuery) => {
+            // Update Breakpoint Cover Label
+            var breakpoints : NodeList;
+            $scope.$watchCollection('sections', () => breakpoints = element[0].querySelectorAll('.timeline__breakpoint'));
+            element.on('scroll', () => {
+                var label = '';
+                for (var i = 0; i < breakpoints.length; i++) {
+                    if((<HTMLElement>breakpoints[i]).offsetTop < element[0].scrollTop + 30) {
+                        label = breakpoints[i].textContent;
+                    } else break;
+                }
+                if(label !== '') {
+                    $scope.label = label;
+                    $scope.$apply();
+                }
+            });
         }
     }
 }
 
 function TimelineController ($scope : IScope) {
-    var currentDate = new Date();
-    var itemsLoaded = 0;
+    var currentDate;
+    var itemsLoaded;
 
-    $scope.sections = [{
-        label: "Today's",
-        date: (<any>Date).today(), //TODO: hmmm... need to create a d.ts for date-utils
-        items: []
-    }];
+    $scope.label = 'Most Recent Posts';
+    $scope.sections = [];
     $scope.scrollPaused = true;
+    $scope.readOnly = false;
 
-    $scope.$watch('fullListOfItems', () => {
+    $scope.$watchCollection('fullListOfItems', () => {
         if ($scope.fullListOfItems.length > 0) {
+            currentDate = Date.today();
+            itemsLoaded = 0;
+            $scope.sections = [{
+                label: "Today's " + Date.today().toFormat("DD MMMM"),
+                date: Date.today(),
+                items: []
+            }];
             $scope.fetchNextItems();
         }
     });
 
     $scope.fetchNextItems = () => {
+        if(typeof currentDate === 'undefined') return;
         $scope.scrollPaused = true;
         var items = itemsLoaded + Math.min($scope.fullListOfItems.length - itemsLoaded, 6);
         for (var i = itemsLoaded; i < items; i++) {
             var item = $scope.fullListOfItems[i];
             item.date = new Date(item.timestamp);
 
-            if ((<any>Date).equalsDay(currentDate, item.date)) { //TODO: hmmm... need to create a d.ts for date-utils
+            if (Date.equalsDay(currentDate, item.date)) {
                 $scope.sections[$scope.sections.length - 1].items.push(item);
             } else {
                 currentDate = item.date;
                 $scope.sections.push({
-                    label: (<any>item.date).toFormat("DDDD DD MMMM"), //TODO: hmmm... need to create a d.ts for date-utils
-                    date: (<any>item.date).clearTime(),//TODO: hmmm... need to create a d.ts for date-utils
+                    label: item.date.toFormat("DDDD DD MMMM"),
+                    date: item.date.clearTime(),
                     items: [item]
                 });
             }
             itemsLoaded++;
         }
         $scope.scrollPaused = $scope.fullListOfItems.length <= itemsLoaded;
+    };
+
+    $scope.removeItem = (id) => {
+        alert("Remove Item: " + id);
     };
 }
 

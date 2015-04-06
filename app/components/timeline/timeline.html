@@ -1,6 +1,6 @@
 <div class="timeline__cover">
     <div class="timeline__breakpoint">
-        <p>Most Recent Posts</p>
+        <p>{{label}}</p>
     </div>
 </div>
 
@@ -13,10 +13,12 @@
         <ul class="timeline__container">
             <li class="timeline__panel" ng-repeat="item in section.items">
                 <div class="media timeline__panel__icon" ng-class="['media--' + item.type, 'icon-' + item.type]"></div>
+
                 <section class="timeline__panel__section section">
                     <picture class="img-wrap-w">
                         <img ng-src="{{item.thumbnail}}" alt="{{item.title}}"/>
                     </picture>
+
                     <div ng-class="'timeline__panel__' + item.type">
                         <h4 class="timeline__panel__heading">{{item.title}}</h4>
                         <!-- TODO: bind date and author-->
@@ -25,6 +27,7 @@
                         <p>{{item.notes}}</p>
                         <a href="#">Read More</a>
                     </div>
+                    <button ng-hide="readOnly" ng-click="removeItem(item.id)">remove</button>
                 </section>
             </li>
         </ul>
