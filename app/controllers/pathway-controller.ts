@@ -17,7 +17,11 @@ interface IScope extends ng.IScope {
     openSettings : () => void
 }
 
-function PathwayController ($scope : IScope, btfModal : any, PointService : PointService, MediaService : MediaService) {
+function PathwayController ($scope : IScope, $rootScope, btfModal : any, PathwayService : PathwayService, PointService : PointService, MediaService : MediaService) {
+    PathwayService.info([1]).then((data) => {
+        $rootScope.title = data.pathways[1].title; //TODO: needs to be fetched from cache
+    });
+
     $scope.openSettings = () => { //TODO: temporary example
         btfModal({
             controller: 'SettingsController',
@@ -37,8 +41,19 @@ function PathwayController ($scope : IScope, btfModal : any, PointService : Poin
     $scope.points = [];
     $scope.addPoint = (mediaId) => {
         PointService.add(1, mediaId, 0).then(() => { //TODO: linkup pathway id and last point id
-            fetchPoints();
-            console.log("YAY ADDED POINT!");
+            //fetchPoints();
+            $scope.points.push({
+                "id": 180,
+                "type": "link",
+                "title": "Example title 180",
+                "thumbnail": "http://placekitten.com/g/300/150",
+                "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
+                "mediaId": 3,
+                "nextPointId": null,
+                "date": new Date(),
+                "timestamp": Date.now(),
+                "previousPointId": 2
+            });
         });
     };
 

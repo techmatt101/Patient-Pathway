@@ -3,12 +3,14 @@ import RoutingUtil = require('./utils/routing-util');
 
 var routes : RoutingUtil.IRoute[] = [
     {
+        title: 'Paths',
         name: 'PathsController',
         path: '/paths',
         controller: 'controllers/paths-controller',
         view: 'views/paths.html'
     },
     {
+        title: 'Pathway',
         name: 'PathwayController',
         path: '/pathway/:id',
         controller: 'controllers/pathway-controller',

@@ -1,5 +1,6 @@
 module RoutingUtil {
     export interface IRoute {
+        title : string
         name : string
         path : string
         controller : string
@@ -14,6 +15,7 @@ module RoutingUtil {
     export function registerRoute (route : IRoute, $routeProvider : ng.route.IRouteProvider) {
         // @ngInject
         var dependencies = ($q, $rootScope) => {
+            $rootScope.title = route.title;
             var deferred = $q.defer();
             require([route.controller], () => $rootScope.$apply(() => deferred.resolve()));
             return deferred.promise;
