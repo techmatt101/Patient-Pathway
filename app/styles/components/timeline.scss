@@ -36,7 +36,7 @@ $offset: 15%;
 
   &__cover {
     text-align: center;
-    background: linear-gradient(to bottom, $body-bg 0%, transparent 100%);
+    background: linear-gradient(to bottom, $body-bg 0%, rgba($body-bg, 0) 100%);
     position: fixed;
     left: 0;
     right: 0;
@@ -53,6 +53,10 @@ $offset: 15%;
     padding: $global-padding-y--small;
     display: inline-block;
     border-radius: $border-radius;
+
+    @media only screen and (max-width: $screen-s) {
+        font-size: 0.7em;
+    }
   }
 
   &__container {
