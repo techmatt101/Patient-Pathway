@@ -4,17 +4,12 @@
 .pathway {
   .search-bar {
     float: left;
+    text-align: left;
   }
 
-.settings  {
-    border: none;
-    color: white;
+  .settings {
     float: right;
-    margin: 0.3em 0.3em 0.7em 0.3em;
-    padding: 0.5em;
-    background: $brand-color--darker;
     font-size: 1em;
-    border-radius: 7px;
   }
 
   .timeline {
@@ -24,7 +19,7 @@
     right: 0;
     bottom: 0;
 
-    @media only screen and (min-width:$screen-xs) and (max-width: $screen-m) {
+    @media only screen and (min-width: $screen-xs) and (max-width: $screen-m) {
       top: 140px;
     }
   }

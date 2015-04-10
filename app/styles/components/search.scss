@@ -10,9 +10,9 @@
     @extend %input-style;
     display: inline-block;
     width: auto;
-    color:$brand-color--dark;
+    color: $brand-color--darker;
 
-    @media only screen and (min-width:$screen-xs) and (max-width: $screen-m) {
+    @media only screen and (min-width: $screen-xs) and (max-width: $screen-m) {
       width: 85%;
     }
   }
@@ -20,29 +20,24 @@
   &__submit {
     margin-left: -10px;
     padding: 9px;
-    border-radius: 0px;
-    padding-bottom: 11px;
-    background:$brand-color--darker
+    border-radius: 0;
+    padding-bottom: 12px;
   }
 
   &__dropdown {
     position: absolute;
     background: $grey--light;
-    border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
     padding: $global-padding;
     z-index: 1000;
     animation: fadeInDown 200ms ease-out;
-    padding: 20px;
     border-radius: 7px;
     min-width: 318px;
-    margin: 0px;
+    margin: 0;
     list-style: none;
-    color:$brand-color--darker;
-   }
+    color: $brand-color--darker;
+  }
 
   &__results {
-    text-align: left;
-    padding: 5px 0px;
+    padding: 5px 0;
   }
 }

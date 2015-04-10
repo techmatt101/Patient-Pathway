@@ -3,7 +3,7 @@
 .btn {
   display: inline-block;
   margin: 0.5em auto;
-  padding: 0.7em 1em;
+  padding: 0.6em 1em;
   max-width: 100%;
   border: 2px solid transparent;
   outline: none;
@@ -27,8 +27,16 @@
     text-decoration: none;
   }
 
-  &:active {
-    border-color: transparent;
+  &--dark {
     background: $brand-color--darker;
+
+    &:focus,
+    &:hover {
+      background: $brand-color--dark;
+    }
+
+    &:focus {
+      border-color: $brand-color--darker;
+    }
   }
 }
