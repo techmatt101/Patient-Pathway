@@ -6,11 +6,26 @@
     float: left;
   }
 
+.settings  {
+    border: none;
+    color: white;
+    float: right;
+    margin: 0.3em 0.3em 0.7em 0.3em;
+    padding: 0.5em;
+    background: $brand-color--darker;
+    font-size: 1em;
+    border-radius: 7px;
+  }
+
   .timeline {
     position: absolute;
     top: 90px;
     left: 0;
     right: 0;
     bottom: 0;
+
+    @media only screen and (min-width:$screen-xs) and (max-width: $screen-m) {
+      top: 140px;
+    }
   }
 }

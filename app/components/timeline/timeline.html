@@ -27,7 +27,7 @@
                         <p>{{item.notes}}</p>
                         <a href="#">Read More</a>
                     </div>
-                    <button ng-hide="readOnly" ng-click="removeItem(item.id)">remove</button>
+                    <div class="timeline__panel__delete" ng-hide="readOnly" ng-click="removeItem(item.id)">X</div>
                 </section>
             </li>
         </ul>

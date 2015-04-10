@@ -138,7 +138,7 @@ $offset: 15%;
       }
 
       &:nth-child(2n+1) {
-        text-align: right;
+        text-align: left;
         margin-left: 50%;
 
         .timeline__panel__icon,
@@ -148,6 +148,7 @@ $offset: 15%;
 
         .timeline__panel__section {
           margin-left: $offset;
+          position:relative;
         }
       }
 
@@ -162,11 +163,25 @@ $offset: 15%;
 
         .timeline__panel__section {
           margin-right: $offset;
+          position: relative;
         }
 
         .timeline__panel__icon {
           margin-right: -1em;
         }
+      }
+    }
+
+    &__delete {
+      cursor: pointer;
+      color: grey;
+      font-weight: bold;
+      position: absolute;
+      top: 5px;
+      right: 8px;
+
+      @media only screen and (min-width:$screen-xs) and (max-width: $screen-m) {
+        right: 22px;
       }
     }
   }
