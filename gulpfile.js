@@ -40,16 +40,37 @@ gulp.task('markup', function() {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('styles', function() {
-    gulp.src('app/styles/main.scss')
+gulp.task('styles', ['high-contrast-theme'], function() {
+    return compileStyles(gulp.src('app/styles/main.scss'))
+        .pipe(gulp.dest('dist/styles'));
+});
+
+gulp.task('high-contrast-theme', function() {
+    return compileStyles(gulp.src('app/styles/main.scss'), 'high-contrast')
+        .pipe($.rename('high-contrast.css'))
+        .pipe(gulp.dest('dist/styles'));
+
+});
+
+function compileStyles(pipe, theme) {
+    var importer;
+    if (theme) {
+        importer = function(url, prev, done) {
+            if (url !== '../../styles/core/variables' && url.indexOf('variables') !== -1) {
+                done({ file: 'themes/' + theme });
+            } else {
+                done(url);
+            }
+        }
+    }
+    return pipe
         .pipe($.if(isDebug, $.sourcemaps.init()))
-        .pipe($.sass())
+        .pipe($.sass({ importer: importer }))
         .pipe($.autoprefixer())
         .pipe($.if(isDebug, $.sourcemaps.write()))
         .pipe($.if(isProduction, $.groupCssMediaQueries())) //no support for source maps
-        .pipe($.if(isProduction, $.cleancss({ advanced: true })))
-        .pipe(gulp.dest('dist/styles'));
-});
+        .pipe($.if(isProduction, $.cleancss({ advanced: true })));
+}
 
 gulp.task('scriptLibs', function() {
     gulp.src([

@@ -8,7 +8,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- //TODO: Place touch icons -->
 
-    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet" id="stylesheet">
 </head>
 <body>
     <!--[if lt IE 9]>
@@ -24,6 +24,10 @@
                 angular.bootstrap(document, ['PatientPathway']);
             });
         });
+
+        function changeTheme(theme) {
+            document.getElementById('stylesheet').href = 'styles/' + theme + '.css';
+        }
     </script>
     <!-- //TODO: change Google Analytics UA-XXXXX-X to be site's ID. -->
     <script>

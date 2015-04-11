@@ -14,7 +14,8 @@
     "install": "bower install && tsd reinstall -s -o",
     "start": "(cd dist && http-server ./ -a localhost -p 8000 -c-1 -o --ssl)"
   },
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "chalk": "~0.5.1",
     "del": "~1.1.1",
@@ -32,6 +33,7 @@
     "gulp-size": "^1.1.0",
     "gulp-sourcemaps": "^1.2.8",
     "gulp-typescript": "^2.4.2",
+    "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.0.2",
     "gulp-util": "^3.0.1"
   }
