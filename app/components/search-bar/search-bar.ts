@@ -6,6 +6,7 @@ interface IScope {
     results : any[]
     submit : () => void
     itemClick : () => void
+    showDropdown : boolean
 }
 
 export function SearchBar () {
@@ -22,6 +23,7 @@ export function SearchBar () {
 }
 
 function SearchBarController ($scope : IScope) {
+    $scope.showDropdown = false;
     $scope.text = '';
     $scope.placeholder = 'Search';
     $scope.results = [];

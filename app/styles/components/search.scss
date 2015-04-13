@@ -2,42 +2,66 @@
 @import '../core/helpers';
 
 .search-bar {
-  display: inline-block;
+  position: relative;
+  display: block;
+  margin: 0.5em 0;
+  width: 100%;
+  max-width: 400px;
+
+  $btn-size: 50px;
 
   &__input {
     @extend %input-style;
     display: inline-block;
-    width: auto;
+    width: calc(100% - #{$btn-size});
+    height: 50px;
     color: $black;
     border-color: $brand-color;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin: 0;
+    margin-right: -2px;
 
-    @media only screen and (min-width: $screen-xs) and (max-width: $screen-m) {
-      width: 85%;
+    @media only screen and (max-width: $screen-m) {
+      display: none;
     }
   }
 
   &__submit {
-    margin-left: -12px;
-    padding: 9px;
-    padding-bottom: 12px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    padding: 0;
+    margin: 0;
+    width: $btn-size + 2px;
+    height: $btn-size;
+
+    @media only screen and (min-width: $screen-m) {
+      float: right;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
   }
 
   &__dropdown {
+    @extend %list-unstyled;
     position: absolute;
-    background: $white--dark;
-    padding: $global-padding;
     z-index: 1000;
-    animation: fadeInDown 200ms ease-out;
+    width: 100%;
+    margin-top: 5px!important; //hmmm...
+
+    background: $white--dark;
+    overflow: hidden;
     border-radius: 7px;
-    min-width: 318px;
-    margin: 0;
-    list-style: none;
     color: $black;
+    animation: fadeInDown 150ms ease-out;
   }
 
   &__results {
-    padding: 5px 0;
+    padding: 16px 20px;
+    display: block;
+
+    &:hover {
+      background: $grey--light;
+      text-decoration: none;
+    }
   }
 }

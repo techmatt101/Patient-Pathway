@@ -1,9 +1,9 @@
 <form ng-submit="search(text)" class="search-bar">
-    <input class="search-bar__input" ng-model="text" type="search" placeholder="{{placeholder}}">
-    <button type="submit" class="btn icon-search search-bar__submit"></button>
-    <ul class="search-bar__dropdown" ng-show="results.length > 0">
-        <li ng-repeat="item in results" class="search-bar__results">
-            <a ng-click="itemClick(item.id)" href="">
+    <input class="search-bar__input" ng-model="text" ng-focus="showDropdown = true" ng-blur="showDropdown = false" type="search" placeholder="{{placeholder}}">
+    <button type="submit" class="btn icon-search search-bar__submit" ng-focus="showDropdown = true" ng-blur="showDropdown = false"></button>
+    <ul class="search-bar__dropdown" ng-show="showDropdown && results.length > 0">
+        <li ng-repeat="item in results">
+            <a ng-click="itemClick(item.id)" href="" class="search-bar__results">
                 <i ng-class="['icon-' + item.type]"></i> {{item.title}}
             </a>
         </li>

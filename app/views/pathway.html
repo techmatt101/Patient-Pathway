@@ -1,8 +1,14 @@
 <main class="pathway">
     <header class="site__header">
-        <search-bar results="mediaResults" placeholder="Search Resources" on-search="searchMedia" on-item-click="addPoint"></search-bar>
-        <a href="#/paths"><img id="logo" src="images/logo.svg" alt="Patient Pathway" height="65"></a>
-        <button ng-click="openSettings()" class="btn settings">Settings</button>
+        <div class="col col-1-4 left">
+            <search-bar results="mediaResults" placeholder="Search Resources" on-search="searchMedia" on-item-click="addPoint"></search-bar>
+        </div>
+        <div class="col col-2-4 center">
+            <a href="#/paths"><img id="logo" src="images/logo.svg" alt="Patient Pathway" height="65"></a>
+        </div>
+        <div class="col col-1-4 right">
+            <button ng-click="openSettings()" class="btn settings">Settings</button>
+        </div>
     </header>
     <timeline class="timeline" items="points" read-only="false"></timeline>
 </main>
