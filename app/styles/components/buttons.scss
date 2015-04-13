@@ -8,7 +8,7 @@
   border: 2px solid transparent;
   outline: none;
 
-  background: $brand-color--dark;
+  background: $brand-color;
   border-radius: $border-radius;
   color: $white;
   cursor: pointer;
@@ -18,25 +18,25 @@
   transition: 200ms background;
 
   &:focus {
-    border-color: $brand-color--dark;
+    border-color: $brand-color;
   }
 
   &:focus,
   &:hover {
-    background: $brand-color--darker;
+    background: $brand-color;
     text-decoration: none;
   }
 
   &--dark {
-    background: $brand-color--darker;
+    background: $brand-color;
 
     &:focus,
     &:hover {
-      background: $brand-color--dark;
+      background: $brand-color;
     }
 
     &:focus {
-      border-color: $brand-color--darker;
+      border-color: $brand-color;
     }
   }
 }

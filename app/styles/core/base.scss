@@ -8,11 +8,11 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: $brand-color--dark;
+    background-color: $brand-color;
     border-radius: 6px;
 
     &:hover {
-      background-color: $brand-color--darker;
+      background-color: $brand-color;
     }
   }
 }
@@ -31,14 +31,13 @@ body {
 
 a {
   color: $link-color;
-  text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    font-weight: bold;
   }
 
   &:focus {
-    outline-color: $brand-color--darker;
+    outline-color: $brand-color;
   }
 }
 
@@ -65,6 +64,8 @@ h3 {
 h4 {
   font-size: 28px;
 }
+
+
 
 main {
   display: block; //IE fix

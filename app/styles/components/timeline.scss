@@ -30,7 +30,7 @@ $offset: 15%;
     position: fixed;
     height: 100%;
     width: 2px;
-    background: $brand-color--darker;
+    background: $brand-color;
     z-index: -1;
   }
 
@@ -48,7 +48,7 @@ $offset: 15%;
   }
 
   &__breakpoint {
-    background-color: $brand-color--darker;
+    background-color: $brand-color;
     color: $white;
     padding: $global-padding-y--small;
     display: inline-block;
@@ -101,19 +101,19 @@ $offset: 15%;
 
     &__video {
       .timeline__panel__heading {
-        color: $media-video-color;
+        color: $black;
       }
     }
 
     &__link {
       .timeline__panel__heading {
-        color: $media-link-color;
+        color: $black;
       }
     }
 
     &__pdf {
       .timeline__panel__heading {
-        color: $media-pdf-color;
+        color: $black;
       }
     }
 
@@ -133,7 +133,7 @@ $offset: 15%;
         height: 2px;
         width: $offset;
         top: 50%;
-        background: $brand-color--darker;
+        background: $brand-color;
         z-index: -1;
       }
 
