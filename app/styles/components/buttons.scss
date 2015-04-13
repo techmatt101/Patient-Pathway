@@ -18,25 +18,36 @@
   transition: 200ms background;
 
   &:focus {
-    border-color: $brand-color;
+    border-color: $brand-color--dark;
   }
 
-  &:focus,
   &:hover {
-    background: $brand-color;
+    background: $brand-color--dark;
     text-decoration: none;
   }
 
   &--dark {
-    background: $brand-color;
-
-    &:focus,
-    &:hover {
-      background: $brand-color;
-    }
+    background: $brand-color--dark;
 
     &:focus {
       border-color: $brand-color;
+    }
+
+    &:hover {
+      background: $brand-color;
+    }
+  }
+
+  &--grey {
+    color: $black;
+    background: $grey--light;
+
+    &:focus {
+      border-color: $grey;
+    }
+
+    &:hover {
+      background: $grey;
     }
   }
 }

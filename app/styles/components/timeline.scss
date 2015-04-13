@@ -44,6 +44,7 @@ $offset: 15%;
 
     .timeline__breakpoint {
       padding: $global-padding-y--small $global-padding-x;
+      background: $brand-color--dark;
     }
   }
 
@@ -101,19 +102,19 @@ $offset: 15%;
 
     &__video {
       .timeline__panel__heading {
-        color: $black;
+        color: $media-video-color;
       }
     }
 
     &__link {
       .timeline__panel__heading {
-        color: $black;
+        color: $media-link-color;
       }
     }
 
     &__pdf {
       .timeline__panel__heading {
-        color: $black;
+        color: $media-pdf-color;
       }
     }
 

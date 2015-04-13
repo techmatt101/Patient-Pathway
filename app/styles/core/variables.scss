@@ -1,10 +1,9 @@
 // Global Variables
 
 // Colors =============================== //
-$brand-color: #68d5d8;
-$brand-color--light: #90e4f1;
-$brand-color--dark: #37848c;
-$brand-color--darker: #18545A;
+$brand-color: #357880;
+$brand-color--light: #68d5d8;
+$brand-color--dark: #18545A;
 
 $media-video-color: #3498db;
 $media-link-color: #e76e70;
@@ -15,14 +14,14 @@ $pastel-pink: #f2dede;
 $pastel-green: #dff0d8;
 
 $white: #fff;
-$white--dark: darken($white, 10%);
+$white--dark: #f5f5f5;
 $black: #333;
 $black--light: lighten($black, 10%);
-$grey: #393939;
-$grey--dark: darken($grey, 7%);
-$grey--light: #f5f5f5;
+$grey: #bbb;
+$grey--dark: #666;
+$grey--light: #ddd;
 
-$body-bg: $brand-color;
+$body-bg: $brand-color--light;
 $text-color: $black;
 
 $link-color: $brand-color--dark;

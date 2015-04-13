@@ -31,9 +31,10 @@ body {
 
 a {
   color: $link-color;
+  text-decoration: none;
 
   &:hover {
-    font-weight: bold;
+    text-decoration: underline;
   }
 
   &:focus {

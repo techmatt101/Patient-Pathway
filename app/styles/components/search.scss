@@ -9,6 +9,7 @@
     display: inline-block;
     width: auto;
     color: $black;
+    border-color: $brand-color;
 
     @media only screen and (min-width: $screen-xs) and (max-width: $screen-m) {
       width: 85%;
@@ -16,15 +17,16 @@
   }
 
   &__submit {
-    margin-left: -10px;
+    margin-left: -12px;
     padding: 9px;
-    border-radius: 0;
     padding-bottom: 12px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
   &__dropdown {
     position: absolute;
-    background: $grey--light;
+    background: $white--dark;
     padding: $global-padding;
     z-index: 1000;
     animation: fadeInDown 200ms ease-out;

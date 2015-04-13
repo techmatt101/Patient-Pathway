@@ -2,7 +2,7 @@
     <header ng-include="'components/navbar/navbar.html'"></header>
     <ul class="pathways">
         <li class="pathway-overview section" ng-repeat="pathway in paths">
-            <h4><a ng-href="{{pathway.url}}">{{pathway.title}}</a></h4>
+            <h4 class="pathway-overview__header"><a ng-href="{{pathway.url}}">{{pathway.title}}</a></h4>
 
             <ul class="pathway-overview__points">
                 <li class="pathway-overview__points__item" ng-repeat="item in pathway.points">
