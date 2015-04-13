@@ -46,10 +46,13 @@
     position: absolute;
     z-index: 1000;
     width: 100%;
+    max-height: 300px;
+    max-height: 50vh;
     margin-top: 5px !important; //hmmm...
 
     background: $white--dark;
     overflow: hidden;
+    overflow-y: scroll;
     border-radius: 7px;
     color: $black;
     animation: fadeInDown 150ms ease-out;
