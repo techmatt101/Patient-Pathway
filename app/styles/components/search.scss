@@ -46,7 +46,7 @@
     position: absolute;
     z-index: 1000;
     width: 100%;
-    margin-top: 5px!important; //hmmm...
+    margin-top: 5px !important; //hmmm...
 
     background: $white--dark;
     overflow: hidden;
@@ -58,6 +58,9 @@
   &__results {
     padding: 16px 20px;
     display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &:hover {
       background: $grey--light;
