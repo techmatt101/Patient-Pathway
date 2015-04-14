@@ -15,10 +15,10 @@
                 <div class="media timeline__panel__icon" ng-class="['media--' + item.type, 'icon-' + item.type]"></div>
 
                 <section class="timeline__panel__section section">
-                    <picture class="img-wrap-w">
-                        <img ng-src="{{item.thumbnail}}" alt="{{item.title}}"/>
-                    </picture>
-
+                    <div class="wrap--ratio-16-9">
+                        <img ng-src="{{item.thumbnail}}" alt="{{item.title}}" ng-click="(item.type === 'video') ? item.showVideo = true : null" ng-hide="item.showVideo" />
+                        <iframe ng-if="item.showVideo" ng-src="{{item.url}}" frameborder="0" allowfullscreen></iframe>
+                    </div>
                     <div ng-class="'timeline__panel__' + item.type">
                         <h4 class="timeline__panel__heading">{{item.title}}</h4>
                         <!-- TODO: bind date and author-->

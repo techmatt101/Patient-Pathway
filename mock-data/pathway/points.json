@@ -7,17 +7,6 @@
     "points": {
       "1": {
         "id": 1,
-        "type": "video",
-        "title": "Example title 1",
-        "thumbnail": "http://placekitten.com/g/300/150",
-        "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
-        "mediaId": 1,
-        "timestamp": 1428266361805,
-        "nextPointId": 2,
-        "previousPointId": null
-      },
-      "2": {
-        "id": 2,
         "type": "link",
         "title": "Example title 2",
         "thumbnail": "http://placekitten.com/g/300/150",
@@ -26,6 +15,18 @@
         "timestamp": 1428266361805,
         "nextPointId": 3,
         "previousPointId": 1
+      },
+      "2": {
+        "id": 2,
+        "type": "video",
+        "title": "Lets Talk About Mental Health",
+        "thumbnail": "http://img.youtube.com/vi/gkZiBnL0h7Y/0.jpg",
+        "notes": "For a while now i've wanted to tackle the subject of Mental Health on this channel. It's something that is very important to me and something I feel incredibly strongly about. However I've always put it off because i'd never worked out how to approach it. In the end I decided just to talk about it in the same way I would to a friend because ultimately that's exactly the way we should be approaching it. Please share your thoughts using our forum (linked below) or in the comment section. ",
+        "mediaId": 1,
+        "timestamp": 1428266361805,
+        "nextPointId": 2,
+        "previousPointId": null,
+        "url": "https://www.youtube.com/embed/gkZiBnL0h7Y"
       },
       "3": {
         "id": 3,

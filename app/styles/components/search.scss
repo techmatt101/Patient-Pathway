@@ -50,7 +50,7 @@
     max-height: 50vh;
     margin-top: 5px !important; //hmmm...
 
-    background: $white--dark;
+    background: $white;
     overflow: hidden;
     overflow-y: scroll;
     border-radius: 7px;
@@ -64,9 +64,10 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
 
     &:hover {
-      background: $grey--light;
+      background: $white--dark;
       text-decoration: none;
     }
   }

@@ -40,12 +40,12 @@ function PathwayController ($scope : IScope, $rootScope, btfModal : any, Pathway
     // Timeline
     $scope.points = [];
     $scope.addPoint = (mediaId) => {
+        console.log(mediaId);
         PointService.add(1, mediaId, 0).then(() => { //TODO: linkup pathway id and last point id
-            //fetchPoints();
-            $scope.points.push({
-                "id": 180,
+            $scope.points.unshift({
+                "id": mediaId,
                 "type": "link",
-                "title": "Example title 180",
+                "title": "Example title " + mediaId,
                 "thumbnail": "http://placekitten.com/g/300/150",
                 "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
                 "mediaId": 3,
@@ -54,6 +54,7 @@ function PathwayController ($scope : IScope, $rootScope, btfModal : any, Pathway
                 "timestamp": Date.now(),
                 "previousPointId": 2
             });
+            (<any>document.querySelector('timeline > ul > li:nth-child(1) > ul > li:last-child')).scrollIntoView();
         });
     };
 

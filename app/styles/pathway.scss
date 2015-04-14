@@ -12,9 +12,5 @@
     left: 0;
     right: 0;
     bottom: 0;
-
-    @media only screen and (min-width: $screen-xs) and (max-width: $screen-m) {
-      top: 140px;
-    }
   }
 }

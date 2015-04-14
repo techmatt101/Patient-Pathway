@@ -24,6 +24,7 @@ export interface IItem {
     thumbnail : string
     date : Date
     timestamp : number
+    url? : string
 }
 
 export function Timeline () {
@@ -54,7 +55,7 @@ export function Timeline () {
     }
 }
 
-function TimelineController ($scope : IScope) {
+function TimelineController ($scope : IScope, $sce) {
     var currentDate;
     var itemsLoaded;
 
@@ -83,6 +84,8 @@ function TimelineController ($scope : IScope) {
         for (var i = itemsLoaded; i < items; i++) {
             var item = $scope.fullListOfItems[i];
             item.date = new Date(item.timestamp);
+
+            item.url = $sce.trustAsResourceUrl(item.url + '?autoplay=1');
 
             if (Date.equalsDay(currentDate, item.date)) {
                 $scope.sections[$scope.sections.length - 1].items.push(item);
