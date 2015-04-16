@@ -1,18 +1,30 @@
 <header ng-include="'components/navbar/navbar.html'"></header>
 
 <section class="section">
-    <h1>Settings</h1>
-    <h2>Update Details</h2>
-    <form class="form" ng-submit="submit()">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" ng-model="name" class="form__input" required>
-
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" ng-model="email" class="form__input" required>
-
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" ng-model="password" class="form__input" required>
-
-        <button type="submit" class="btn">Update</button>
-    </form>
+    <h2>Settings</h2>
+    <ul>
+        <li><a href="#">Change Theme</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Add a Family Member</a></li>
+        <li><a href="#">View my pathways</a></li>
+        <li><a href="#">My Clinicians</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
 </section>
+
+<!-- maybe to go on profile page?
+<h2>Update Details</h2>
+<form class="form" ng-submit="submit()">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" ng-model="name" class="form__input" required>
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" ng-model="email" class="form__input" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" ng-model="password" class="form__input" required>
+
+    <button type="submit" class="btn">Update</button>
+</form>
+-->
