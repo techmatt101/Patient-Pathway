@@ -2,11 +2,14 @@
 @import 'components/timeline';
 
 .pathway {
+  .site__header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
   .timeline {
-    position: absolute;
-    top: 90px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    margin-top: 90px;
   }
 }

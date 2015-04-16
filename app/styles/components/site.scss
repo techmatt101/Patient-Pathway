@@ -5,6 +5,7 @@
     text-align: center;
     padding: $global-padding-y--small $global-padding-x;
     height: 90px;
+    background: $body-bg;
 
     .settings {
       .btn {
@@ -16,5 +17,12 @@
         text-align: left;
       }
     }
+  }
+
+  &__footer {
+    padding: 10px;
+    text-align: center;
+    font-size: 0.7em;
+    opacity: 0.8;
   }
 }
