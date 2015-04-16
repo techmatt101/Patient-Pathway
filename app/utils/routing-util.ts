@@ -5,6 +5,7 @@ module RoutingUtil {
         path : string
         controller : string
         view : string
+        permissionLevel? : number
         resolve? : any
     }
 
@@ -23,6 +24,7 @@ module RoutingUtil {
         var config = {
             templateUrl: route.view,
             controller: route.name,
+            permissionLevel: (route.permissionLevel) ? route.permissionLevel : 0,
             resolve: (route.resolve) ? route.resolve : {}
         };
         config.resolve.dependencies = dependencies;

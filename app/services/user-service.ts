@@ -29,6 +29,24 @@ class UserService {
         this._Promise = $q;
         this._request = BackendConnectionService;
         this._session = $cookieStore;
+
+        this.generateGuestUser();
+    }
+
+    private generateGuestUser() {
+        this.User = {
+            id: 0,
+            name : 'Guest',
+            email: '',
+            permissionLevel: Permissions.GUEST
+        };
+    }
+
+    checkSession() {
+        var data = this._session.get('user');
+        if(data) {
+            this.User = JSON.parse(data);
+        }
     }
 
     getEmail() : string {
@@ -36,18 +54,25 @@ class UserService {
     }
 
     login (email : string, password : string) {
-        var self = this;
+        if(email.indexOf('error') !== -1) return this._Promise.reject(); //TODO: for demo purposes only!
         return this._request.get('user/login', {
             email: email,
             password: password
         }).then((data) => {
-            self._session.put('email', data.email);
-            self.User = data;
+            this._session.put('email', data.email);
+            this._session.put('user', JSON.stringify(data));
+
+            this.User.name = data.name; //TODO: move to a mapper!!
+            this.User.email = data.email;
+            this.User.permissionLevel = data.permissionLevel;
+
             return data;
         });
     }
 
     logout () {
+        this._session.put('user', null);
+        this.generateGuestUser();
         return this._request.get('user/logout');
     }
 
