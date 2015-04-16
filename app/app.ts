@@ -10,18 +10,22 @@ var app = angular.module('PatientPathway', [
     'PatientPathway.User',
     'PatientPathway.Pathway'
 ])
-    .run(($window) => {
+    .run(($window, $rootScope) => {
         $window.$ = angular.element;
+        $rootScope.changeTheme = () => {
+            (<any>document.getElementById('stylesheet')).href = 'styles/high-contrast.css';
+        };
     })
-    .run(($rootScope, cfpLoadingBar) => {
+    .run(($rootScope : ng.IRootScopeService, cfpLoadingBar) => {
         var timeout;
-        $rootScope.$on('$routeChangeStart', function() {
+        $rootScope.$on('$routeChangeStart', () => {
+            clearTimeout(timeout);
             timeout = setTimeout(() => {
                 cfpLoadingBar.start();
                 cfpLoadingBar.inc();
             }, 100);
         });
-        $rootScope.$on('$routeChangeSuccess', function() {
+        $rootScope.$on('$routeChangeSuccess', () => {
             clearTimeout(timeout);
             cfpLoadingBar.complete();
         });
@@ -35,14 +39,14 @@ var app = angular.module('PatientPathway', [
     })
     .config(($routeProvider : ng.route.IRouteProvider, cfpLoadingBarProvider) => {
         cfpLoadingBarProvider.includeSpinner = false;
-        $routeProvider.when('/', {redirectTo: '/login'});
+        $routeProvider.when('/', { redirectTo: '/login' });
         $routeProvider.when('/404', {
             templateUrl: 'views/404.html'
         });
         $routeProvider.when('/style-guide', {
             templateUrl: 'views/style-guide.html'
         });
-        $routeProvider.otherwise({redirectTo: '/404'});
+        $routeProvider.otherwise({ redirectTo: '/404' });
     });
 
 export = app;

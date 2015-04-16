@@ -41,34 +41,8 @@
     }
   }
 
-  &__dropdown {
-    @extend %list-unstyled;
-    position: absolute;
-    z-index: 1000;
-    width: 100%;
-    max-height: 300px;
-    max-height: 50vh;
-    margin-top: 5px !important; //hmmm...
-
-    background: $white;
-    overflow: hidden;
+  .dropdown {
     overflow-y: scroll;
-    border-radius: 7px;
-    color: $black;
-    animation: fadeInDown 150ms ease-out;
-  }
-
-  &__results {
-    padding: 16px 20px;
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: pointer;
-
-    &:hover {
-      background: $white--dark;
-      text-decoration: none;
-    }
+    width: 100%;
   }
 }

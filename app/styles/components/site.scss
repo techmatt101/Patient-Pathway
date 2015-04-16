@@ -3,7 +3,18 @@
 .site {
   &__header {
     text-align: center;
-    padding: $global-padding--small;
+    padding: $global-padding-y--small $global-padding-x;
     height: 90px;
+
+    .settings {
+      .btn {
+        font-size: 1em;
+      }
+
+      .dropdown {
+        right: $global-padding-x--small;
+        text-align: left;
+      }
+    }
   }
 }

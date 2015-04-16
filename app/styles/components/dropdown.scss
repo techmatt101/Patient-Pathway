@@ -1,0 +1,32 @@
+@import '../core/variables';
+@import '../core/helpers';
+
+.dropdown {
+  @extend %list-unstyled;
+  position: absolute;
+  z-index: 1000;
+  max-height: 300px;
+  max-height: 50vh;
+  margin-top: 5px !important; //hmmm...
+
+  background: $white;
+  overflow: hidden;
+  border-radius: 7px;
+  color: $black;
+  animation: fadeInDown 150ms ease-out;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+
+  &__item {
+    padding: 16px 20px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+    &:hover {
+      background: $white--dark;
+      text-decoration: none;
+    }
+  }
+}

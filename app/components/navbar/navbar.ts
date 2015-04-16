@@ -1,7 +1,11 @@
 import app = require('app');
 
+interface IScope {
+    showMenu : boolean;
+}
 
-function Navbar() {
+function Navbar($scope : IScope) {
+    $scope.showMenu = false;
 }
 
 app.controller('Navbar', Navbar);
