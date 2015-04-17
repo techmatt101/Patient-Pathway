@@ -71,6 +71,7 @@
         "mediaId": 3,
         "timestamp": 1428266361805,
         "nextPointId": null,
+        "url": "https://www.youtube.com/embed/p2H5YVfZVFw",
         "previousPointId": 2
       },
       "7": {
@@ -104,6 +105,7 @@
         "mediaId": 1,
         "nextPointId": 2,
         "timestamp": 1428066361805,
+        "url": "https://www.youtube.com/embed/p2H5YVfZVFw",
         "previousPointId": null
       },
       "10": {
@@ -115,6 +117,7 @@
         "mediaId": 1,
         "nextPointId": 2,
         "timestamp": 1428066361805,
+        "url": "https://www.youtube.com/embed/p2H5YVfZVFw",
         "previousPointId": null
       },
       "12": {
@@ -148,6 +151,7 @@
         "mediaId": 3,
         "nextPointId": null,
         "timestamp": 1425066361805,
+        "url": "https://www.youtube.com/embed/p2H5YVfZVFw",
         "previousPointId": 2
       },
       "15": {
@@ -170,6 +174,7 @@
         "mediaId": 3,
         "nextPointId": null,
         "timestamp": 1425066361805,
+        "url": "https://www.youtube.com/embed/p2H5YVfZVFw",
         "previousPointId": 2
       },
       "17": {

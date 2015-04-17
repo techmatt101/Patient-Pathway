@@ -15,10 +15,11 @@
                 <div class="media timeline__panel__icon" ng-class="['media--' + item.type, 'icon-' + item.type]"></div>
 
                 <section class="timeline__panel__section section">
-
                     <div class="wrap--ratio-16-9">
-                        <img class="timeline__panel__static" ng-src="{{item.thumbnail}}" alt="{{item.title}}" ng-click="(item.type === 'video') ? item.showVideo = true : null" ng-hide="item.showVideo" />
-                        <div class="icon-play timeline__panel__play" ng-click="(item.type === 'video') ? item.showVideo = true : null" ng-hide="item.showVideo"></div>
+                        <div class="timeline__panel__play" ng-click="(item.type === 'video') ? item.showVideo = true : null" ng-hide="item.showVideo" ng-if="item.type == 'video'">
+                            <i class="icon-play"></i>
+                        </div>
+                        <img class="timeline__panel__static" ng-src="{{item.thumbnail}}" alt="{{item.title}}" ng-hide="item.showVideo" />
                         <iframe ng-if="item.showVideo" ng-src="{{item.url}}" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <div ng-class="'timeline__panel__' + item.type">
@@ -26,8 +27,7 @@
                         <!-- TODO: bind date and author-->
                         <p>Posted on 06/05/2015 by Grace</p>
                         <p>{{item.notes}}</p>
-                        <a href="#">Read More</a>
-                        <button class="btn timeline__panel__delete" ng-hide="readOnly" ng-click="removeItem(item.id)">Remove</button>
+                        <button class="btn btn--grey timeline__panel__delete" ng-if="sections[0] == section" ng-hide="readOnly" ng-click="removeItem(item.id)">Remove</button>
                     </div>
                 </section>
             </li>

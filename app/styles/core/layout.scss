@@ -75,7 +75,7 @@
   &--ratio-16-9 {
     position: relative;
 
-    * {
+    > * {
       position: absolute;
       top: 0;
       height: 100%;

@@ -28,12 +28,14 @@ $offset: 15%;
     position: fixed;
     height: 100%;
     width: 2px;
-    background: $brand-color;
+    left: 0;
+    right: 0;
+    margin: auto;
     z-index: -1;
+    background: $brand-color;
   }
 
   &__cover {
-    text-align: center;
     background: linear-gradient(to bottom, $body-bg 0%, rgba($body-bg, 0) 100%);
     position: fixed;
     left: 0;
@@ -54,7 +56,7 @@ $offset: 15%;
     border-radius: $border-radius;
 
     @media only screen and (max-width: $screen-s) {
-        font-size: 0.7em;
+      font-size: 0.7em;
     }
   }
 
@@ -68,12 +70,12 @@ $offset: 15%;
     list-style: none outside none;
     position: relative;
     margin-top: 70px;
-	text-align: left;
+    text-align: left;
 
     &__section {
       min-height: $height;
       animation: fadeInUp 1s;
-      display:inline-block;
+      display: inline-block;
       p {
         font-size: 0.8em;
       }
@@ -103,19 +105,41 @@ $offset: 15%;
     }
 
     &__play {
+      $size: 90px;
+
       position: absolute;
-      top: 35%;
-      left: 44%;
-      z-index: 500;
+      top: 0;
+      left: 0;
+      margin: auto;
+      height: 100%;
+      width: 100%;
       color: $media-video-color;
-      font-size: 74px;
-      cursor:pointer;
-      height: auto;
-      width: auto;
+      text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      font-size: $size;
+      cursor: pointer;
+      z-index: 100;
+      transition: color 100ms;
+
+      i {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: $size;
+        width: $size;
+      }
+
+      &:hover {
+        color: lighten($media-video-color, 5%);
+      }
     }
 
-    &__play:hover {
-      color:$brand-color--dark;
+    &__delete {
+      float: right;
+      margin: 0;
+      font-size: 0.7em;
     }
 
     &__video {
@@ -151,7 +175,9 @@ $offset: 15%;
         position: absolute;
         height: 2px;
         width: $offset;
-        top: 50%;
+        top: 0;
+        bottom: 0;
+        margin: auto;
         background: $brand-color;
         z-index: -1;
       }
@@ -167,7 +193,7 @@ $offset: 15%;
 
         .timeline__panel__section {
           margin-left: $offset;
-          position:relative;
+          position: relative;
         }
       }
 
@@ -190,10 +216,5 @@ $offset: 15%;
         }
       }
     }
-
-    &__delete {
-      float:right;
-      margin:0px;
-      }
-    }
   }
+}
