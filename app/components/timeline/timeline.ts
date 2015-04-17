@@ -39,10 +39,10 @@ export function Timeline () {
             // Update Breakpoint Cover Label
             var breakpoints : NodeList;
             $scope.$watchCollection('sections', () => breakpoints = element[0].querySelectorAll('.timeline__breakpoint'));
-            element.on('scroll', () => {
+            window.addEventListener('scroll', () => {
                 var label = $scope.label;
                 for (var i = 0; i < breakpoints.length; i++) {
-                    if((<HTMLElement>breakpoints[i]).offsetTop < element[0].scrollTop + 30) {
+                    if((<HTMLElement>breakpoints[i]).offsetTop < window.pageYOffset + 30) {
                         label = breakpoints[i].textContent;
                     } else break;
                 }
