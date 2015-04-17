@@ -5,7 +5,13 @@ import Navbar = require('../components/navbar/navbar');
 var imported = [UserService, PathwayService, Navbar]; //TODO: HACK!!!
 
 interface IScope extends ng.IScope {
-    paths : IPath[]
+    users : IUser[]
+}
+
+interface IUser {
+    id : number
+    name : string
+    pathways : IPath[]
 }
 
 interface IPath {
@@ -16,18 +22,17 @@ interface IPath {
     url : string
 }
 
-interface IUser {
-    id : number
-    name : string
-}
-
 function PathsController ($scope : IScope, PathwayService: PathwayService) {
-    $scope.paths = [];
+    $scope.users = [];
     PathwayService.list(1).then((data) => {
-        $scope.paths = data.map((x : any) => {
-            x.url = '#/pathway/' + x.id;
-            return x;
+        $scope.users = data;
+        $scope.users.forEach((user) => {
+            user.pathways = user.pathways.map((x : any) => {
+                x.url = '#/pathway/' + x.id;
+                return x;
+            });
         });
+        console.log($scope.users);
     });
 }
 

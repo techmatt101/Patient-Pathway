@@ -6,115 +6,110 @@
     "users": {
       "1": {
         "id": 1,
+        "name": "Peter Lloyd",
         "pathways": {
           "1": {
             "id": 1,
-            "title": "Peter Lloyd's Pathway",
+            "title": "Drug Addiction",
             "creator": {
               "id": 1,
               "email": "foo@bar.com"
             },
-            "points": [
-              {
-                "title": "Broken Leg",
-                "dateStarted": "08/03/2015"
-              },
-              {
-                "title": "Broken Arm",
-                "dateStarted": "06/03/2015"
-              },
-              {
-                "title": "Broken Hand",
-                "dataStarted": "05/03/2015"
-              }
-            ],
             "dateModified": 1427226102
           },
           "2": {
             "id": 2,
-            "title": "Greg Ottley's Pathway",
+            "title": "Alcohol misuse",
             "creator": {
               "id": 1,
               "email": "foo@bar.com"
             },
-            "points": [
-              {
-                "title": "Broken Hand",
-                "dateStarted": "08/03/2015"
-              },
-              {
-                "title": "Broken Arm",
-                "dateStarted": "06/03/2015"
-              },
-              {
-                "title": "Broken Leg",
-                "dateStarted": "05/03/2015"
-              }
-            ],
-            "dateModified": 1427226102
-          },
-          "3": {
-            "id": 2,
-            "title": "Matt Kemp's Pathway",
-            "creator": {
-              "id": 1,
-              "email": "foo@bar.com"
-            },
-            "points": [
-              {
-                "title": "Broken Knee",
-                "dateStarted": "08/03/2015"
-              },
-              {
-                "title": "Broken Foot",
-                "dateStarted": "07/03/2015"
-              },
-              {
-                "title": "Broken Toe",
-                "dateStarted": "02/03/2015"
-              }
-            ],
-            "dateModified": 1427226102
-          },
-          "4": {
-            "id": 2,
-            "title": "Fran Haine's Pathway",
-            "creator": {
-              "id": 1,
-              "email": "foo@bar.com"
-            },
-            "points": [
-              {
-                "title": "Broken Back",
-                "dateStarted": "08/03/2015"
-              },
-              {
-                "title": "Broken Neck",
-                "dateStarted": "06/03/2015"
-              },
-              {
-                "title": "Broken Ear",
-                "dateStarted": "02/03/2015"
-              }
-            ],
             "dateModified": 1427226102
           }
         }
       },
       "2": {
         "id": 2,
-        "pathways": [
-        ]
+        "name": "Matt Kemp",
+        "pathways": {
+          "1": {
+            "id": 1,
+            "title": "Panic disorder",
+            "creator": {
+              "id": 1,
+              "email": "foo@bar.com"
+            },
+            "dateModified": 1427226102
+          },
+          "2": {
+            "id": 2,
+            "title": "Compulsive hoarding",
+            "creator": {
+              "id": 1,
+              "email": "foo@bar.com"
+            },
+            "dateModified": 1427226102
+          },
+          "3": {
+            "id": 3,
+            "title": "Obsessive compulsive disorder",
+            "creator": {
+              "id": 1,
+              "email": "foo@bar.com"
+            },
+            "dateModified": 1427226102
+          }
+        }
       },
       "3": {
         "id": 3,
+        "name": "Greg Ottley",
         "pathways": {
-          "3": {
-            "id": 3,
-            "title": "Example Pathway #3",
+          "1": {
+            "id": 1,
+            "title": "Depression",
             "creator": {
-              "id": 3,
-              "email": "hoge@fuga.com"
+              "id": 1,
+              "email": "foo@bar.com"
+            },
+            "dateModified": 1427226102
+          }
+        }
+      },
+      "4": {
+        "id": 4,
+        "name": "David Lethaby",
+        "pathways": {
+          "1": {
+            "id": 1,
+            "title": "Anxiety",
+            "creator": {
+              "id": 1,
+              "email": "foo@bar.com"
+            },
+            "dateModified": 1427226102
+          },
+          "2": {
+            "id": 2,
+            "title": "Schizophrenia",
+            "creator": {
+              "id": 1,
+              "email": "foo@bar.com"
+            },
+            "dateModified": 1427226102
+          }
+        }
+      },
+      "5": {
+        "id": 5,
+        "name": "Fran Haine",
+        "pathways": {
+          "1": {
+            "id": 1,
+            "title": "Spider Phobia",
+            "creator": {
+              "id": 1,
+              "email": "foo@bar.com"
             },
             "dateModified": 1427226102
           }

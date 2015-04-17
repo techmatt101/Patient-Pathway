@@ -42,6 +42,8 @@
 
   &__points {
     @extend %list-unstyled;
+    max-height: 260px;
+    overflow-y: scroll;
 
     &__item {
       background: $white;

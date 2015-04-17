@@ -1,13 +1,13 @@
 <main class="paths">
     <header ng-include="'components/navbar/navbar.html'"></header>
     <ul class="pathways">
-        <li class="pathway-overview section" ng-repeat="pathway in paths">
-            <h4 class="pathway-overview__header"><a ng-href="{{pathway.url}}">{{pathway.title}}</a></h4>
+        <li class="pathway-overview section" ng-repeat="user in users">
+            <h4 class="pathway-overview__header">{{user.name}}'s Pathway</h4>
 
             <ul class="pathway-overview__points">
-                <li class="pathway-overview__points__item" ng-repeat="item in pathway.points">
-                    <h5><a href="#">{{item.title}}</a></h5>
-                    <p>Date Started: {{item.dateStarted}}</p>
+                <li class="pathway-overview__points__item" ng-repeat="path in user.pathways">
+                    <h5><a href="{{path.url}}">{{path.title}}</a></h5>
+                    <p>Date Modified: {{path.dateModified}}</p>
                 </li>
             </ul>
         </li>

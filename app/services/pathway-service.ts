@@ -31,8 +31,13 @@ class PathwayService {
     list (userId : number) {
         return this._request.get('user/pathways', {
             id: [userId]
-        }).then(function(data : any) {
-            return Helpers.tableToArray(data.users['1'].pathways);
+        }).then((data : any) => {
+            var users = Helpers.tableToArray(data.users);
+            for (var i = 0; i < users.length; i++) {
+                var user = users[i];
+                user.pathways = Helpers.tableToArray(user.pathways);
+            }
+            return users;
         });
     }
 
@@ -49,6 +54,10 @@ class PathwayService {
             description: description,
             themeId: themeId
         });
+    }
+
+    notifications () {
+        return this._request.getFromMockData('pathway/notifications');
     }
 }
 
