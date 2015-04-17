@@ -73,7 +73,7 @@ $offset: 15%;
     &__section {
       min-height: $height;
       animation: fadeInUp 1s;
-
+      display:inline-block;
       p {
         font-size: 0.8em;
       }
@@ -173,16 +173,8 @@ $offset: 15%;
     }
 
     &__delete {
-      cursor: pointer;
-      color: grey;
-      font-weight: bold;
-      position: absolute;
-      top: 5px;
-      right: 8px;
-
-      @media only screen and (min-width:$screen-xs) and (max-width: $screen-m) {
-        right: 22px;
+      float:right;
+      margin:0px;
       }
     }
   }
-}

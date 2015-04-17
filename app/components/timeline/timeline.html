@@ -23,11 +23,10 @@
                         <h4 class="timeline__panel__heading">{{item.title}}</h4>
                         <!-- TODO: bind date and author-->
                         <p>Posted on 06/05/2015 by Grace</p>
-
                         <p>{{item.notes}}</p>
                         <a href="#">Read More</a>
+                        <button class="btn timeline__panel__delete" ng-hide="readOnly" ng-click="removeItem(item.id)">Remove</button>
                     </div>
-                    <div class="timeline__panel__delete" ng-hide="readOnly" ng-click="removeItem(item.id)">X</div>
                 </section>
             </li>
         </ul>
