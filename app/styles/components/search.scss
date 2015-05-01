@@ -21,7 +21,7 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     margin: 0;
-    margin-right: -2px;
+    margin-right: -10px;
 
     @media only screen and (max-width: $screen-m) {
       display: none;
@@ -31,7 +31,7 @@
   &__submit {
     padding: 0;
     margin: 0;
-    width: $btn-size + 2px;
+    width: $btn-size + 4px;
     height: $btn-size;
 
     @media only screen and (min-width: $screen-m) {
