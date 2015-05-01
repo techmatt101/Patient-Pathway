@@ -32,7 +32,6 @@ function PathsController ($scope : IScope, PathwayService: PathwayService) {
                 return x;
             });
         });
-        console.log($scope.users);
     });
 }
 
