@@ -12,9 +12,6 @@ var app = angular.module('PatientPathway', [
 ])
     .run(($window, $rootScope) => {
         $window.$ = angular.element;
-        $rootScope.changeTheme = () => {
-            (<any>document.getElementById('stylesheet')).href = 'styles/high-contrast.css';
-        };
     })
     .run(($rootScope : ng.IRootScopeService, cfpLoadingBar) => {
         var timeout;
@@ -48,5 +45,11 @@ var app = angular.module('PatientPathway', [
         });
         $routeProvider.otherwise({ redirectTo: '/404' });
     });
+
+require(['services/theme-service'], () => {
+    app.run(($rootScope, ThemeService) => {
+        $rootScope.changeTheme = () => ThemeService.toggleTheme('high-contrast');
+    })
+});
 
 export = app;
