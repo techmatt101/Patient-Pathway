@@ -40,7 +40,7 @@ var PatientPathwayUser = angular.module('PatientPathway.User', [])
         UserService.checkSession();
         $rootScope.User = UserService.User;
         $rootScope.$on('$routeChangeStart', (event, next : any) => {
-            if (typeof next.$$route.permissionLevel !== 'undefined' && next.$$route.permissionLevel > UserService.User.permissionLevel) {
+            if (typeof next.$$route !== 'undefined' && next.$$route.permissionLevel > UserService.User.permissionLevel) {
                 $location.path('/login');
             }
         });

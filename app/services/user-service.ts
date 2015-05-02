@@ -1,3 +1,4 @@
+declare var window : any;
 import app = require('app');
 import BackendConnectionService = require('./backend-connection-service');
 var imported = [BackendConnectionService]; //TODO: HACK!!!
@@ -9,6 +10,8 @@ enum Permissions {
     CLINICIAN,
     TEAM_LEADER
 }
+
+window.UserPermissions = Permissions;  //TODO: HACK?
 
 interface IUserDetails {
     id : number

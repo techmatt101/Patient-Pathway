@@ -1,12 +1,13 @@
-<header class="site__header" ng-controller="Navbar">
+<header class="site__header">
     <div class="col col-1-4 left">
+        <div ng-transclude></div>
     </div>
     <div class="col col-2-4 center">
         <a href="#/paths"><img id="logo" src="images/logo.svg" alt="Patient Pathway" height="65"></a>
     </div>
     <div class="col col-1-4 right actions">
-        <button ng-focus="showUserMenu = true" ng-blur="showUserMenu = false" class="btn">{{ User.name }}</button>
-        <ul class="dropdown" ng-show="showUserMenu">
+        <button ng-show="User.permissionLevel >= UserPermissions.PATIENT" ng-focus="showUserMenu = true" ng-blur="showUserMenu = false" class="btn">{{ User.name }}</button>
+        <ul class="dropdown ng-hide" ng-show="showUserMenu">
             <li><a href="#/paths" class="dropdown__item">View pathways</a></li>
             <li><a href="#/clinicians" class="dropdown__item">Clinicians</a></li>
             <li><a href="" ng-click="changeTheme()" class="dropdown__item">High Contrast Theme</a></li>
@@ -14,8 +15,8 @@
             <li><a href="#/logout" class="dropdown__item">Logout</a></li>
             <li><a href="#/help" class="dropdown__item">Help</a></li>
         </ul>
-        <button ng-focus="showNotificationsDropdown = true" ng-blur="showNotificationsDropdown = false" class="btn icon-bell"></button>
-        <ul class="dropdown notifications" ng-show="showNotificationsDropdown">
+        <button ng-show="User.permissionLevel >= UserPermissions.PATIENT" ng-focus="showNotificationsDropdown = true" ng-blur="showNotificationsDropdown = false" class="btn icon-bell"></button>
+        <ul class="dropdown notifications ng-hide" ng-show="showNotificationsDropdown">
             <li class="dropdown__item" ng-repeat="notification in notifications">
                 <p>{{notification.message}}</p>
                 <p class="small right">{{notification.date}}</p>

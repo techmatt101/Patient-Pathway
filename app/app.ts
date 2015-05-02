@@ -10,7 +10,7 @@ var app = angular.module('PatientPathway', [
     'PatientPathway.User',
     'PatientPathway.Pathway'
 ])
-    .run(($window, $rootScope) => {
+    .run(($window) => {
         $window.$ = angular.element;
     })
     .run(($rootScope : ng.IRootScopeService, cfpLoadingBar) => {

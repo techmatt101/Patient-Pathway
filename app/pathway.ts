@@ -1,12 +1,8 @@
 /// <reference path="../typings/tsd.d.ts" />
+declare var UserPermissions;
 import RoutingUtil = require('./utils/routing-util');
-
-enum Permissions { //TODO: hmmm...
-    GUEST,
-    PATIENT,
-    CLINICIAN,
-    TEAM_LEADER
-}
+import UserService = require('./services/user-service');
+var imported = [UserService]; //TODO: HACK!!!
 
 var routes : RoutingUtil.IRoute[] = [
     {
@@ -15,7 +11,7 @@ var routes : RoutingUtil.IRoute[] = [
         path: '/paths',
         controller: 'controllers/paths-controller',
         view: 'views/paths.html',
-        permissionLevel: Permissions.PATIENT
+        permissionLevel: UserPermissions.PATIENT
     },
     {
         title: 'Pathway',
@@ -23,7 +19,7 @@ var routes : RoutingUtil.IRoute[] = [
         path: '/pathway/:id',
         controller: 'controllers/pathway-controller',
         view: 'views/pathway.html',
-        permissionLevel: Permissions.PATIENT
+        permissionLevel: UserPermissions.PATIENT
     }
 ];
 
