@@ -49,6 +49,13 @@ a {
   text-decoration: underline;
 }
 
+footer a {
+  text-decoration: underline;
+  color: white;
+}
+
+
+
 &__logo {
   height: 100%;
   background: url("../images/logo-emblem-white.svg") no-repeat center !important;
@@ -57,6 +64,6 @@ a {
   background-color: none !important;
 
   @media only screen and (min-width: $screen-s) {
-    background-image: url("../images/logo_white.svg");
+    background-image: url("../images/logo_white.svg") !important;
   }
 }
