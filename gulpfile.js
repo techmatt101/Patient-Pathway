@@ -26,10 +26,11 @@ gulp.task('size', function() {
 });
 
 gulp.task('watch', ['build'], function() {
+    gulp.watch('app/**/*.ts', ['scripts']);
     gulp.watch('app/styles/**/*.scss', ['styles']);
     gulp.watch('app/**/*.html', ['markup']);
     gulp.watch('mock-data/**/*.json', ['other']);
-    console.log(chalk.blue('\nNow watching: styles, markup and mock data'));
+    console.log(chalk.blue('\nNow watching: styles, markup, scripts and mock data'));
 });
 
 //===================================================//

@@ -33,7 +33,7 @@ export function Timeline () {
         controller: TimelineController,
         scope: {
             fullListOfItems: '=items',
-            readOnly: '=readOnly'
+            readOnly: '=?readOnly'
         },
         link: ($scope : IScope, element : ng.IAugmentedJQuery) => {
             // Update Breakpoint Cover Label

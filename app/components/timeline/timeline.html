@@ -15,7 +15,7 @@
                 <div class="media timeline__panel__icon" ng-class="['media--' + item.type, 'icon-' + item.type]"></div>
 
                 <section class="timeline__panel__section section">
-                    <div class="wrap--ratio-16-9">
+                    <div class="wrap--ratio-16-9" ng-if="item.thumbnail">
                         <div class="timeline__panel__play" ng-click="(item.type === 'video') ? item.showVideo = true : null" ng-hide="item.showVideo" ng-if="item.type == 'video'">
                             <i class="icon-play"></i>
                         </div>

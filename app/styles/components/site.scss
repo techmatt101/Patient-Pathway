@@ -3,24 +3,46 @@
 .site {
   &__header {
     text-align: center;
-    padding: $global-padding-y--small $global-padding-x;
+    padding: $global-padding-y--small $global-padding-y--small;
     height: 90px;
     background: $body-bg;
 
-    .actions {
-      .btn {
+    @media only screen and (min-width: $screen-s) {
+      padding: $global-padding-y--small $global-padding-x;
+    }
+
+    .btn {
+      font-size: 0.8em;
+      height: 50px;
+      vertical-align: top;
+
+      @media only screen and (min-width: $screen-s) {
         font-size: 1em;
-        height: 52px;
-        vertical-align: top;
       }
+    }
+
+    &__logo {
+      height: 65px;
+      background: url("../images/logo-emblem.svg") no-repeat center;
+      background-size: 100% 100%;
+      font-size: 0;
+
+      @media only screen and (min-width: $screen-s) {
+        background-image: url("../images/logo.svg");
+      }
+    }
+
+    &__action {
+      display: inline-block;
+      position: relative;
 
       .dropdown {
         text-align: left;
+        right: 0;
       }
 
       .notifications {
-        right: $global-padding-x--small;
-        max-width: 20vw;
+        width: 300px;
 
         .dropdown__item {
           white-space: normal;

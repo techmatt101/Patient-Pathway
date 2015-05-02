@@ -26,7 +26,7 @@ function PathsController ($scope : IScope, PathwayService: PathwayService) {
     $scope.users = [];
     PathwayService.list(1).then((data) => {
         $scope.users = data;
-        $scope.users.forEach((user) => {
+        $scope.users.forEach((user : any) => {
             user.pathways = user.pathways.map((x : any) => {
                 x.url = '#/pathway/' + x.id;
                 return x;

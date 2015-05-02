@@ -26,7 +26,6 @@ function SearchBarController ($scope : IScope) {
     $scope.showDropdown = false;
     $scope.text = '';
     $scope.placeholder = 'Search';
-    $scope.results = [];
 }
 
 app.directive('searchBar', SearchBar);
