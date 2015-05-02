@@ -37,7 +37,10 @@ gulp.task('watch', ['build'], function() {
 
 gulp.task('markup', function() {
     return gulp.src('app/**/*.html')
-        .pipe($.if(isProduction, $.minifyHtml()))
+        .pipe($.if(isProduction, $.minifyHtml({
+            empty: true,
+            loose: true
+        })))
         .pipe(gulp.dest('dist'));
 });
 
