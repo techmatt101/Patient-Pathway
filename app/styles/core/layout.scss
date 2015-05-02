@@ -8,9 +8,21 @@
   border-bottom: 3px solid rgba(0, 0, 0, 0.1);
 }
 
+.compact {
+  @media only screen and (min-width: $screen-m) {
+    display: none;
+  }
+}
+
+.expanded {
+  @media only screen and (max-width: $screen-m) {
+    display: none;
+  }
+}
+
 .col {
   float: left;
-  min-height: 1px;
+  height: 100%;
 
   // Two
   &-1-2 {

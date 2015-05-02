@@ -55,6 +55,10 @@ $offset: 15%;
     display: inline-block;
     border-radius: $border-radius;
 
+    @media only screen and (max-width: $screen-m) {
+      font-size: 0.8em;
+    }
+
     @media only screen and (max-width: $screen-s) {
       font-size: 0.7em;
     }

@@ -10,6 +10,10 @@
   }
 
   .timeline {
-    margin-top: 90px;
+    margin-top: 70px;
+
+    @media only screen and (min-width: $screen-s) {
+      margin-top: 90px;
+    }
   }
 }

@@ -4,25 +4,28 @@
   &__header {
     text-align: center;
     padding: $global-padding-y--small $global-padding-y--small;
-    height: 90px;
+    height: 70px;
     background: $body-bg;
 
     @media only screen and (min-width: $screen-s) {
+      height: 90px;
       padding: $global-padding-y--small $global-padding-x;
     }
 
     .btn {
-      font-size: 0.8em;
+      font-size: 1em;
       height: 50px;
       vertical-align: top;
 
-      @media only screen and (min-width: $screen-s) {
-        font-size: 1em;
+      @media only screen and (max-width: $screen-s) {
+        font-size: 0.7em;
+        height: 40px;
+        padding: 0.4em 0.8em;
       }
     }
 
     &__logo {
-      height: 65px;
+      height: 100%;
       background: url("../images/logo-emblem.svg") no-repeat center;
       background-size: 100% 100%;
       font-size: 0;
@@ -34,18 +37,29 @@
 
     &__action {
       display: inline-block;
-      position: relative;
 
       .dropdown {
-        text-align: left;
         right: 0;
+        left: 0;
+        margin: 0 $global-margin-x;
+        text-align: left;
       }
 
-      .notifications {
-        width: 300px;
+      .notifications .dropdown__item {
+        white-space: normal;
+      }
 
-        .dropdown__item {
-          white-space: normal;
+      @media only screen and (min-width: $screen-s) {
+        position: relative;
+
+        .dropdown {
+          right: 0;
+          left: auto;
+          margin: 0;
+        }
+
+        .notifications {
+          width: 300px;
         }
       }
     }

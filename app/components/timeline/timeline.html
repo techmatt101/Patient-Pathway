@@ -12,12 +12,12 @@
 
         <ul class="timeline__container">
             <li class="timeline__panel" ng-repeat="item in section.items">
-                <div class="media timeline__panel__icon" ng-class="['media--' + item.type, 'icon-' + item.type]"></div>
+                <div class="media timeline__panel__icon icon" ng-class="['media--' + item.type, 'icon-' + item.type]"></div>
 
                 <section class="timeline__panel__section section">
                     <div class="wrap--ratio-16-9" ng-if="item.thumbnail">
                         <div class="timeline__panel__play" ng-click="(item.type === 'video') ? item.showVideo = true : null" ng-hide="item.showVideo" ng-if="item.type == 'video'">
-                            <i class="icon-play"></i>
+                            <i class="icon icon-play"></i>
                         </div>
                         <img class="timeline__panel__static" ng-src="{{item.thumbnail}}" alt="{{item.title}}" ng-hide="item.showVideo" />
                         <iframe ng-if="item.showVideo" ng-src="{{item.url}}" frameborder="0" allowfullscreen></iframe>

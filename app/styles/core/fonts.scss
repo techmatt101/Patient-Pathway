@@ -48,7 +48,7 @@ $fonts-path: '../content/fonts/';
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+.icon {
   font-family: 'icomoon'!important; //hmmm.... btn css seems to be overriding the font
   speak: none;
   font-style: normal;
