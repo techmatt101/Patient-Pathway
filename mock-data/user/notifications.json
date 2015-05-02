@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "token": "6b1adee9b2bd36fe115b70332ba50d9b7f5449e7",
+  "timestamp": 1425561853,
+  "response": {
+    "notifications": [
+      {
+        "message": "Two new points has been added your pathway",
+        "date": "22/04/2015"
+      },
+      {
+        "message": "Five new points has been added your pathway",
+        "date": "14/04/2015"
+      },
+      {
+        "message": "One new point has been added your pathway",
+        "date": "11/04/2015"
+      }
+    ]
+  }
+}

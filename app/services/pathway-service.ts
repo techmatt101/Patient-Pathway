@@ -55,10 +55,6 @@ class PathwayService {
             themeId: themeId
         });
     }
-
-    notifications () {
-        return this._request.getFromMockData('pathway/notifications');
-    }
 }
 
 app.service('PathwayService', PathwayService);

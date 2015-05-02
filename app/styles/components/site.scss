@@ -7,14 +7,24 @@
     height: 90px;
     background: $body-bg;
 
-    .settings {
+    .actions {
       .btn {
         font-size: 1em;
+        height: 52px;
+        vertical-align: top;
       }
 
       .dropdown {
-        right: $global-padding-x--small;
         text-align: left;
+      }
+
+      .notifications {
+        right: $global-padding-x--small;
+        max-width: 20vw;
+
+        .dropdown__item {
+          white-space: normal;
+        }
       }
     }
   }

@@ -94,6 +94,10 @@ class UserService {
             email: email
         });
     }
+
+    notifications () {
+        return this._request.getFromMockData('user/notifications');
+    }
 }
 
 app.service('UserService', UserService);
