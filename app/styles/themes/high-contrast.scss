@@ -49,6 +49,14 @@ a {
   text-decoration: underline;
 }
 
-#logo {
-  background: #fff;
+&__logo {
+  height: 100%;
+  background: url("../images/logo-emblem-white.svg") no-repeat center !important;
+  background-size: 100% 100%;
+  font-size: 0;
+  background-color: none !important;
+
+  @media only screen and (min-width: $screen-s) {
+    background-image: url("../images/logo_white.svg");
+  }
 }
