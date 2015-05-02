@@ -19,4 +19,12 @@
   &--pdf {
     background: $media-pdf-color;
   }
+
+  &--image {
+    background: $media-image-color;
+  }
+
+  &--form {
+    background: $media-form-color;
+  }
 }

@@ -76,6 +76,9 @@ $offset: 15%;
       min-height: $height;
       animation: fadeInUp 1s;
       display: inline-block;
+      margin: 0 3%;
+      width: 94%;
+
       p {
         font-size: 0.8em;
       }
@@ -160,9 +163,26 @@ $offset: 15%;
       }
     }
 
+    &__image {
+      .timeline__panel__heading {
+        color: $media-image-color;
+      }
+    }
+
+    &__form {
+      .timeline__panel__heading {
+        color: $media-form-color;
+      }
+    }
+
     @media only screen and (min-width: $screen-m) {
       margin-top: 0;
       margin-bottom: -$height / 2;
+
+      .section {
+        width: 85%;
+        margin: $global-margin-y 0;
+      }
 
       &__icon {
         top: 50%;

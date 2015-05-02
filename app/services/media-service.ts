@@ -7,7 +7,8 @@ enum MediaTypes {
     VIDEO,
     IMAGE,
     PDF,
-    LINK
+    LINK,
+    FORM
 }
 
 class MediaService {

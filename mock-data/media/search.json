@@ -218,7 +218,7 @@
         "title": "Example media #2",
         "description": "Example media description",
         "resourceUrl": "http:\/\/example.com\/hoge",
-        "type": "link",
+        "type": "image",
         "subMedia": {},
         "tags": [
           "Foo",
