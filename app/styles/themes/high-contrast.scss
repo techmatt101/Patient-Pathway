@@ -41,15 +41,10 @@ $font-family: Helvetica, Arial, sans-serif;
 
 .section {
   color: $black !important;
-
-  a {
-    color: $link-color;
-  }
 }
 
 a {
   text-decoration: underline;
-  color: white;
 }
 
 .site {
@@ -60,8 +55,18 @@ a {
       background-image: url("../images/logo-white.svg");
     }
   }
+
+  &__footer a {
+    color: white;
+  }
 }
 
-.auth__logo {
-  background-image: url("../images/logo-white.svg");
+.auth {
+  &__logo {
+    background-image: url("../images/logo-white.svg");
+  }
+
+  a {
+    color: white;
+  }
 }
