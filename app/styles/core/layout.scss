@@ -10,13 +10,13 @@
 
 .compact {
   @media only screen and (min-width: $screen-m) {
-    display: none;
+    display: none !important;
   }
 }
 
 .expanded {
   @media only screen and (max-width: $screen-m) {
-    display: none;
+    display: none !important;
   }
 }
 

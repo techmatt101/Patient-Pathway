@@ -1,0 +1,10 @@
+@import 'core/variables';
+
+.settings {
+  padding: $global-margin;
+
+  .section {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

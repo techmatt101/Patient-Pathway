@@ -1,7 +1,9 @@
 @import '../core/variables';
 @import '../core/helpers';
 
-$height: 340px;
+@import 'resource';
+
+$height: 200px;
 $icon-size: 4vw;
 $offset: 15%;
 
@@ -88,9 +90,6 @@ $offset: 15%;
       }
     }
 
-    &__static {
-    }
-
     &__icon {
       position: absolute;
       top: 0;
@@ -111,72 +110,10 @@ $offset: 15%;
       }
     }
 
-    &__play {
-      $size: 90px;
-
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: auto;
-      height: 100%;
-      width: 100%;
-      color: $media-video-color;
-      text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      font-size: $size;
-      cursor: pointer;
-      z-index: 100;
-      transition: color 100ms;
-
-      i {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        height: $size;
-        width: $size;
-      }
-
-      &:hover {
-        color: lighten($media-video-color, 5%);
-      }
-    }
-
     &__delete {
       float: right;
       margin: 0;
       font-size: 0.7em;
-    }
-
-    &__video {
-      .timeline__panel__heading {
-        color: $media-video-color;
-      }
-    }
-
-    &__link {
-      .timeline__panel__heading {
-        color: $media-link-color;
-      }
-    }
-
-    &__pdf {
-      .timeline__panel__heading {
-        color: $media-pdf-color;
-      }
-    }
-
-    &__image {
-      .timeline__panel__heading {
-        color: $media-image-color;
-      }
-    }
-
-    &__form {
-      .timeline__panel__heading {
-        color: $media-form-color;
-      }
     }
 
     @media only screen and (min-width: $screen-m) {
