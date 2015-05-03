@@ -1,4 +1,11 @@
 import app = require('app');
+import GenericResource = require('../resource/generic/generic-resource');
+import LinkResource = require('../resource/link/link-resource');
+import ImageResource = require('../resource/image/image-resource');
+import VideoResource = require('../resource/video/video-resource');
+import PDFResource = require('../resource/pdf/pdf-resource');
+import FormResource = require('../resource/form/form-resource');
+var imported = [GenericResource, LinkResource, ImageResource, VideoResource, PDFResource, FormResource];
 
 interface IScope extends ng.IScope {
     label: string
