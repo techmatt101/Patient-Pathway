@@ -23,9 +23,7 @@ $media-video-color: $theme-color--light;
 $media-link-color: $theme-color--light;
 $media-pdf-color: $theme-color--light;
 
-$pastel-blue: #91ddff;
-$pastel-pink: #91ddff;
-$pastel-green: #91ddff;
+$path-bg: #91ddff;
 
 $body-bg: $theme-color--dark;
 $text-color: $white;
@@ -43,27 +41,27 @@ $font-family: Helvetica, Arial, sans-serif;
 
 .section {
   color: $black !important;
+
+  a {
+    color: $link-color;
+  }
 }
 
 a {
   text-decoration: underline;
-}
-
-footer a {
-  text-decoration: underline;
   color: white;
 }
 
+.site {
+  &__header__logo {
+    background-image: url("../images/logo-emblem-white.svg");
 
-
-&__logo {
-  height: 100%;
-  background: url("../images/logo-emblem-white.svg") no-repeat center !important;
-  background-size: 100% 100%;
-  font-size: 0;
-  background-color: none !important;
-
-  @media only screen and (min-width: $screen-s) {
-    background-image: url("../images/logo_white.svg") !important;
+    @media only screen and (min-width: $screen-s) {
+      background-image: url("../images/logo-white.svg");
+    }
   }
+}
+
+.auth__logo {
+  background-image: url("../images/logo-white.svg");
 }

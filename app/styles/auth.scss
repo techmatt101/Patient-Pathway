@@ -21,8 +21,10 @@
   }
 
   &__logo {
-    width: 100%;
-    max-width: 280px;
+    height: 100px;
+    background: url("../images/logo.svg") no-repeat center;
+    background-size: 100% 100%;
+    font-size: 0;
   }
 
   &--login {

@@ -28,17 +28,7 @@
 }
 
 .pathway-overview {
-  &:nth-child(3n+1) {
-    background-color: $pastel-blue;
-  }
-
-  &:nth-child(3n+2) {
-    background-color: $pastel-pink;
-  }
-
-  &:nth-child(3n+3) {
-    background-color: $pastel-green;
-  }
+  background-color: $path-bg;
 
   &__points {
     @extend %list-unstyled;
