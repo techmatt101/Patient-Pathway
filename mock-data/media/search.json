@@ -16,10 +16,35 @@
           "Bar"
         ]
       },
+      "11": {
+        "id": 11,
+        "title": "Supporting someone through mental illness",
+        "description": "Phils brother Simon has a mental illness. The brothers explain how mutual support has helped them to cope with the illness",
+        "resourceUrl": "https://www.youtube.com/watch?v=fwWcFpA8C8g",
+        "type": "video",
+        "subMedia": {},
+        "tags": []
+      },
+      "13": {
+        "id": 13,
+        "title": "Bipolar disorder help from NICE",
+        "description": "The management of bipolar disorder in adults, children and adolescents, in primary and secondary care",
+        "resourceUrl": "http://www.nice.org.uk/guidance/cg38/resources/information-for-the-public-bipolar-disorder-the-management-of-bipolar-disorder-in-adults-children-and-adolescents-in-primary-and-secondary-care-pdf",
+        "type": "pdf",
+        "tags": []
+      },
+      "15": {
+        "id": 15,
+        "title": "What is stress?",
+        "description": "Stress is the feeling of being under too much mental or emotional pressure. Pressure turns into stress when you feel unable to cope. People have different ways of reacting to stress, so a situation that feels stressful to one person may be motivating to someone else.",
+        "resourceUrl": "http://www.nhs.uk/Conditions/stress-anxiety-depression/Pages/understanding-stress.aspx",
+        "type": "link",
+        "tags": []
+      },
       "16": {
         "id": 16,
         "title": "Anxiety disorders in children 40",
-        "description": "Ipsum ut ut sequi culpa ut aperiam voluptates tempore.",
+        "description": "Anxiety disorders are the most common mental illness in the U.S., affecting 40 million adults in the United States age 18 and older (18% of U.S. population).Anxiety disorders are highly treatable, yet only about one-third of those suffering receive treatment.",
         "type": "video",
         "tags": []
       },
@@ -62,7 +87,11 @@
         "id": 22,
         "title": "Autism spectrum disorder -830",
         "description": "Consectetur ipsum officiis aut et architecto.",
-        "type": "image",
+        "title": "Why lack of sleep is bad for your health",
+        "description": "Many effects of a lack of sleep, such as feeling grumpy and not working at your best, are well known. But did you know that sleep deprivation can also have profound consequences for your physical health?",
+        "resourceUrl": "http://www.nhs.uk/Livewell/tiredness-and-fatigue/Pages/lack-of-sleep-health-risks.aspx",
+        "type": "link",
+        "subMedia": {},
         "tags": []
       },
       "23": {
@@ -74,9 +103,10 @@
       },
       "24": {
         "id": 24,
-        "title": "Counselling -739",
-        "description": "Distinctio molestias ipsa dolorem sequi quos officiis exercitationem.",
-        "type": "link",
+        "title": "Attitudes to mental health",
+        "description": "Four people who've had mental health issues talk about the negative reactions they faced and how they overcame them.",
+        "resourceUrl": "https://www.youtube.com/watch?v=Qh3I3tOVqUk",
+        "type": "video",
         "tags": []
       },
       "25": {
@@ -106,6 +136,74 @@
         "description": "Dolorem voluptatibus dolor beatae voluptates qui commodi vero est nisi.",
         "type": "video",
         "tags": []
+      },
+      "213": {
+        "id": 213,
+        "title": "Transhealth Guide",
+        "description": "GPs and other health professionals may not have much experience with trans health issues or gender dysphoria. If you need to see a healthcare professional about your condition, it might be worth taking a look at the latest guide to gender dysphoria services which can help you with advice.",
+        "resourceUrl": "http://www.nhs.uk/Livewell/Transhealth/PublishingImages/84493492_overview_377x171.jpg",
+        "type": "pdf",
+        "tags": []
+      },
+      "158": {
+        "id": 158,
+        "title": "What is stress?",
+        "description": "Stress is the feeling of being under too much mental or emotional pressure. Pressure turns into stress when you feel unable to cope. People have different ways of reacting to stress, so a situation that feels stressful to one person may be motivating to someone else.",
+        "resourceUrl": "http://www.nhs.uk/Conditions/stress-anxiety-depression/Pages/understanding-stress.aspx",
+        "type": "link",
+        "tags": []
+      },
+      "99": {
+        "id": 99,
+        "title": "Lets Talk About Mental Health",
+        "description": "For a while now i've wanted to tackle the subject of Mental Health on this channel. It's something that is very important to me and something I feel incredibly strongly about. However I've always put it off because i'd never worked out how to approach it. In the end I decided just to talk about it in the same way I would to a friend because ultimately that's exactly the way we should be approaching it.",
+        "resourceUrl": "https://www.youtube.com/embed/gkZiBnL0h7Y",
+        "type": "video",
+        "tags": []
+      },
+      "474": {
+        "id": 474,
+        "title": "Five steps to mental wellbeing",
+        "description": "Evidence suggests there are five steps we can all take to improve our mental wellbeing. Try approaching them with an open mind and judge the results for yourself.",
+        "resourceUrl": "https://www.youtube.com/embed/l6WLM0wGqq4",
+        "type": "video",
+        "tags": []
+      },
+      "67": {
+        "id": 67,
+        "title": "Supporting employees with long-term medical conditions",
+        "description": "Advice for line managers on supporting employees with long-term medical conditions.",
+        "resourceUrl": "http://www.nhs.uk/Livewell/workplacehealth/Documents/ChronicConds_LineManagers_Factsheet_A4.pdf",
+        "type": "pdf",
+        "tags": []
+      },
+      "56": {
+        "id": 56,
+        "title": "About Male anorexia",
+        "description": "Anorexia nervosa is an eating disorder and a serious mental health condition. People with anorexia have problems with eating. They are anxious about their weight and keep it as low as possible by strictly controlling and limiting what they eat. In this video, David talks about life with anorexia and how he found the help to recover from it.",
+        "resourceUrl": "https://www.youtube.com/watch?v=GmgJ9AXo19A",
+        "type": "video",
+        "tags": []
+      },
+      "48": {
+        "id": 48,
+        "title": "Low mood and depression",
+        "description": "Most people experience ups and downs in their life, and can feel unhappy, depressed, stressed or anxious during difficult times. This is a normal part of life.",
+        "resourceUrl": "http://www.nhs.uk/Conditions/stress-anxiety-depression/Pages/low-mood-and-depression.aspx",
+        "type": "image",
+        "tags": []
+      },
+      "34": {
+        "id": 34,
+        "title": "Returning to work after mental health issues",
+        "description": "Find out how to get back into work if you've been off because of mental or emotional health issues.",
+        "resourceUrl": "http://www.nhs.uk/Livewell/mentalhealth/Pages/returning-to-work-mental-health.aspx",
+        "type": "link",
+        "subMedia": {},
+        "tags": [
+          "Foo",
+          "Bar"
+        ]
       }
     }
   }

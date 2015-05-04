@@ -12,6 +12,7 @@
   background: $white;
   overflow: hidden;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   border-radius: 7px;
   color: $black;
   animation: fadeInDown 150ms ease-out;
