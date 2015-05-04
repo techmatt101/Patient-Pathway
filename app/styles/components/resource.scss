@@ -40,13 +40,13 @@
   }
 
   &--link {
-    .resource__heading {
+    .resource__heading a {
       color: $media-link-color;
     }
   }
 
   &--pdf {
-    .resource__heading {
+    .resource__heading a {
       color: $media-pdf-color;
     }
   }
@@ -58,7 +58,7 @@
   }
 
   &--form {
-    .resource__heading {
+    .resource__heading a {
       color: $media-form-color;
     }
   }

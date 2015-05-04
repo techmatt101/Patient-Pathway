@@ -11,6 +11,7 @@
         "title": "NHS Choices",
         "thumbnail": "http://www.pharmafile.com/system/files/imagecache/news_full/nhs_choices.jpg",
         "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
+        "url": "http://www.nhs.uk/Pages/HomePage.aspx",
         "mediaId": 2,
         "timestamp": 1428266361805,
         "nextPointId": 3,
@@ -57,6 +58,7 @@
         "title": "Feedback",
         "mediaId": 3,
         "timestamp": 1428266361805,
+        "url" : "https://docs.google.com/forms/d/15ObDtr3TUT0EdZ-gkXVuSMrBZdvDJoFhidoehF9UfFo/viewform",
         "nextPointId": null,
         "previousPointId": 2
       },

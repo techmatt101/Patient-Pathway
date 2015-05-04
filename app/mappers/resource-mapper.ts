@@ -5,9 +5,10 @@ module ResourceMapper {
     export function mapResponseToResource (data) : Resource {
         var resource : Resource = {
             id: data.id,
+            title: data.title,
+            url : data.url,
             mediaType: MediaTypes[<string>data.type.toUpperCase()],
             mediaTypeName: data.type.toLowerCase(),
-            title: data.title,
             dateCreated: new Date(data.timestamp),
         };
         if(data.notes) resource.notes = data.notes;
