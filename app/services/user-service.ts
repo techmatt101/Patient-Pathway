@@ -20,7 +20,7 @@ class UserService {
     public User : IUserDetails;
 
 
-    constructor($q, $cookieStore, BackendConnectionService) {
+    constructor ($q, $cookieStore, BackendConnectionService) {
         this._Promise = $q;
         this._request = BackendConnectionService;
         this._session = $cookieStore;
@@ -28,28 +28,28 @@ class UserService {
         this.generateGuestUser();
     }
 
-    private generateGuestUser() {
+    private generateGuestUser () {
         this.User = {
             id: 0,
-            name : 'Guest',
+            name: 'Guest',
             email: '',
             permissionLevel: Permissions.GUEST
         };
     }
 
-    checkSession() {
+    checkSession () {
         var data = this._session.get('user');
-        if(data) {
+        if (data) {
             this.User = JSON.parse(data);
         }
     }
 
-    getEmail() : string {
+    getEmail () : string {
         return this._session.get('email');
     }
 
     login (email : string, password : string) : ng.IPromise<User> {
-        if(email.indexOf('error') !== -1) return this._Promise.reject(); //TODO: for demo purposes only!
+        if (email.indexOf('error') !== -1) return this._Promise.reject(); //TODO: for demo purposes only!
         return this._request.get('user/login', {
             email: email,
             password: password
@@ -57,9 +57,9 @@ class UserService {
             this.User.name = data.name; //TODO: move to a mapper!!
             this.User.email = data.email;
             this.User.permissionLevel = data.permissionLevel;
-            if(email.indexOf('1') !== -1) this.User.permissionLevel = 1; //TODO: for demo purposes only!
-            if(email.indexOf('2') !== -1) this.User.permissionLevel = 2; //TODO: for demo purposes only!
-            if(email.indexOf('3') !== -1) this.User.permissionLevel = 3; //TODO: for demo purposes only!
+            if (email.indexOf('1') !== -1) this.User.permissionLevel = 1; //TODO: for demo purposes only!
+            if (email.indexOf('2') !== -1) this.User.permissionLevel = 2; //TODO: for demo purposes only!
+            if (email.indexOf('3') !== -1) this.User.permissionLevel = 3; //TODO: for demo purposes only!
 
             this._session.put('email', this.User.email);
             this._session.put('user', JSON.stringify(this.User));
@@ -78,6 +78,10 @@ class UserService {
         return this._request.get('user/info', {
             ids: userIds
         });
+    }
+
+    update (data : any) : ng.IPromise<void> {
+        return this._request.get('user/update', { data: data });
     }
 
     updatePassword (oldPassword : string, newPassword : string) : ng.IPromise<void> {

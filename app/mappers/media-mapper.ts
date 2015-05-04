@@ -10,6 +10,7 @@ module MediaMapper {
             typeName: data.type.toLowerCase(),
             title: data.title,
             description: data.description,
+            url: data.url,
             tags: data.tags
         }
     }

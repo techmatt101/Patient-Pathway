@@ -1,0 +1,28 @@
+@import 'core/variables';
+@import 'core/helpers';
+
+.media-list {
+  @extend %list-unstyled;
+
+  &__item {
+    background-color: $white;
+    padding: $global-padding--small;
+
+    &:nth-child(odd) {
+      background-color: $white--dark;
+    }
+
+    .media {
+      font-size: 12px;
+      margin: 0;
+    }
+
+    .small {
+      color: $grey--dark;
+    }
+
+    &__actions {
+      float: right;
+    }
+  }
+}

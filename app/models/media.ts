@@ -6,6 +6,7 @@ interface Media {
     typeName : string
     title : string
     description : string
+    url : string
     tags : string[]
 }
 

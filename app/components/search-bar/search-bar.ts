@@ -1,6 +1,6 @@
 import app = require('app');
 
-interface IScope {
+interface IScope extends ng.IScope {
     text : string
     placeholder : string
     results : IItem[]

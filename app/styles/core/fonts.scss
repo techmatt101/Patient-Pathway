@@ -60,6 +60,10 @@ $fonts-path: '../content/fonts/';
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  &:before {
+    content: "\e602";
+  }
 }
 
 .icon-arrow:before {
@@ -104,4 +108,9 @@ $fonts-path: '../content/fonts/';
 
 .icon-image:before {
   content: "\e90d";
+}
+
+.icon-remove:before {
+  font-family: 'Helvetica', Arial, sans-serif;
+  content: '\00D7';
 }
