@@ -34,6 +34,14 @@ var routes : RoutingUtil.IRoute[] = [
         view: 'views/settings.html',
         permissionLevel: Permissions.PATIENT
     },
+    {
+        title: 'Clinicians',
+        name: 'CliniciansController',
+        path: '/clinicians',
+        controller: 'controllers/clinicians-controller',
+        view: 'views/clinicians.html',
+        permissionLevel: Permissions.TEAM_LEADER
+    }
 ];
 
 var PatientPathwayUser = angular.module('PatientPathway.User', [])

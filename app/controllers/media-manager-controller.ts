@@ -27,7 +27,7 @@ function MediaManagerController ($scope : IScope, ngDialog, MediaService : Media
         }).closePromise
             .then((data) => { //TODO: hacky needs refactor
                 window.scroll(0, 0);
-                itemsLoaded--;
+                itemsLoaded++;
                 var newMedia = data.value;
                 newMedia.type = 0;
                 $scope.items.unshift(newMedia);

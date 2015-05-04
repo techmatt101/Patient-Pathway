@@ -50,6 +50,11 @@ function NavbarController ($rootScope, $scope : IScope, UserService : UserServic
 
         if(UserService.User.permissionLevel >= Permissions.TEAM_LEADER) {
             items.push({
+                text: 'Clinicians',
+                href: '/clinicians'
+            });
+
+            items.push({
                 text: 'Manage Media',
                 href: '/media-manager'
             });
