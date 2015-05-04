@@ -6,9 +6,9 @@
     "media": {
       "6": {
         "id": 6,
-        "title": "Example media #1",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "NHS Choices",
+        "description": "Giving people more choice is a priority of the modern NHS. This is because research in the UK and overseas has shown that treatments are more effective if patients choose, understand and control their care.",
+        "resourceUrl": "http://www.nhs.uk/Pages/HomePage.aspx",
         "type": "link",
         "subMedia": {
           "1": {
@@ -29,9 +29,9 @@
       },
       "213": {
         "id": 213,
-        "title": "Example media #1",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "Transhealth Guide",
+        "description": "GPs and other health professionals may not have much experience with trans health issues or gender dysphoria. If you need to see a healthcare professional about your condition, it might be worth taking a look at the latest guide to gender dysphoria services which can help you with advice.",
+        "resourceUrl": "http://www.nhs.uk/Livewell/Transhealth/PublishingImages/84493492_overview_377x171.jpg",
         "type": "pdf",
         "subMedia": {
           "1": {
@@ -52,9 +52,9 @@
       },
       "158": {
         "id": 158,
-        "title": "Example media #1",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "What is stress?",
+        "description": "Stress is the feeling of being under too much mental or emotional pressure. Pressure turns into stress when you feel unable to cope. People have different ways of reacting to stress, so a situation that feels stressful to one person may be motivating to someone else.",
+        "resourceUrl": "http://www.nhs.uk/Conditions/stress-anxiety-depression/Pages/understanding-stress.aspx",
         "type": "link",
         "subMedia": {
           "1": {
@@ -75,9 +75,9 @@
       },
       "99": {
         "id": 99,
-        "title": "Example media #1",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "Lets Talk About Mental Health",
+        "description": "For a while now i've wanted to tackle the subject of Mental Health on this channel. It's something that is very important to me and something I feel incredibly strongly about. However I've always put it off because i'd never worked out how to approach it. In the end I decided just to talk about it in the same way I would to a friend because ultimately that's exactly the way we should be approaching it.",
+        "resourceUrl": "https://www.youtube.com/embed/gkZiBnL0h7Y",
         "type": "video",
         "subMedia": {
           "1": {
@@ -98,9 +98,9 @@
       },
       "474": {
         "id": 474,
-        "title": "Example media #1",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "Five steps to mental wellbeing",
+        "description": "Evidence suggests there are five steps we can all take to improve our mental wellbeing. Try approaching them with an open mind and judge the results for yourself.",
+        "resourceUrl": "https://www.youtube.com/embed/l6WLM0wGqq4",
         "type": "video",
         "subMedia": {
           "1": {
@@ -121,9 +121,9 @@
       },
       "15": {
         "id": 15,
-        "title": "Example media #1",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "What is stress?",
+        "description": "Stress is the feeling of being under too much mental or emotional pressure. Pressure turns into stress when you feel unable to cope. People have different ways of reacting to stress, so a situation that feels stressful to one person may be motivating to someone else.",
+        "resourceUrl": "http://www.nhs.uk/Conditions/stress-anxiety-depression/Pages/understanding-stress.aspx",
         "type": "link",
         "subMedia": {
           "1": {
@@ -144,9 +144,9 @@
       },
       "24": {
         "id": 24,
-        "title": "Example media #2",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "Attitudes to mental health",
+        "description": "Four people who've had mental health issues talk about the negative reactions they faced and how they overcame them.",
+        "resourceUrl": "https://www.youtube.com/watch?v=Qh3I3tOVqUk",
         "type": "video",
         "subMedia": {
           "1": {
@@ -167,9 +167,9 @@
       },
       "11": {
         "id": 11,
-        "title": "Example media #2",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "Supporting someone through mental illness",
+        "description": "Phils brother Simon has a mental illness. The brothers explain how mutual support has helped them to cope with the illness",
+        "resourceUrl": "https://www.youtube.com/watch?v=fwWcFpA8C8g",
         "type": "video",
         "subMedia": {},
         "tags": [
@@ -179,9 +179,9 @@
       },
       "13": {
         "id": 13,
-        "title": "Example media #2",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "Bipolar disorder help from NICE",
+        "description": "The management of bipolar disorder in adults, children and adolescents, in primary and secondary care",
+        "resourceUrl": "http://www.nice.org.uk/guidance/cg38/resources/information-for-the-public-bipolar-disorder-the-management-of-bipolar-disorder-in-adults-children-and-adolescents-in-primary-and-secondary-care-pdf",
         "type": "pdf",
         "subMedia": {},
         "tags": [
@@ -191,9 +191,9 @@
       },
       "22": {
         "id": 22,
-        "title": "Example media #2",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "Why lack of sleep is bad for your health",
+        "description": "Many effects of a lack of sleep, such as feeling grumpy and not working at your best, are well known. But did you know that sleep deprivation can also have profound consequences for your physical health?",
+        "resourceUrl": "http://www.nhs.uk/Livewell/tiredness-and-fatigue/Pages/lack-of-sleep-health-risks.aspx",
         "type": "link",
         "subMedia": {},
         "tags": [
@@ -203,9 +203,9 @@
       },
       "34": {
         "id": 34,
-        "title": "Example media #2",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "Returning to work after mental health issues",
+        "description": "Find out how to get back into work if you've been off because of mental or emotional health issues.",
+        "resourceUrl": "http://www.nhs.uk/Livewell/mentalhealth/Pages/returning-to-work-mental-health.aspx",
         "type": "link",
         "subMedia": {},
         "tags": [
@@ -215,9 +215,9 @@
       },
       "48": {
         "id": 48,
-        "title": "Example media #2",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "Low mood and depression",
+        "description": "Most people experience ups and downs in their life, and can feel unhappy, depressed, stressed or anxious during difficult times. This is a normal part of life.",
+        "resourceUrl": "http://www.nhs.uk/Conditions/stress-anxiety-depression/Pages/low-mood-and-depression.aspx",
         "type": "image",
         "subMedia": {},
         "tags": [
@@ -227,9 +227,9 @@
       },
       "56": {
         "id": 56,
-        "title": "Example media #2",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
+        "title": "About Male anorexia",
+        "description": "Anorexia nervosa is an eating disorder and a serious mental health condition. People with anorexia have problems with eating. They are anxious about their weight and keep it as low as possible by strictly controlling and limiting what they eat. In this video, David talks about life with anorexia and how he found the help to recover from it.",
+        "resourceUrl": "https://www.youtube.com/watch?v=GmgJ9AXo19A",
         "type": "video",
         "subMedia": {},
         "tags": [
@@ -239,10 +239,10 @@
       },
       "67": {
         "id": 67,
-        "title": "Example media #2",
-        "description": "Example media description",
-        "resourceUrl": "http:\/\/example.com\/hoge",
-        "type": "link",
+        "title": "Supporting employees with long-term medical conditions",
+        "description": "Advice for line managers on supporting employees with long-term medical conditions.",
+        "resourceUrl": "http://www.nhs.uk/Livewell/workplacehealth/Documents/ChronicConds_LineManagers_Factsheet_A4.pdf",
+        "type": "pdf",
         "subMedia": {},
         "tags": [
           "Foo",
