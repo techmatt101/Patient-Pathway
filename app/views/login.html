@@ -1,9 +1,9 @@
-<main class="auth auth--login">
+<main role="main" class="auth auth--login">
     <h1 id="logo" class="auth__logo">Patient Pathway</h1>
 
     <p>{{ notice }}</p>
 
-    <form id="login" class="form" ng-submit="submit()">
+    <form role=form" id="login" class="form" ng-submit="submit()">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" ng-model="email" class="form__input" required>
 

@@ -1,11 +1,11 @@
-<navbar></navbar>
+<navbar role="navigation"> </navbar>
 
-<main class="settings">
+<main role="main" class="settings">
     <section class="section">
         <h2>Update Details</h2>
         <p><b>Account Type:</b> {{accountType | capitalize}}</p>
         <br>
-        <form class="form" ng-submit="submit()">
+        <form role="form" class="form" ng-submit="submit()">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" ng-model="name" class="form__input" required>
 
