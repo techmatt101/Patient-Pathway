@@ -1,12 +1,12 @@
-<navbar>
+<navbar role="navigation">
     <button class="btn" ng-click="newMedia()">New<span class="expanded"> Media</span></button>
 </navbar>
 
-<main class="media-manager">
+<main role="main" class="media-manager">
     <section class="section">
         <div class="clearfix">
             <h2 class="col col-1-2">Media Manager</h2>
-            <form class="form filter col col-1-2 right">
+            <form role="form" class="form filter col col-1-2 right">
                 <label class="form__label">Filter:</label>
                 <select id="filter" ng-model="filter" class="form__select" required>
                     <option value="" selected>All</option>
