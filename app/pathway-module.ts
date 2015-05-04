@@ -23,6 +23,14 @@ var routes : RoutingUtil.IRoute[] = [
         controller: 'controllers/pathway-controller',
         view: 'views/pathway.html',
         permissionLevel: Permissions.PATIENT
+    },
+    {
+        title: 'Media Manager',
+        name: 'MediaManagerController',
+        path: '/media-manager',
+        controller: 'controllers/media-manager-controller',
+        view: 'views/manage-media.html',
+        permissionLevel: Permissions.TEAM_LEADER
     }
 ];
 

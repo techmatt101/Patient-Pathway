@@ -41,25 +41,41 @@ function NavbarController ($rootScope, $scope : IScope, UserService : UserServic
     $scope.menuItems = [];
 
     $scope.$watch('pageMenuItems', () => {
-        if(typeof $scope.pageMenuItems === 'undefined') $scope.pageMenuItems = [];
-        $scope.menuItems = $scope.pageMenuItems.concat([
-            {
-                text: 'View pathways',
-                href: '/paths'
-            },
-            {
-                text: 'High Contrast Theme',
-                action: $rootScope.changeTheme
-            },
-            {
-                text: 'Settings',
-                href: '/settings'
-            },
-            {
-                text: 'Logout',
-                href: '/logout'
-            }
-        ]);
+        var items = $scope.pageMenuItems || [];
+
+        items.push({
+            text: 'View pathways',
+            href: '/paths'
+        });
+
+        if(UserService.User.permissionLevel >= Permissions.TEAM_LEADER) {
+            items.push({
+                text: 'Clinicians',
+                href: '/clinicians'
+            });
+
+            items.push({
+                text: 'Manage Media',
+                href: '/media-manager'
+            });
+        }
+
+        items.push({
+            text: 'High Contrast Theme',
+            action: $rootScope.changeTheme
+        });
+
+        items.push({
+            text: 'Settings',
+            href: '/settings'
+        });
+
+        items.push({
+            text: 'Logout',
+            href: '/logout'
+        });
+
+        $scope.menuItems = items;
     });
 
     UserService.notifications()

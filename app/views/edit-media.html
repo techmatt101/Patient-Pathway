@@ -1,0 +1,22 @@
+<span class="media icon" ng-class="['media--' + media.typeName, 'icon-' + media.typeName]"></span> <h2 class="inline">Media</h2>
+
+<form class="form" ng-submit="closeThisDialog(media)">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" ng-model="media.title" class="form__input" required>
+
+    <label for="description">Description</label>
+    <textarea id="description" name="description" ng-model="media.description" class="form__input" required></textarea>
+
+    <label for="type">Type</label>
+    <select id="type" name="type" ng-model="media.typeName" class="form__select" required>
+        <option value="link">Link</option> <!--TODO: NEED TO BE DYNAMIC-->
+        <option value="pdf">PDF</option>
+        <option value="image">Image</option>
+        <option value="video">Video</option>
+    </select>
+
+    <label for="url">Media URL</label>
+    <input type="url" id="url" name="url" ng-model="media.url" class="form__input" required>
+
+    <button type="submit" class="btn">Save</button>
+</form>

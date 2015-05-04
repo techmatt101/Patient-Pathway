@@ -1,0 +1,31 @@
+<navbar>
+    <button class="btn" ng-click="newMedia()">New<span class="expanded"> Media</span></button>
+</navbar>
+
+<main class="media-manager">
+    <section class="section">
+        <div class="clearfix">
+            <h2 class="col col-1-2">Media Manager</h2>
+            <form class="form filter col col-1-2 right">
+                <label class="form__label">Filter:</label>
+                <select id="filter" ng-model="filter" class="form__select" required>
+                    <option value="" selected>All</option>
+                    <option value="link">Link</option> <!--TODO: NEED TO BE DYNAMIC-->
+                    <option value="pdf">PDF</option>
+                    <option value="image">Image</option>
+                    <option value="video">Video</option>
+                </select>
+            </form>
+        </div>
+        <ul class="media-list" infinite-scroll="fetchNextItems()" infinite-scroll-distance="1" infinite-scroll-disabled="scrollPaused">
+            <li ng-repeat="media in items | filter:{ typeName: filter }" class="media-list__item">
+                <span class="media icon" ng-class="['media--' + media.typeName, 'icon-' + media.typeName]"></span>
+                <a ng-click="editMedia($index)" href="">{{media.title}}</a>
+                <small class="small">{{media.description}}</small>
+                <span class="media-list__item__actions">
+                    <button class="btn btn--grey btn--small icon icon-remove" ng-click="deleteMedia($index)"></button>
+                </span>
+            </li>
+        </ul>
+    </section>
+</main>

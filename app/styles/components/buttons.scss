@@ -26,6 +26,11 @@
     text-decoration: none;
   }
 
+  &--small {
+    padding: 0.1em 0.4em;
+    margin: 0;
+  }
+
   &--dark {
     background: $brand-color--dark;
 
