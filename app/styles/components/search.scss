@@ -10,28 +10,55 @@
 
   $btn-size: 50px;
 
+  @media only screen and (max-width: $screen-m) {
+    position: absolute;
+    left: $global-padding-x--small;
+    right: $global-padding-x--small;
+    z-index: 1000;
+  }
+
+  &:focus,
+  &:hover {
+    .search-bar{
+      &__input {
+        display: inline-block;
+      }
+
+      &__submit {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+
   &__input {
     @extend %input-style;
     display: inline-block;
     width: calc(100% - #{$btn-size});
-    height: 50px;
+    height: $btn-size;
     color: $black;
     border-color: $brand-color;
     border-right: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     margin: 0;
-    margin-right: -10px;
+    margin-right: -$btn-size / 2;
+
+    @media only screen and (max-width: $screen-s) {
+      height: 40px;
+    }
 
     @media only screen and (max-width: $screen-m) {
       display: none;
+      transform-origin: 0 0;
+      animation: stretchIn 100ms ease-out;
     }
   }
 
   &__submit {
     padding: 0;
     margin: 0;
-    width: $btn-size + 4px;
+    width: $btn-size;
     height: $btn-size;
 
     @media only screen and (min-width: $screen-m) {
