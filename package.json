@@ -15,6 +15,7 @@
     "start": "(cd dist && http-server ./ -a localhost -p 8000 -c-1 -o --ssl)"
   },
   "dependencies": {
+    "gulp-template": "^3.0.0"
   },
   "devDependencies": {
     "chalk": "~0.5.1",

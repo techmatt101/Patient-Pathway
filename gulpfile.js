@@ -37,6 +37,7 @@ gulp.task('watch', ['build'], function() {
 
 gulp.task('markup', function() {
     return gulp.src('app/**/*.html')
+        .pipe($.template({ isProduction: isProduction }))
         .pipe($.if(isProduction, $.minifyHtml({
             empty: true,
             loose: true
