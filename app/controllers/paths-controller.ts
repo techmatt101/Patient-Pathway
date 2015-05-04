@@ -18,7 +18,10 @@ function PathsController ($scope : IScope, $location : ng.ILocationService, Path
         });
 
     $scope.newPathway = () => {
-        $location.path('/pathway/1')
+        PathwayService.create('New pathway')
+            .then((pathway) => {
+                $location.path(pathway.url);
+            });
     };
 }
 

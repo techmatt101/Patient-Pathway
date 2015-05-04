@@ -29,7 +29,7 @@ interface IScope extends ng.IScope {
 function PathwayController ($scope : IScope, $rootScope, $routeParams, ngDialog, PathwayService : PathwayService, MediaService : MediaService) {
     PathwayService.info([$routeParams.id])
         .then((pathways) => {
-            $scope.pathway = pathways[$routeParams.id];
+            $scope.pathway = pathways[0];
             $rootScope.title = $scope.pathway.title;
         })
         .then(() => {

@@ -21,11 +21,9 @@ class PathwayService {
     }
 
 
-    create (title : number, themeId = 1) : ng.IPromise<Pathway> {
-        return this._request.get('pathway/create', {
-            title: title,
-            themeId: themeId
-        }).then((data) => PathwayMapper.mapResponseToPathway(data));
+    create (title : string) : ng.IPromise<Pathway> {
+        return this._request.get('pathway/create', { title: title })
+            .then((data) => PathwayMapper.mapResponseToPathway(data));
     }
 
     remove (pathwayId : number) : ng.IPromise<void> {
