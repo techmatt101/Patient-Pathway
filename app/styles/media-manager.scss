@@ -1,6 +1,15 @@
 @import 'core/variables';
 @import 'core/helpers';
 
+.media-manager {
+  .filter {
+    select {
+      width: auto;
+      display: inline;
+    }
+  }
+}
+
 .media-list {
   @extend %list-unstyled;
 
