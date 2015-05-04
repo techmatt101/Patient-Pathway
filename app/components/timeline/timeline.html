@@ -21,7 +21,7 @@
                     <link-resource ng-switch-when="link" resource="item"></link-resource>
                     <pdf-resource ng-switch-when="pdf" resource="item"></pdf-resource>
                     <form-resource ng-switch-when="form" resource="item"></form-resource>
-                    <button class="btn btn--grey timeline__panel__delete" ng-if="sections[0] == section" ng-hide="readOnly" ng-click="removeItem(item.id)">Remove</button>
+                    <button class="btn btn--grey timeline__panel__delete" ng-if="sections[0] == section && !readOnly" ng-click="removeItem(item.id)">Remove</button>
                 </section>
             </li>
         </ul>

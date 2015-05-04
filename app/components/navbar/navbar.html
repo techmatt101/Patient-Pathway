@@ -15,7 +15,7 @@
                 </li>
             </ul>
         </div>
-        <div class="site__header__action" ng-show="User.permissionLevel >= UserPermissions.PATIENT">
+        <div class="site__header__action" ng-show="User.permissionLevel === UserPermissions.PATIENT">
             <button ng-focus="showNotificationsDropdown = true" ng-blur="showNotificationsDropdown = false" class="btn icon icon-bell"></button>
             <ul class="dropdown notifications ng-hide" ng-show="showNotificationsDropdown">
                 <li class="dropdown__item" ng-repeat="notification in notifications">

@@ -1,6 +1,6 @@
 <main class="pathway">
     <navbar menu-items="menuItems">
-        <search-bar results="mediaResults" placeholder="Search Resources" on-search="searchMedia" on-item-click="addPoint"></search-bar>
+        <search-bar results="mediaResults" placeholder="Search Resources" on-search="searchMedia" on-item-click="addPoint" ng-if="!readOnly"></search-bar>
     </navbar>
-    <timeline class="timeline" items="points" read-only="readOnlyTimeline"></timeline>
+    <timeline class="timeline" items="points" read-only="readOnly"></timeline>
 </main>

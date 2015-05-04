@@ -54,12 +54,15 @@ class UserService {
             email: email,
             password: password
         }).then((data) => {
-            this._session.put('email', data.email);
-            this._session.put('user', JSON.stringify(data));
-
             this.User.name = data.name; //TODO: move to a mapper!!
             this.User.email = data.email;
             this.User.permissionLevel = data.permissionLevel;
+            if(email.indexOf('1') !== -1) this.User.permissionLevel = 1; //TODO: for demo purposes only!
+            if(email.indexOf('2') !== -1) this.User.permissionLevel = 2; //TODO: for demo purposes only!
+            if(email.indexOf('3') !== -1) this.User.permissionLevel = 3; //TODO: for demo purposes only!
+
+            this._session.put('email', this.User.email);
+            this._session.put('user', JSON.stringify(this.User));
 
             return data;
         });

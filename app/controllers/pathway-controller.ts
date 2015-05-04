@@ -1,8 +1,10 @@
 import app = require('app');
 
+import User = require('models/user');
 import Media = require('models/media');
 import MediaMapper = require('mappers/media-mapper');
 import Resource = require('models/resource');
+import Permissions = require('types/permissions');
 
 import UserService = require('services/user-service');
 import PathwayService = require('services/pathway-service');
@@ -22,11 +24,18 @@ interface IScope extends ng.IScope {
     searchMedia : (query : string) => void
     points : Resource[]
     addPoint : (mediaId : number) => void
-    readOnlyTimeline : boolean
+    readOnly : boolean
     openSettings : () => void
+    User : User
+    Permissions : any
+
 }
 
-function PathwayController ($scope : IScope, $rootScope, $routeParams, ngDialog, PathwayService : PathwayService, MediaService : MediaService) {
+function PathwayController ($scope : IScope, $rootScope, $routeParams, ngDialog, PathwayService : PathwayService, MediaService : MediaService, UserService : UserService) {
+    $scope.mediaResults = [];
+    $scope.points = [];
+    $scope.readOnly = UserService.User.permissionLevel < Permissions.CLINICIAN;
+
     PathwayService.info([$routeParams.id])
         .then((pathways) => {
             $scope.pathway = pathways[0];
@@ -39,6 +48,7 @@ function PathwayController ($scope : IScope, $rootScope, $routeParams, ngDialog,
                 });
         });
 
+    if($scope.readOnly) return;
 
     // Menu
     $scope.menuItems = [
@@ -64,7 +74,6 @@ function PathwayController ($scope : IScope, $rootScope, $routeParams, ngDialog,
 
 
     // Search Bar
-    $scope.mediaResults = [];
     $scope.searchMedia = (query) => {
         MediaService.search(query).then((medias) => {
             $scope.mediaResults = medias.map((x) => MediaMapper.mapMediaToSearchItem(x));
@@ -73,7 +82,6 @@ function PathwayController ($scope : IScope, $rootScope, $routeParams, ngDialog,
 
 
     // Timeline
-    $scope.points = [];
     $scope.addPoint = (mediaId) => {
         PathwayService.addResource($scope.pathway.id, mediaId, 0)
             .then((resource) => {

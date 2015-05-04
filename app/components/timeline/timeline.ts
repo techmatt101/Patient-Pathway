@@ -62,7 +62,6 @@ function TimelineController ($scope : IScope) {
     $scope.label = 'Most Recent Posts';
     $scope.sections = [];
     $scope.scrollPaused = true;
-    $scope.readOnly = false;
 
     $scope.$watchCollection('fullListOfItems', (newItems : Resource[], oldItems  : Resource[]) => {
         if ($scope.sections.length === 0) {
