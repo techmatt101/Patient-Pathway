@@ -34,6 +34,7 @@
     @extend %list-unstyled;
     max-height: 260px;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 
     &__item {
       background: $white--dark;
