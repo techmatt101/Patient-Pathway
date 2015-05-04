@@ -5,9 +5,9 @@
   "response": {
     "id": 102,
     "type": "link",
-    "title": "New Point",
-    "thumbnail": "http://www.nhs.uk/Livewell/Transhealth/PublishingImages/84493492_overview_377x171.jpg",
-    "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus massa, pellentesque sit amet lectus eu, aliquam commodo lacus. In hac habitasse platea dictumst.",
+    "title": "NHS Choices",
+    "thumbnail": "http://www.pharmafile.com/system/files/imagecache/news_full/nhs_choices.jpg",
+    "notes": "Giving people more choice is a priority of the modern NHS. This is because research in the UK and overseas has shown that treatments are more effective if patients choose, understand and control their care.",
     "mediaId": 3,
     "timestamp": 1430697894312,
     "nextPointId": null,
