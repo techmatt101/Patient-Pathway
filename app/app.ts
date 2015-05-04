@@ -1,8 +1,8 @@
 /// <reference path="../typings/tsd.d.ts" />
 import Helpers = require('utils/helpers');
-var usingHtml5Mode = Helpers.supportsHistoryApi() && false; //TODO: setup config
 var base = <any>document.getElementsByTagName('base');
-var baseUrl = (base) ? base.href : '/';
+var baseUrl = (base[0]) ? base.href : '/';
+var usingHtml5Mode = Helpers.supportsHistoryApi() && typeof base[0] !== 'undefined'; //TODO: setup config
 
 var app = angular.module('PatientPathway', [
     'ngRoute',
