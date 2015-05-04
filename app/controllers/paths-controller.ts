@@ -7,14 +7,19 @@ var imported = [UserService, PathwayService, Navbar]; //TODO: HACK!!!
 
 interface IScope extends ng.IScope {
     users : User[]
+    newPathway : () => void
 }
 
-function PathsController ($scope : IScope, PathwayService : PathwayService, UserService : UserService) {
+function PathsController ($scope : IScope, $location : ng.ILocationService, PathwayService : PathwayService, UserService : UserService) {
     $scope.users = [];
     PathwayService.list(UserService.User.id)
         .then((data) => {
             $scope.users = data;
         });
+
+    $scope.newPathway = () => {
+        $location.path('/pathway/1')
+    };
 }
 
 app.controller('PathsController', PathsController);

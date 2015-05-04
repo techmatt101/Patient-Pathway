@@ -15,7 +15,7 @@
   border-radius: 7px;
   color: $black;
   animation: fadeInDown 150ms ease-out;
-  box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+  box-shadow: $box-shadow;
 
   &__item {
     padding: 16px 20px;

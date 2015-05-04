@@ -83,7 +83,7 @@ gulp.task('scriptLibs', function() {
         'bower_components/angular-cookies/angular-cookies.js',
         'bower_components/angular-animate/angular-animate.js',
         'bower_components/angular-loading-bar/build/loading-bar.js',
-        'bower_components/angular-modal/modal.js',
+        'bower_components/ngDialog/js/ngDialog.js',
         'bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
         'bower_components/date-utils/lib/date-utils.js',
         'bower_components/requirejs/require.js'

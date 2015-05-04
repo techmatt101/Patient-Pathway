@@ -1,5 +1,5 @@
 <main class="paths">
-    <navbar><button class="btn">New<span class="expanded"> Pathway</span></button></navbar>
+    <navbar><button class="btn" ng-click="newPathway()">New<span class="expanded"> Pathway</span></button></navbar>
     <ul class="pathways">
         <li class="pathway-overview section" ng-repeat="user in users">
             <h4 class="pathway-overview__header">{{user.name}}'s Pathway</h4>

@@ -6,7 +6,7 @@ export function VideoResource () {
         scope: {
             resource: '=resource',
         },
-        controller: ($scope, $sce) => {
+        controller: ($scope, $sce : ng.ISCEService) => {
             $scope.resource.url = $sce.trustAsResourceUrl($scope.resource.url + '?autoplay=1');
         }
     }

@@ -26,7 +26,7 @@ interface IScope extends ng.IScope {
     openSettings : () => void
 }
 
-function PathwayController ($scope : IScope, $rootScope, $routeParams, PathwayService : PathwayService, MediaService : MediaService) {
+function PathwayController ($scope : IScope, $rootScope, $routeParams, ngDialog, PathwayService : PathwayService, MediaService : MediaService) {
     PathwayService.info([$routeParams.id])
         .then((pathways) => {
             $scope.pathway = pathways[$routeParams.id];
@@ -41,17 +41,26 @@ function PathwayController ($scope : IScope, $rootScope, $routeParams, PathwaySe
 
 
     // Menu
-    $scope.menuItems = [{
-        text: 'Assign Patient to Pathway',
-        href: '/404'
-    }];
-
-    //$scope.openSettings = () => { //TODO: temporary example
-    //    btfModal({
-    //        controller: 'SettingsController',
-    //        templateUrl: 'views/settings.html'
-    //    }).activate();
-    //};
+    $scope.menuItems = [
+        {
+            text: 'Assign Patient to Pathway',
+            action: () => {
+                ngDialog.open({
+                    className: 'modal',
+                    template: 'views/assign-user-pathway.html'
+                });
+            }
+        },
+        {
+            text: 'Pathway Settings',
+            action: () => {
+                ngDialog.open({
+                    className: 'modal',
+                    template: 'views/pathway-settings.html'
+                });
+            }
+        }
+    ];
 
 
     // Search Bar
@@ -69,7 +78,7 @@ function PathwayController ($scope : IScope, $rootScope, $routeParams, PathwaySe
         PathwayService.addResource($scope.pathway.id, mediaId, 0)
             .then((resource) => {
                 $scope.points.unshift(resource);
-                window.scroll(0,0);
+                window.scroll(0, 0);
             });
     };
 }

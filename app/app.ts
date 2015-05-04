@@ -8,8 +8,8 @@ var app = angular.module('PatientPathway', [
     'ngRoute',
     'ngCookies',
     'ngAnimate',
+    'ngDialog',
     'angular-loading-bar',
-    'btford.modal',
     'infinite-scroll',
     'PatientPathway.User',
     'PatientPathway.Pathway'

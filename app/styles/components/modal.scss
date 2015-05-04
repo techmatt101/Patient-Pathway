@@ -1,0 +1,80 @@
+@import "../core/variables";
+
+.ngdialog {
+  position: fixed;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.ngdialog-overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  animation: fadein 0.5s;
+}
+
+.ngdialog-closing {
+  .ngdialog-content,
+  .ngdialog-overlay {
+    animation: fadeout 0.5s;
+  }
+}
+
+.ngdialog-close:before {
+  font-family: 'Helvetica', Arial, sans-serif;
+  content: '\00D7';
+  cursor: pointer;
+}
+
+.ngdialog-open {
+  overflow: hidden;
+}
+
+.modal {
+  padding-bottom: 160px;
+  padding-top: 160px;
+  text-align: center;
+
+  &.ngdialog-closing .ngdialog-content {
+    animation: fadeOutDown 250ms ease-in;
+  }
+
+  .ngdialog-content {
+    max-width: 100%;
+    min-width: 200px;
+    min-width: 50vw;
+    margin: $global-margin;
+    padding: $global-padding;
+    position: relative;
+    display: inline-block;
+
+    text-align: left;
+    background: $white;
+    border-radius: $border-radius;
+    color: $black;
+    box-shadow: $box-shadow;
+    animation: fadeInUp 250ms ease-out;
+  }
+
+  .ngdialog-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #888;
+    font-size: 24px;
+    padding: 0 10px;
+
+    &:hover:before,
+    &:active:before {
+      color: #333;
+    }
+  }
+}
