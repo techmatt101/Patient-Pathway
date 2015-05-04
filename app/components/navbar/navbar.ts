@@ -1,40 +1,70 @@
-declare var UserPermissions;
 import app = require('app');
+import User = require('models/User');
+import Notification = require('models/notification');
+import Permissions = require('types/permissions');
 import UserService = require('services/user-service');
 var imported = [UserService]; //TODO: HACK!!!
 
 
-interface IScope {
-    showUserMenu : boolean;
-    showNotificationsDropdown : boolean;
-    User : any;
-    UserPermissions : any;
-    notifications : INotification[];
+interface IScope extends ng.IScope {
+    showUserMenu : boolean
+    showNotificationsDropdown : boolean
+    User : User
+    UserPermissions : any
+    notifications : Notification[]
+    menuItems : IMenuItem[]
+    pageMenuItems : IMenuItem[]
 }
 
-interface INotification {
-    message : string
-    date : Date
+export interface IMenuItem {
+    text : string
+    href? : string
+    action? : any
 }
 
 export function Navbar () {
     return {
         templateUrl: 'components/navbar/navbar.html',
         controller: NavbarController,
-        scope: {},
+        scope: {
+            pageMenuItems: '=?menuItems'
+        },
         transclude: true
     }
 }
 
-function NavbarController ($scope : IScope, UserService : UserService) {
+function NavbarController ($rootScope, $scope : IScope, UserService : UserService) {
     $scope.showUserMenu = false;
     $scope.showNotificationsDropdown = false;
     $scope.User = UserService.User;
-    $scope.UserPermissions = UserPermissions;
+    $scope.UserPermissions = Permissions;
+    $scope.menuItems = [];
+
+    $scope.$watch('pageMenuItems', () => {
+        if(typeof $scope.pageMenuItems === 'undefined') $scope.pageMenuItems = [];
+        $scope.menuItems = $scope.pageMenuItems.concat([
+            {
+                text: 'View pathways',
+                href: '/paths'
+            },
+            {
+                text: 'High Contrast Theme',
+                action: $rootScope.changeTheme
+            },
+            {
+                text: 'Settings',
+                href: '/settings'
+            },
+            {
+                text: 'Logout',
+                href: '/logout'
+            }
+        ]);
+    });
 
     UserService.notifications()
-        .then((data) => {
-            $scope.notifications = data.notifications;
+        .then((notifications) => {
+            $scope.notifications = notifications;
         });
 }
 

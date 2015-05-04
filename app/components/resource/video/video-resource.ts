@@ -5,6 +5,9 @@ export function VideoResource () {
         templateUrl: 'components/resource/video/video-resource.html',
         scope: {
             resource: '=resource',
+        },
+        controller: ($scope, $sce) => {
+            $scope.resource.url = $sce.trustAsResourceUrl($scope.resource.url + '?autoplay=1');
         }
     }
 }

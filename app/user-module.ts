@@ -1,6 +1,7 @@
 /// <reference path="../typings/tsd.d.ts" />
-import RoutingUtil = require('./utils/routing-util');
-import UserService = require('./services/user-service');
+
+import RoutingUtil = require('utils/routing-util');
+import UserService = require('services/user-service');
 var imported = [UserService]; //TODO: HACK!!!
 
 enum Permissions { //TODO: hmmm...

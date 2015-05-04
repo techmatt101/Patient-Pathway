@@ -3,18 +3,16 @@
         <div ng-transclude></div>
     </div>
     <div class="col col-1-3 center">
-        <a href="#/paths"><h1 id="logo" class="site__header__logo">Patient Pathway</h1></a>
+        <a ng-route="#/paths"><h1 id="logo" class="site__header__logo">Patient Pathway</h1></a>
     </div>
     <div class="col col-1-3 right">
         <div class="site__header__action" ng-show="User.permissionLevel >= UserPermissions.PATIENT">
             <button ng-focus="showUserMenu = true" ng-blur="showUserMenu = false" class="btn"><i class="compact icon icon-menu"></i><span class="expanded">{{ User.name }}</span></button>
             <ul class="dropdown ng-hide" ng-show="showUserMenu">
-                <li><a href="#/paths" class="dropdown__item">View pathways</a></li>
-                <li><a href="#/clinicians" class="dropdown__item">Clinicians</a></li>
-                <li><a href="" ng-click="changeTheme()" class="dropdown__item">High Contrast Theme</a></li>
-                <li><a href="#/settings" class="dropdown__item">Settings</a></li>
-                <li><a href="#/logout" class="dropdown__item">Logout</a></li>
-                <li><a href="#/help" class="dropdown__item">Help</a></li>
+                <li class="dropdown__item compact center"><b>{{ User.name }}</b></li>
+                <li ng-repeat="item in menuItems">
+                    <a ng-route="{{item.href}}" ng-click="item.action()" class="dropdown__item">{{item.text}}</a>
+                </li>
             </ul>
         </div>
         <div class="site__header__action" ng-show="User.permissionLevel >= UserPermissions.PATIENT">

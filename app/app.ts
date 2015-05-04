@@ -1,4 +1,8 @@
 /// <reference path="../typings/tsd.d.ts" />
+import Helpers = require('utils/helpers');
+var usingHtml5Mode = Helpers.supportsHistoryApi() && false; //TODO: setup config
+var base = <any>document.getElementsByTagName('base');
+var baseUrl = (base) ? base.href : '/';
 
 var app = angular.module('PatientPathway', [
     'ngRoute',
@@ -34,8 +38,9 @@ var app = angular.module('PatientPathway', [
         app.factory = $provide.factory;
         app.service = $provide.service;
     })
-    .config(($routeProvider : ng.route.IRouteProvider, cfpLoadingBarProvider) => {
+    .config(($routeProvider : ng.route.IRouteProvider, $locationProvider : ng.ILocationProvider, cfpLoadingBarProvider) => {
         cfpLoadingBarProvider.includeSpinner = false;
+        $locationProvider.html5Mode(usingHtml5Mode);
         $routeProvider.when('/', { redirectTo: '/login' });
         $routeProvider.when('/404', {
             templateUrl: 'views/404.html'
@@ -46,10 +51,13 @@ var app = angular.module('PatientPathway', [
         $routeProvider.otherwise({ redirectTo: '/404' });
     });
 
-require(['services/theme-service'], () => {
-    app.run(($rootScope, ThemeService) => {
-        $rootScope.changeTheme = () => ThemeService.toggleTheme('high-contrast');
-    })
+app.directive('ngRoute', () => {
+    return {
+        restrict: 'A',
+        link: (scope, el, attr : any) => {
+            if(attr.ngRoute) el.attr('href', ((!usingHtml5Mode) ? '#' : baseUrl) + attr.ngRoute);
+        }
+    }
 });
 
 export = app;

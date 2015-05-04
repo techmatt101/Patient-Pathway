@@ -1,10 +1,13 @@
 import app = require('app');
-import GenericResource = require('../resource/generic/generic-resource');
-import LinkResource = require('../resource/link/link-resource');
-import ImageResource = require('../resource/image/image-resource');
-import VideoResource = require('../resource/video/video-resource');
-import PDFResource = require('../resource/pdf/pdf-resource');
-import FormResource = require('../resource/form/form-resource');
+import Helpers = require('utils/helpers');
+import Resource = require('models/resource');
+
+import GenericResource = require('components/resource/generic/generic-resource');
+import LinkResource = require('components/resource/link/link-resource');
+import ImageResource = require('components/resource/image/image-resource');
+import VideoResource = require('components/resource/video/video-resource');
+import PDFResource = require('components/resource/pdf/pdf-resource');
+import FormResource = require('components/resource/form/form-resource');
 var imported = [GenericResource, LinkResource, ImageResource, VideoResource, PDFResource, FormResource];
 
 interface IScope extends ng.IScope {
@@ -12,7 +15,7 @@ interface IScope extends ng.IScope {
     readOnly: boolean
     scrollPaused: boolean
     sections : ISection[]
-    fullListOfItems : IItem[]
+    fullListOfItems : Resource[]
     fetchNextItems : () => void
     removeItem : (id) => void
 }
@@ -20,18 +23,7 @@ interface IScope extends ng.IScope {
 export interface ISection {
     label : string
     date : Date
-    items : IItem[]
-}
-
-export interface IItem {
-    id : number
-    title : string
-    type : string
-    notes : string
-    thumbnail : string
-    date : Date
-    timestamp : number
-    url? : string
+    items : Resource[]
 }
 
 export function Timeline () {
@@ -49,11 +41,13 @@ export function Timeline () {
             window.addEventListener('scroll', () => {
                 var label = $scope.label;
                 for (var i = 0; i < breakpoints.length; i++) {
-                    if((<HTMLElement>breakpoints[i]).offsetTop < window.pageYOffset + 30) {
+                    if ((<HTMLElement>breakpoints[i]).offsetTop < window.pageYOffset + 30) {
                         label = breakpoints[i].textContent;
-                    } else break;
+                    } else {
+                        break;
+                    }
                 }
-                if(label !== $scope.label) {
+                if (label !== $scope.label) {
                     $scope.label = label;
                     $scope.$apply();
                 }
@@ -62,8 +56,7 @@ export function Timeline () {
     }
 }
 
-function TimelineController ($scope : IScope, $sce) {
-    var currentDate;
+function TimelineController ($scope : IScope) {
     var itemsLoaded;
 
     $scope.label = 'Most Recent Posts';
@@ -71,46 +64,73 @@ function TimelineController ($scope : IScope, $sce) {
     $scope.scrollPaused = true;
     $scope.readOnly = false;
 
-    $scope.$watchCollection('fullListOfItems', () => {
-        if ($scope.fullListOfItems.length > 0) {
-            currentDate = Date.today();
-            itemsLoaded = 0;
-            $scope.sections = [{
-                label: "Today's " + Date.today().toFormat("DD MMMM"),
-                date: Date.today(),
-                items: []
-            }];
-            $scope.fetchNextItems();
+    $scope.$watchCollection('fullListOfItems', (newItems : Resource[], oldItems  : Resource[]) => {
+        if ($scope.sections.length === 0) {
+            if ($scope.fullListOfItems.length > 0) {
+                itemsLoaded = 0;
+                $scope.sections = [{
+                    label: "Today's " + Date.today().toFormat("DD MMMM"),
+                    date: Date.today(),
+                    items: []
+                }];
+                $scope.fetchNextItems();
+            }
+        } else {
+            var itemDiff = Helpers.getDiff(newItems, oldItems);
+            itemDiff.added.forEach((x) => addItem(x));
+            itemDiff.removed.forEach((x) => removeItem(x));
         }
     });
 
+    function addItem(item : Resource) {
+        itemsLoaded++;
+        for (var i = 0; i < $scope.sections.length; i++) {
+            var section = $scope.sections[i];
+            if(Date.equalsDay(section.date, item.dateCreated)) {
+                $scope.sections[i].items.push(item);
+                return;
+            }
+        }
+
+        $scope.sections.push({
+            label: item.dateCreated.toFormat("DDDD DD MMMM"),
+            date: item.dateCreated.clearTime(),
+            items: [item]
+        });
+    }
+
+    function removeItem(item : Resource) {
+        itemsLoaded--;
+        for (var i = 0; i < $scope.sections.length; i++) {
+            var section = $scope.sections[i];
+            if(Date.equalsDay(section.date, item.dateCreated)) {
+                for (var j = 0; j < section.items.length; j++) {
+                    var item = section.items[j];
+                    if(item.id === item.id) {
+                        section.items.splice(j, 1);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
     $scope.fetchNextItems = () => {
-        if(typeof currentDate === 'undefined') return;
         $scope.scrollPaused = true;
         var items = itemsLoaded + Math.min($scope.fullListOfItems.length - itemsLoaded, 6);
         for (var i = itemsLoaded; i < items; i++) {
-            var item = $scope.fullListOfItems[i];
-            item.date = new Date(item.timestamp);
-
-            item.url = $sce.trustAsResourceUrl(item.url + '?autoplay=1');
-
-            if (Date.equalsDay(currentDate, item.date)) {
-                $scope.sections[$scope.sections.length - 1].items.push(item);
-            } else {
-                currentDate = item.date;
-                $scope.sections.push({
-                    label: item.date.toFormat("DDDD DD MMMM"),
-                    date: item.date.clearTime(),
-                    items: [item]
-                });
-            }
-            itemsLoaded++;
+            addItem($scope.fullListOfItems[i]);
         }
         $scope.scrollPaused = $scope.fullListOfItems.length <= itemsLoaded;
     };
 
     $scope.removeItem = (id) => {
-        alert("Remove Item: " + id);
+        for (var i = 0; i < $scope.fullListOfItems.length; i++) {
+            if($scope.fullListOfItems[i].id === id) {
+                $scope.fullListOfItems.splice(i, 1);
+                return;
+            }
+        }
     };
 }
 

@@ -1,38 +1,20 @@
 import app = require('app');
-import UserService = require('../services/user-service');
-import PathwayService = require('../services/pathway-service');
-import Navbar = require('../components/navbar/navbar');
+import User = require('models/user');
+import UserService = require('services/user-service');
+import PathwayService = require('services/pathway-service');
+import Navbar = require('components/navbar/navbar');
 var imported = [UserService, PathwayService, Navbar]; //TODO: HACK!!!
 
 interface IScope extends ng.IScope {
-    users : IUser[]
+    users : User[]
 }
 
-interface IUser {
-    id : number
-    name : string
-    pathways : IPath[]
-}
-
-interface IPath {
-    id : number
-    name : string
-    themeId : number
-    users : IUser[]
-    url : string
-}
-
-function PathsController ($scope : IScope, PathwayService: PathwayService) {
+function PathsController ($scope : IScope, PathwayService : PathwayService, UserService : UserService) {
     $scope.users = [];
-    PathwayService.list(1).then((data) => {
-        $scope.users = data;
-        $scope.users.forEach((user : any) => {
-            user.pathways = user.pathways.map((x : any) => {
-                x.url = '#/pathway/' + x.id;
-                return x;
-            });
+    PathwayService.list(UserService.User.id)
+        .then((data) => {
+            $scope.users = data;
         });
-    });
 }
 
 app.controller('PathsController', PathsController);

@@ -1,5 +1,5 @@
 import app = require('app');
-import UserService = require('../services/user-service');
+import UserService = require('services/user-service');
 var imported = [UserService]; //TODO: HACK!!!
 
 interface IScope extends ng.IScope {

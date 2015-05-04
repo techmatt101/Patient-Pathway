@@ -1,8 +1,11 @@
 /// <reference path="../typings/tsd.d.ts" />
+
 declare var UserPermissions;
-import RoutingUtil = require('./utils/routing-util');
-import UserService = require('./services/user-service');
-var imported = [UserService]; //TODO: HACK!!!
+import RoutingUtil = require('utils/routing-util');
+import Permissions = require('types/permissions');
+import UserService = require('services/user-service');
+import ThemeService = require('services/theme-service');
+var imported = [UserService, ThemeService]; //TODO: HACK!!!
 
 var routes : RoutingUtil.IRoute[] = [
     {
@@ -11,7 +14,7 @@ var routes : RoutingUtil.IRoute[] = [
         path: '/paths',
         controller: 'controllers/paths-controller',
         view: 'views/paths.html',
-        permissionLevel: UserPermissions.PATIENT
+        permissionLevel: Permissions.PATIENT
     },
     {
         title: 'Pathway',
@@ -19,11 +22,14 @@ var routes : RoutingUtil.IRoute[] = [
         path: '/pathway/:id',
         controller: 'controllers/pathway-controller',
         view: 'views/pathway.html',
-        permissionLevel: UserPermissions.PATIENT
+        permissionLevel: Permissions.PATIENT
     }
 ];
 
 var PatientPathwayPathway = angular.module('PatientPathway.Pathway', [])
+    .run(($rootScope, ThemeService) => { //TODO: does not belong here!
+        $rootScope.changeTheme = () => ThemeService.toggleTheme('high-contrast');
+    })
     .config(($routeProvider : ng.route.IRouteProvider) => {
         RoutingUtil.registerRoutes(routes, $routeProvider);
     });

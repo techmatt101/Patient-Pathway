@@ -3,10 +3,16 @@ import app = require('app');
 interface IScope {
     text : string
     placeholder : string
-    results : any[]
+    results : IItem[]
     submit : () => void
     itemClick : () => void
     showDropdown : boolean
+}
+
+export interface IItem {
+    id : number
+    name : string
+    icon : string
 }
 
 export function SearchBar () {

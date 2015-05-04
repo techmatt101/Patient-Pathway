@@ -4,7 +4,7 @@
     <ul class="dropdown" ng-show="showDropdown && results.length > 0">
         <li ng-repeat="item in results">
             <a ng-click="itemClick(item.id)" href="" class="dropdown__item">
-                <i class="icon" ng-class="['icon-' + item.type]"></i> {{item.title}}
+                <i class="icon" ng-class="['icon-' + item.icon]"></i> {{item.name}}
             </a>
         </li>
     </ul>

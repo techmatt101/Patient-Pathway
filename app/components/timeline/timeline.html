@@ -12,9 +12,9 @@
 
         <ul class="timeline__container">
             <li class="timeline__panel" ng-repeat="item in section.items">
-                <div class="media timeline__panel__icon icon" ng-class="['media--' + item.type, 'icon-' + item.type]"></div>
+                <div class="media timeline__panel__icon icon" ng-class="['media--' + item.mediaTypeName, 'icon-' + item.mediaTypeName]"></div>
 
-                <section class="timeline__panel__section section" ng-switch on="item.type">
+                <section class="timeline__panel__section section" ng-switch on="item.mediaTypeName">
                     <generic-resource ng-switch-default resource="item"></generic-resource>
                     <video-resource ng-switch-when="video" resource="item"></video-resource>
                     <image-resource ng-switch-when="image" resource="item"></image-resource>

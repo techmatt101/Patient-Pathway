@@ -1,15 +1,9 @@
 import app = require('app');
 import Helpers = require('utils/helpers');
+import Media = require('models/Media');
+import MediaMapper = require('mappers/media-mapper');
 import BackendConnectionService = require('./backend-connection-service');
 var imported = [BackendConnectionService]; //TODO: HACK!!!
-
-enum MediaTypes {
-    VIDEO,
-    IMAGE,
-    PDF,
-    LINK,
-    FORM
-}
 
 class MediaService {
     private _Promise : ng.IQService;
@@ -21,23 +15,9 @@ class MediaService {
         this._request = BackendConnectionService;
     }
 
-
-    info (mediaIds : number[]) {
-        return this._request.get('media/info', {
-            ids: mediaIds
-        });
-    }
-
-    listTags () {
-        return this._request.get('media/tags');
-    }
-
-    search (query : string, tags? : string, type? : string, page? : number, results? : number) {
-        return this._request.get('media/search', {
-            title: query
-        }).then((data : any) => {
-            return Helpers.tableToArray(data.media);
-        });
+    search (query : string, tags? : string, type? : string, page? : number, results? : number) : ng.IPromise<Media[]> {
+        return this._request.get('media/search', { title: query })
+            .then((data) => Helpers.tableToArray(data.media).map((x) => MediaMapper.mapResponseToMedia(x)));
     }
 }
 

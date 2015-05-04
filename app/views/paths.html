@@ -6,8 +6,8 @@
 
             <ul class="pathway-overview__points">
                 <li class="pathway-overview__points__item" ng-repeat="path in user.pathways">
-                    <h5><a href="{{path.url}}">{{path.title}}</a></h5>
-                    <p>Date Modified: {{path.dateModified}}</p>
+                    <h5><a ng-route="{{path.url}}">{{path.title}}</a></h5>
+                    <p class="small">Modified: {{path.dateModified | date : 'mediumDate'}}</p>
                 </li>
             </ul>
         </li>
