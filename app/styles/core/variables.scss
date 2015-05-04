@@ -11,8 +11,6 @@ $media-pdf-color: #1eb47d;
 $media-image-color: #4f52b9;
 $media-form-color:#E17820;
 
-$path-bg: #1abc9c;
-
 $white: #fff;
 $white--dark: #f5f5f5;
 $black: #333;
@@ -23,6 +21,8 @@ $grey--light: #ddd;
 
 $body-bg: $brand-color--light;
 $text-color: $black;
+
+$path-bg: $white;
 
 $link-color: $brand-color--dark;
 $highlight-color: $brand-color--dark;
