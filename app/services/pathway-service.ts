@@ -43,7 +43,7 @@ class PathwayService {
     info (pathwayIds : number[]) : ng.IPromise<Pathway[]> {
         return this._request.get('pathway/info', {
             ids: pathwayIds
-        }).then((data) => Helpers.tableToArray(data.pathways).map(() => PathwayMapper.mapResponseToPathway(data)));
+        }).then((data) => Helpers.tableToArray(data.pathways).map((x) => PathwayMapper.mapResponseToPathway(x)));
     }
 
     update (pathwayId : number, title : string, description : string, themeId : number) : ng.IPromise<void> {
