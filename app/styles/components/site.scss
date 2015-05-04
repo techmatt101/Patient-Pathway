@@ -27,7 +27,7 @@
     &__logo {
       height: 100%;
       background: url("../images/logo-emblem.svg") no-repeat center;
-      background-size: 100% 100%;
+      background-size: auto 100%;
       font-size: 0;
 
       @media only screen and (min-width: $screen-s) {

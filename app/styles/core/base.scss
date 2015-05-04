@@ -25,6 +25,10 @@ body {
   margin: 0;
 }
 
+input {
+  box-shadow: none;
+}
+
 a {
   color: $link-color;
   text-decoration: none;

@@ -11,22 +11,22 @@
   $btn-size: 50px;
 
   @media only screen and (max-width: $screen-m) {
-    position: absolute;
-    left: $global-padding-x--small;
-    right: $global-padding-x--small;
-    z-index: 1000;
-  }
+    &:focus,
+    &:hover {
+      position: absolute;
+      left: $global-padding-x--small;
+      right: $global-padding-x--small;
+      z-index: 1000;
 
-  &:focus,
-  &:hover {
-    .search-bar{
-      &__input {
-        display: inline-block;
-      }
+      .search-bar{
+        &__input {
+          display: inline-block;
+        }
 
-      &__submit {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
+        &__submit {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
       }
     }
   }

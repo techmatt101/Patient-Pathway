@@ -6,8 +6,8 @@
         <a ng-route="/paths"><h1 id="logo" class="site__header__logo">Patient Pathway</h1></a>
     </div>
     <div class="col col-1-3 right">
-        <div class="site__header__action" ng-show="User.permissionLevel >= UserPermissions.PATIENT">
-            <button ng-focus="showUserMenu = true" ng-blur="showUserMenu = false" class="btn"><i class="compact icon icon-menu"></i><span class="expanded">{{ User.name }}</span></button>
+        <div class="site__header__action" ng-if="User.permissionLevel >= UserPermissions.PATIENT">
+            <button ng-click="showUserMenu = !showUserMenu" ng-blur="showUserMenu = false" class="btn"><i class="compact icon icon-menu"></i><span class="expanded">{{ User.name }}</span></button>
             <ul class="dropdown ng-hide" ng-show="showUserMenu">
                 <li class="dropdown__item compact center"><b>{{ User.name }}</b></li>
                 <li ng-repeat="item in menuItems">
@@ -15,8 +15,8 @@
                 </li>
             </ul>
         </div>
-        <div class="site__header__action" ng-show="User.permissionLevel === UserPermissions.PATIENT">
-            <button ng-focus="showNotificationsDropdown = true" ng-blur="showNotificationsDropdown = false" class="btn icon icon-bell"></button>
+        <div class="site__header__action" ng-if="User.permissionLevel === UserPermissions.PATIENT">
+            <button ng-click="showNotificationsDropdown = !showNotificationsDropdown" ng-blur="showNotificationsDropdown = false" class="btn icon icon-bell"></button>
             <ul class="dropdown notifications ng-hide" ng-show="showNotificationsDropdown">
                 <li class="dropdown__item" ng-repeat="notification in notifications">
                     <p>{{notification.message}}</p>
