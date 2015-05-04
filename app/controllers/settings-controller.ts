@@ -1,4 +1,5 @@
 import app = require('app');
+import Permissions = require('types/permissions');
 import UserService = require('services/user-service');
 import PathwayService = require('services/pathway-service');
 import Navbar = require('components/navbar/navbar');
@@ -8,6 +9,7 @@ interface IScope extends ng.IScope {
     name : string
     email : string
     password : string
+    accountType : string
     btnText : string
     submit : () => void
 }
@@ -15,7 +17,10 @@ interface IScope extends ng.IScope {
 function SettingsController($scope : IScope, UserService : UserService) {
     $scope.name = UserService.User.name;
     $scope.email = UserService.User.email;
+    $scope.accountType = Permissions[UserService.User.permissionLevel];
+
     $scope.btnText = 'Update';
+
     $scope.submit = () => {
         $scope.btnText = 'Updating...';
         UserService.update({ name: $scope.name, email: $scope.email })

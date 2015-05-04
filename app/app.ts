@@ -55,8 +55,16 @@ app.directive('ngRoute', () => {
     return {
         restrict: 'A',
         link: (scope, el, attr : any) => {
-            if(attr.ngRoute) el.attr('href', ((!usingHtml5Mode) ? '#' : baseUrl) + attr.ngRoute);
+            if (attr.ngRoute) el.attr('href', ((!usingHtml5Mode) ? '#' : baseUrl) + attr.ngRoute);
         }
+    }
+});
+
+app.filter('capitalize', function() {
+    return function(input, all) {
+        return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function(txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }) : '';
     }
 });
 
