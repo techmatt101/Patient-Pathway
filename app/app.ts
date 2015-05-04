@@ -1,7 +1,7 @@
 /// <reference path="../typings/tsd.d.ts" />
 import Helpers = require('utils/helpers');
 var base = <any>document.getElementsByTagName('base');
-var baseUrl = (base[0]) ? base.href : '/';
+var baseUrl = (base[0]) ? base[0].href.replace(location.protocol + '//' + location.host, '') : '/';
 var usingHtml5Mode = Helpers.supportsHistoryApi() && typeof base[0] !== 'undefined'; //TODO: setup config
 
 var app = angular.module('PatientPathway', [
@@ -55,7 +55,7 @@ app.directive('ngRoute', () => {
     return {
         restrict: 'A',
         link: (scope, el, attr : any) => {
-            if (attr.ngRoute) el.attr('href', ((!usingHtml5Mode) ? '#' : baseUrl) + attr.ngRoute);
+            if (attr.ngRoute) el.attr('href', Helpers.pathJoin(((!usingHtml5Mode) ? '#' : baseUrl), attr.ngRoute));
         }
     }
 });
