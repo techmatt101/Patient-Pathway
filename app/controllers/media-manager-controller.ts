@@ -40,6 +40,7 @@ function MediaManagerController ($scope : IScope, ngDialog, MediaService : Media
         ngDialog.open({
             className: 'modal',
             template: 'views/edit-media.html',
+            // @ngInject
             controller: ($scope) => {
                 $scope.media = media;
             }
